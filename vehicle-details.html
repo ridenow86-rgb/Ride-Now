@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle Details - Ride Now</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f9fc;
+            color: #102a56;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 70px;
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #102a56;
+        }
+
+        .logo span {
+            color: #ff6500;
+        }
+
+
+        .back-button {
+            background: #ff6500;
+            color: white;
+
+            border: none;
+            border-radius: 8px;
+
+            padding: 11px 22px;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #e85a00;
+        }
+
+
+        /* ================= MAIN CONTAINER ================= */
+
+        .details-container {
+            max-width: 1100px;
+
+            margin: 50px auto;
+
+            padding: 0 50px;
+        }
+
+
+        .details-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* ================= IMAGE ================= */
+
+        .vehicle-image {
+            width: 100%;
+            height: 500px;
+
+            object-fit: contain;
+            object-position: center;
+
+            display: block;
+        }
+
+
+        /* ================= CONTENT ================= */
+
+        .details-content {
+            padding: 30px;
+        }
+
+
+        .vehicle-type {
+            display: inline-block;
+
+            background: #e7f1ff;
+            color: #06489e;
+
+            padding: 7px 16px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        h1 {
+            font-size: 34px;
+
+            margin-top: 15px;
+            margin-bottom: 8px;
+
+            color: #102a56;
+        }
+
+
+        .rating {
+            color: #f28c00;
+
+            font-size: 16px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .price {
+            font-size: 30px;
+
+            color: #ff6500;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+
+        .price span {
+            font-size: 15px;
+
+            color: #555;
+
+            font-weight: normal;
+        }
+
+
+        /* ================= SPECIFICATIONS ================= */
+
+        .specifications {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .spec {
+
+            background: #f5f8fc;
+
+            padding: 18px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e6edf5;
+        }
+
+
+        .spec-title {
+
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .spec-value {
+
+            color: #102a56;
+
+            font-size: 16px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= DESCRIPTION ================= */
+
+        .description {
+
+            border-top: 1px solid #e5e5e5;
+
+            padding-top: 25px;
+        }
+
+
+        .description h2 {
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .description p {
+
+            color: #555;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= RENT BUTTON ================= */
+
+        .rent-button {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 15px;
+
+            background: #ff6500;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .rent-button:hover {
+
+            background: #e85a00;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .details-container {
+                margin-top: 20px;
+            }
+
+            .vehicle-image {
+                height: 260px;
+            }
+
+            .specifications {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            Ride<span>Now</span>
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= VEHICLE DETAILS ================= -->
+
+    <div class="details-container">
+
+        <div class="details-card">
+
+
+            <!-- Vehicle Image -->
+
+            <img
+                id="vehicleImage"
+                class="vehicle-image"
+                src=""
+                alt="Vehicle">
+
+
+            <div class="details-content">
+
+
+                <!-- Car / Bike -->
+
+                <span
+                    id="vehicleType"
+                    class="vehicle-type">
+
+                    Car
+
+                </span>
+
+
+                <!-- Vehicle Name -->
+
+                <h1 id="vehicleName">
+                    Vehicle Name
+                </h1>
+
+
+                <!-- Rating -->
+
+                <div
+                    id="vehicleRating"
+                    class="rating">
+
+                    ⭐ 4.8
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="price">
+
+                    ₹<span id="vehiclePrice">
+                        1,199
+                    </span>
+
+                    <span>
+                        / day
+                    </span>
+
+                </div>
+
+
+
+                <!-- ================= SPECIFICATIONS ================= -->
+
+                <div class="specifications">
+
+
+                    <div class="spec">
+
+                        <div class="spec-title">
+                            Brand
+                        </div>
+
+                        <div
+                            id="vehicleBrand"
+                            class="spec-value">
+
+                            Hyundai
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="spec">
+
+                        <div class="spec-title">
+                            Fuel Type
+                        </div>
+
+                        <div
+                            id="vehicleFuel"
+                            class="spec-value">
+
+                            Petrol
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="spec">
+
+                        <div class="spec-title">
+                            Transmission
+                        </div>
+
+                        <div
+                            id="vehicleTransmission"
+                            class="spec-value">
+
+                            Manual
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="spec">
+
+                        <div class="spec-title">
+                            Seats
+                        </div>
+
+                        <div
+                            id="vehicleSeats"
+                            class="spec-value">
+
+                            5 Seats
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ================= DESCRIPTION ================= -->
+
+                <div class="description">
+
+                    <h2>
+                        About this vehicle
+                    </h2>
+
+                    <p id="vehicleDescription">
+
+                        Vehicle description will appear here.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ================= RENT BUTTON ================= -->
+
+                <button
+                    class="rent-button"
+                    onclick="rentVehicle()">
+
+                    Rent Now →
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /*
+        Get the vehicle selected
+        on the Home page
+        */
+
+        const selectedVehicle =
+            JSON.parse(
+                localStorage.getItem("selectedVehicle")
+            );
+
+
+
+        /*
+        If no vehicle was selected,
+        return to Home page
+        */
+
+        if (!selectedVehicle) {
+
+            alert("Vehicle details not found.");
+
+            window.location.href = "home.html";
+
+        }
+
+
+        else {
+
+
+            /*
+            Display image
+            */
+
+            document.getElementById("vehicleImage").src =
+                selectedVehicle.image;
+
+
+
+            /*
+            Display Car / Bike
+            */
+
+            document.getElementById("vehicleType").textContent =
+                selectedVehicle.type;
+
+
+
+            /*
+            Display name
+            */
+
+            document.getElementById("vehicleName").textContent =
+                selectedVehicle.name;
+
+
+
+            /*
+            Display rating
+            */
+
+            document.getElementById("vehicleRating").textContent =
+                "⭐ " + selectedVehicle.rating;
+
+
+
+            /*
+            Display price
+            */
+
+            document.getElementById("vehiclePrice").textContent =
+                Number(selectedVehicle.price).toLocaleString("en-IN");
+
+
+
+            /*
+            Display brand
+            */
+
+            document.getElementById("vehicleBrand").textContent =
+                selectedVehicle.brand;
+
+
+
+            /*
+            Display fuel
+            */
+
+            document.getElementById("vehicleFuel").textContent =
+                selectedVehicle.fuel;
+
+
+
+            /*
+            Display transmission
+            */
+
+            document.getElementById("vehicleTransmission").textContent =
+                selectedVehicle.transmission;
+
+
+
+            /*
+            Display seats
+            */
+
+            document.getElementById("vehicleSeats").textContent =
+                selectedVehicle.seats + " Seats";
+
+
+
+            /*
+            Display description
+            */
+
+            document.getElementById("vehicleDescription").textContent =
+                selectedVehicle.description;
+
+        }
+
+
+
+        /*
+        Back button
+        */
+
+        function goBack() {
+
+            window.location.href = "home.html";
+
+        }
+
+
+
+        /*
+        Rent Now button
+        */
+
+        function rentVehicle() {
+
+            alert(
+                "You selected " +
+                selectedVehicle.name +
+                " for ₹" +
+                selectedVehicle.price +
+                " per day."
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f8fc;
+
+    color: #103a67;
+}
+
+
+.page {
+    min-height: 100vh;
+
+    padding: 35px 20px;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.step {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 90px;
+
+    color: #8a9aaa;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.step-number {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #e2e8ef;
+
+    color: #64748b;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.step.completed {
+    color: #1d7a46;
+
+    font-weight: 600;
+}
+
+
+.step.completed .step-number {
+    background: #1d7a46;
+
+    color: white;
+}
+
+
+.step.active {
+    color: #1d7a46;
+
+    font-weight: 600;
+}
+
+
+.step.active .step-number {
+    background: #1d7a46;
+
+    color: white;
+}
+
+
+.line {
+    width: 70px;
+
+    height: 2px;
+
+    background: #d8e0e8;
+
+    margin-bottom: 25px;
+}
+
+
+.completed-line {
+    background: #1d7a46;
+}
+
+
+/* =========================
+   SUCCESS CARD
+========================= */
+
+.success-card {
+    width: 100%;
+
+    max-width: 560px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #e2eaf2;
+
+    box-shadow:
+        0 8px 30px rgba(16, 58, 103, 0.10);
+
+    text-align: center;
+}
+
+
+/* =========================
+   SUCCESS ICON
+========================= */
+
+.success-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #e7f7ee;
+
+    color: #1d7a46;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    border: 4px solid #ccebd9;
+}
+
+
+.success-card h1 {
+    color: #103a67;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.success-message {
+    color: #6b7c8f;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   OWNER INFORMATION
+========================= */
+
+.owner-info {
+    background: #f7fafc;
+
+    border: 1px solid #e1e8ef;
+
+    border-radius: 10px;
+
+    padding: 15px 18px;
+
+    text-align: left;
+
+    margin-bottom: 22px;
+}
+
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #e5ebf1;
+}
+
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+
+.label {
+    color: #78899a;
+
+    font-size: 13px;
+}
+
+
+.value {
+    color: #103a67;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.next-message {
+    background: #fff7ef;
+
+    border: 1px solid #ffe1c7;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.next-message strong {
+    color: #e85e00;
+
+    font-size: 14px;
+}
+
+
+.next-message p {
+    color: #6b7c8f;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-button {
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #ff6b00;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    background: #e85e00;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding: 20px 15px;
+    }
+
+
+    .progress-container {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 10px;
+    }
+
+
+    .step {
+        min-width: 75px;
+
+        font-size: 11px;
+    }
+
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .line {
+        width: 35px;
+    }
+
+
+    .success-card {
+        padding: 28px 20px;
+    }
+
+
+    .success-card h1 {
+        font-size: 24px;
+    }
+
+
+    .success-message {
+        font-size: 13px;
+    }
+
+
+    .info-row {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+
+    .value {
+        text-align: left;
+    }
+
+}

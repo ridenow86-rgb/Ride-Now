@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Owner Profile</title>
+
+    <link rel="stylesheet"
+        href="owner-profile.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo-section">
+
+            <img
+                src="ride_now_logo.jpeg"
+                alt="Ride Now"
+                class="logo"
+            >
+
+        </div>
+
+
+        <nav>
+
+            <a href="owner-home.html">
+                Home
+            </a>
+
+            <a href="owner-vehicles.html">
+                My Vehicles
+            </a>
+
+            <a href="#">
+                Bookings
+            </a>
+
+            <a href="#">
+                Earnings
+            </a>
+
+            <a href="owner-profile.html"
+               class="active">
+                Profile
+            </a>
+
+            <a href="#">
+                Reminder
+            </a>
+
+        </nav>
+
+
+        <div class="owner-user">
+
+            <img
+                id="navProfilePhoto"
+                src="default-user.png"
+                alt="Owner"
+            >
+
+            <span id="navOwnerName">
+                Owner
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         PROFILE PAGE
+    ========================== -->
+
+    <main class="profile-container">
+
+        <div class="page-heading">
+
+            <h1>
+                Owner Profile
+            </h1>
+
+            <p>
+                Manage your personal information and documents.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             PERSONAL PROFILE
+        ========================== -->
+
+        <section class="profile-card">
+
+            <div class="profile-header">
+
+                <div class="profile-photo-box">
+
+                    <img
+                        id="profilePhoto"
+                        src="default-user.png"
+                        alt="Profile Photo"
+                    >
+
+                    <label
+                        for="changeProfilePhoto"
+                        class="change-photo">
+                        Change Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="changeProfilePhoto"
+                        accept=".jpg,.jpeg,.png"
+                        hidden
+                    >
+
+                </div>
+
+
+                <div class="profile-title">
+
+                    <h2 id="profileName">
+                        Owner
+                    </h2>
+
+                    <p>
+                        Vehicle Owner
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-details">
+
+                <div class="detail-box">
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="detailName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>
+                        Phone Number
+                    </span>
+
+                    <strong id="detailPhone">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>
+                        Email Address
+                    </span>
+
+                    <strong id="detailEmail">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box address-box">
+
+                    <span>
+                        Address
+                    </span>
+
+                    <strong id="detailAddress">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OWNER DOCUMENTS
+        ========================== -->
+
+        <section class="documents-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Owner Documents
+                    </h2>
+
+                    <p>
+                        Upload and manage your required documents.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="documents-grid">
+
+
+                <!-- Aadhaar -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+                        🪪
+                    </div>
+
+                    <div class="document-content">
+
+                        <h3>
+                            Aadhaar Card
+                        </h3>
+
+                        <p id="aadhaarStatus">
+                            Not Uploaded
+                        </p>
+
+                    </div>
+
+                    <label
+                        for="aadhaarInput"
+                        class="upload-button">
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="aadhaarInput"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        hidden
+                    >
+
+                </div>
+
+
+
+                <!-- PAN -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+                        💳
+                    </div>
+
+                    <div class="document-content">
+
+                        <h3>
+                            PAN Card
+                        </h3>
+
+                        <p id="panStatus">
+                            Not Uploaded
+                        </p>
+
+                    </div>
+
+                    <label
+                        for="panInput"
+                        class="upload-button">
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="panInput"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        hidden
+                    >
+
+                </div>
+
+
+
+                <!-- Driving Licence -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+                        🚘
+                    </div>
+
+                    <div class="document-content">
+
+                        <h3>
+                            Driving Licence
+                        </h3>
+
+                        <p id="licenseStatus">
+                            Not Uploaded
+                        </p>
+
+                    </div>
+
+                    <label
+                        for="licenseInput"
+                        class="upload-button">
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="licenseInput"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        hidden
+                    >
+
+                </div>
+
+
+
+                <!-- Vehicle Papers -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+                        📄
+                    </div>
+
+                    <div class="document-content">
+
+                        <h3>
+                            Car / Bike Papers
+                        </h3>
+
+                        <p id="vehiclePaperStatus">
+                            Not Uploaded
+                        </p>
+
+                    </div>
+
+                    <label
+                        for="vehiclePaperInput"
+                        class="upload-button">
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="vehiclePaperInput"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        hidden
+                    >
+
+                </div>
+
+
+
+                <!-- Other Documents -->
+
+                <div class="document-card">
+
+                    <div class="document-icon">
+                        📁
+                    </div>
+
+                    <div class="document-content">
+
+                        <h3>
+                            Other Documents
+                        </h3>
+
+                        <p id="otherStatus">
+                            Not Uploaded
+                        </p>
+
+                    </div>
+
+                    <label
+                        for="otherInput"
+                        class="upload-button">
+                        Upload
+                    </label>
+
+                    <input
+                        type="file"
+                        id="otherInput"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        multiple
+                        hidden
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ACCOUNT ACTIONS
+        ========================== -->
+
+        <section class="account-actions">
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="window.location.href='owner-home.html'">
+
+                ← Back to Home
+
+            </button>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton">
+
+                Logout
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+        /* =========================================
+           LOAD OWNER ACCOUNT
+        ========================================== */
+
+        function loadOwnerProfile() {
+
+            const account =
+                JSON.parse(
+                    localStorage.getItem(
+                        "rideNowOwnerAccount"
+                    ) || "null"
+                );
+
+
+            if (!account) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            /* Name */
+
+            document.getElementById(
+                "profileName"
+            ).textContent =
+                account.name || "Owner";
+
+
+            document.getElementById(
+                "detailName"
+            ).textContent =
+                account.name || "-";
+
+
+            /* Phone */
+
+            document.getElementById(
+                "detailPhone"
+            ).textContent =
+                account.phone || "-";
+
+
+            /* Email */
+
+            document.getElementById(
+                "detailEmail"
+            ).textContent =
+                account.email || "-";
+
+
+            /* Address */
+
+            document.getElementById(
+                "detailAddress"
+            ).textContent =
+                account.address || "-";
+
+
+            /* Navbar name */
+
+            document.getElementById(
+                "navOwnerName"
+            ).textContent =
+                account.name || "Owner";
+
+
+            /* Profile photo */
+
+            const photo =
+                account.profilePhoto ||
+                localStorage.getItem(
+                    "rideNowOwnerProfilePhoto"
+                );
+
+
+            if (photo) {
+
+                document.getElementById(
+                    "profilePhoto"
+                ).src = photo;
+
+
+                document.getElementById(
+                    "navProfilePhoto"
+                ).src = photo;
+
+            }
+
+
+            loadDocuments();
+
+        }
+
+
+
+        /* =========================================
+           DOCUMENT STORAGE
+        ========================================== */
+
+        function getDocuments() {
+
+            return JSON.parse(
+                localStorage.getItem(
+                    "rideNowOwnerDocuments"
+                ) || "{}"
+            );
+
+        }
+
+
+
+        function saveDocuments(documents) {
+
+            localStorage.setItem(
+                "rideNowOwnerDocuments",
+                JSON.stringify(documents)
+            );
+
+        }
+
+
+
+        /* =========================================
+           DISPLAY DOCUMENT STATUS
+        ========================================== */
+
+        function loadDocuments() {
+
+            const documents =
+                getDocuments();
+
+
+            updateDocumentStatus(
+                "aadhaar",
+                documents.aadhaar
+            );
+
+
+            updateDocumentStatus(
+                "pan",
+                documents.pan
+            );
+
+
+            updateDocumentStatus(
+                "license",
+                documents.license
+            );
+
+
+            updateDocumentStatus(
+                "vehiclePaper",
+                documents.vehiclePaper
+            );
+
+
+            updateDocumentStatus(
+                "other",
+                documents.other
+            );
+
+        }
+
+
+
+        function updateDocumentStatus(
+            name,
+            file
+        ) {
+
+            const status =
+                document.getElementById(
+                    name + "Status"
+                );
+
+
+            if (!status) return;
+
+
+            if (file) {
+
+                status.textContent =
+                    "✓ " + file.name;
+
+                status.classList.add(
+                    "uploaded"
+                );
+
+            } else {
+
+                status.textContent =
+                    "Not Uploaded";
+
+                status.classList.remove(
+                    "uploaded"
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           SAVE DOCUMENT
+        ========================================== */
+
+        function handleDocumentUpload(
+            inputId,
+            documentName
+        ) {
+
+            const input =
+                document.getElementById(
+                    inputId
+                );
+
+
+            input.addEventListener(
+                "change",
+                function() {
+
+                    if (
+                        !input.files ||
+                        input.files.length === 0
+                    ) {
+                        return;
+                    }
+
+
+                    const file =
+                        input.files[0];
+
+
+                    const documents =
+                        getDocuments();
+
+
+                    documents[documentName] = {
+
+                        name: file.name,
+
+                        type: file.type,
+
+                        size: file.size
+
+                    };
+
+
+                    saveDocuments(
+                        documents
+                    );
+
+
+                    updateDocumentStatus(
+                        documentName,
+                        documents[documentName]
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================
+           DOCUMENT UPLOAD EVENTS
+        ========================================== */
+
+        handleDocumentUpload(
+            "aadhaarInput",
+            "aadhaar"
+        );
+
+
+        handleDocumentUpload(
+            "panInput",
+            "pan"
+        );
+
+
+        handleDocumentUpload(
+            "licenseInput",
+            "license"
+        );
+
+
+        handleDocumentUpload(
+            "vehiclePaperInput",
+            "vehiclePaper"
+        );
+
+
+        handleDocumentUpload(
+            "otherInput",
+            "other"
+        );
+
+
+
+        /* =========================================
+           CHANGE PROFILE PHOTO
+        ========================================== */
+
+        document.getElementById(
+            "changeProfilePhoto"
+        ).addEventListener(
+            "change",
+            function(event) {
+
+                const file =
+                    event.target.files[0];
+
+
+                if (!file) return;
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(e) {
+
+                        const image =
+                            e.target.result;
+
+
+                        document.getElementById(
+                            "profilePhoto"
+                        ).src = image;
+
+
+                        document.getElementById(
+                            "navProfilePhoto"
+                        ).src = image;
+
+
+                        localStorage.setItem(
+                            "rideNowOwnerProfilePhoto",
+                            image
+                        );
+
+
+                        const account =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    "rideNowOwnerAccount"
+                                ) || "{}"
+                            );
+
+
+                        account.profilePhoto =
+                            image;
+
+
+                        localStorage.setItem(
+                            "rideNowOwnerAccount",
+                            JSON.stringify(account)
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+
+
+        /* =========================================
+           LOGOUT
+        ========================================== */
+
+        document.getElementById(
+            "logoutButton"
+        ).addEventListener(
+            "click",
+            function() {
+
+                localStorage.removeItem(
+                    "isOwnerLoggedIn"
+                );
+
+                localStorage.removeItem(
+                    "ownerLoggedIn"
+                );
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+
+
+        /* =========================================
+           START
+        ========================================== */
+
+        loadOwnerProfile();
+
+    </script>
+
+</body>
+
+</html>

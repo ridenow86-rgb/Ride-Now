@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9fd;
+    color: #063d73;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #dce7f3;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 35px;
+
+    gap: 30px;
+}
+
+.logo {
+    width: 125px;
+    height: auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    flex: 1;
+}
+
+.navbar nav a {
+    text-decoration: none;
+
+    color: #52779d;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 28px 0;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #063d73;
+    font-weight: 700;
+}
+
+.owner-user {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+}
+
+.owner-user img {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #dce7f3;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.earnings-container {
+    max-width: 1200px;
+
+    margin: 35px auto;
+
+    padding: 0 25px;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    font-size: 34px;
+
+    color: #063d73;
+
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    color: #66829d;
+}
+
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.earning-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.earning-card {
+    background: white;
+
+    border: 1px solid #dce7f3;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(
+            20,
+            70,
+            110,
+            0.05
+        );
+}
+
+.earning-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 13px;
+
+    background: #eaf3fb;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    color: #063d73;
+
+    flex-shrink: 0;
+}
+
+.earning-card span {
+    display: block;
+
+    color: #7890a8;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+.earning-card h2 {
+    color: #063d73;
+
+    font-size: 23px;
+}
+
+.earning-card.total {
+    border-top: 4px solid #063d73;
+}
+
+
+/* =========================
+   SECTION CARD
+========================= */
+
+.section-card {
+    background: white;
+
+    border: 1px solid #dce7f3;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(
+            20,
+            70,
+            110,
+            0.05
+        );
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    color: #063d73;
+
+    font-size: 23px;
+
+    margin-bottom: 6px;
+}
+
+.section-title p {
+    color: #718aa2;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   VEHICLE EARNINGS
+========================= */
+
+.vehicle-earnings-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.vehicle-earning {
+    border: 1px solid #e0eaf3;
+
+    background: #f8fbfe;
+
+    border-radius: 12px;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.vehicle-earning-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #eaf3fb;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.vehicle-earning-info {
+    flex: 1;
+}
+
+.vehicle-earning-info h3 {
+    color: #164f80;
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+.vehicle-earning-info p {
+    color: #8195a8;
+
+    font-size: 12px;
+}
+
+.vehicle-earning strong {
+    color: #15945a;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f3f8fc;
+}
+
+th {
+    text-align: left;
+
+    padding: 14px;
+
+    font-size: 13px;
+
+    color: #5f7c96;
+
+    border-bottom: 1px solid #dce7f3;
+}
+
+td {
+    padding: 15px 14px;
+
+    border-bottom: 1px solid #edf2f6;
+
+    color: #365d7d;
+
+    font-size: 14px;
+}
+
+.amount {
+    font-weight: 700;
+
+    color: #15945a;
+}
+
+.paid {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 12px;
+
+    background: #e5f7ed;
+
+    color: #15945a;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #7890a8;
+}
+
+.empty-state div {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    color: #426784;
+
+    margin-bottom: 6px;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+.no-data {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #8195a8;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom-actions {
+    padding-bottom: 35px;
+}
+
+.bottom-actions button {
+    border: none;
+
+    background: #eaf3fb;
+
+    color: #063d73;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .earning-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .vehicle-earnings-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 20px;
+    }
+
+    .navbar nav a {
+        padding: 10px 0;
+
+        white-space: nowrap;
+    }
+
+    .earnings-container {
+        margin-top: 25px;
+
+        padding: 0 15px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .earning-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card {
+        padding: 20px;
+    }
+
+    .page-heading h1 {
+        font-size: 28px;
+    }
+
+}

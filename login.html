@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+
+    <!-- Login Page -->
+
+    <div class="login-page">
+
+
+        <!-- Left Side -->
+
+        <div class="login-left">
+
+            <img src="ride_now_logo.jpeg" alt="Ride Now Logo">
+
+            <h1>Welcome!!</h1>
+
+            <p>
+                Your next ride is just a few clicks away.
+            </p>
+
+        </div>
+
+
+        <!-- Right Side -->
+
+        <div class="login-right">
+
+
+            <div class="login-box">
+
+                <h2>Login</h2>
+
+                <p class="login-text">
+                    Sign in to continue to Ride Now
+                </p>
+
+
+                <!-- Email / Phone -->
+
+                <label>Email / Phone</label>
+
+                <input
+                    type="text"
+                    id="loginId"
+                    placeholder="Enter your email or phone no"
+                >
+
+
+                <!-- Password -->
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                >
+
+
+                <!-- Remember + Forgot -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox" id="rememberMe">
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- Login Button -->
+
+                <button type="button" id="loginButton">
+                    Login
+                </button>
+
+
+                <!-- Create Account -->
+
+                <p class="create-account">
+
+                    Don't have an account?
+
+                    <a href="journey.html">
+                        Create Account
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         LOGIN JAVASCRIPT
+    ========================== -->
+
+   <script>
+
+document
+    .getElementById("loginButton")
+    .addEventListener(
+        "click",
+        function () {
+
+            const loginId =
+                document
+                .getElementById("loginId")
+                .value
+                .trim();
+
+            const loginPassword =
+                document
+                .getElementById("loginPassword")
+                .value;
+
+
+            /* =========================
+               CHECK EMPTY FIELDS
+            ========================== */
+
+            if (loginId === "") {
+
+                alert(
+                    "Please enter your email or phone number."
+                );
+
+                return;
+
+            }
+
+
+            if (loginPassword === "") {
+
+                alert(
+                    "Please enter your password."
+                );
+
+                return;
+
+            }
+
+
+            /* =========================
+               CHECK RENTER ACCOUNTS
+            ========================== */
+
+            let renterAccounts =
+                JSON.parse(
+                    localStorage.getItem(
+                        "rideNowAccounts"
+                    ) || "[]"
+                );
+
+
+            /*
+               Support old account format
+               if it already exists
+            */
+
+            const oldRenterAccount =
+                localStorage.getItem(
+                    "rideNowAccount"
+                );
+
+
+            if (
+                renterAccounts.length === 0 &&
+                oldRenterAccount
+            ) {
+
+                renterAccounts.push(
+                    JSON.parse(
+                        oldRenterAccount
+                    )
+                );
+
+            }
+
+
+            /* =========================
+               FIND RENTER ACCOUNT
+            ========================== */
+
+            const renter =
+                renterAccounts.find(
+                    function (account) {
+
+                        const emailMatch =
+                            loginId.toLowerCase() ===
+                            account.email.toLowerCase();
+
+                        const phoneMatch =
+                            loginId ===
+                            account.phone;
+
+                        const passwordMatch =
+                            loginPassword ===
+                            account.password;
+
+                        return (
+                            (emailMatch || phoneMatch)
+                            &&
+                            passwordMatch
+                        );
+
+                    }
+                );
+
+
+            /* =========================
+               RENTER LOGIN SUCCESS
+            ========================== */
+
+            if (renter) {
+
+                localStorage.setItem(
+                    "isLoggedIn",
+                    "true"
+                );
+
+                localStorage.setItem(
+                    "userType",
+                    "renter"
+                );
+
+                localStorage.setItem(
+                    "userName",
+                    renter.name
+                );
+
+                localStorage.setItem(
+                    "userEmail",
+                    renter.email
+                );
+
+                localStorage.setItem(
+                    "userPhone",
+                    renter.phone
+                );
+
+                localStorage.setItem(
+                    "userAddress",
+                    renter.address
+                );
+
+
+                alert(
+                    "Login successful!"
+                );
+
+
+                window.location.href =
+                    "home.html";
+
+                return;
+
+            }
+
+
+            /* =========================
+               CHECK OWNER ACCOUNT
+            ========================== */
+
+            const savedOwnerAccount =
+                localStorage.getItem(
+                    "rideNowOwnerAccount"
+                );
+
+
+            if (savedOwnerAccount) {
+
+                const ownerAccount =
+                    JSON.parse(
+                        savedOwnerAccount
+                    );
+
+
+                const ownerEmailMatch =
+                    loginId.toLowerCase() ===
+                    ownerAccount.email.toLowerCase();
+
+
+                const ownerPhoneMatch =
+                    loginId ===
+                    ownerAccount.phone;
+
+
+                const ownerPasswordMatch =
+                    loginPassword ===
+                    ownerAccount.password;
+
+
+                /* =========================
+                   OWNER LOGIN SUCCESS
+                ========================== */
+
+                if (
+                    (ownerEmailMatch ||
+                     ownerPhoneMatch)
+                    &&
+                    ownerPasswordMatch
+                ) {
+
+                    localStorage.setItem(
+                        "isLoggedIn",
+                        "true"
+                    );
+
+                    localStorage.setItem(
+                        "userType",
+                        "owner"
+                    );
+
+                    localStorage.setItem(
+                        "userName",
+                        ownerAccount.name
+                    );
+
+                    localStorage.setItem(
+                        "userEmail",
+                        ownerAccount.email
+                    );
+
+                    localStorage.setItem(
+                        "userPhone",
+                        ownerAccount.phone
+                    );
+
+                    localStorage.setItem(
+                        "userAddress",
+                        ownerAccount.address
+                    );
+
+
+                    alert(
+                        "Login successful!"
+                    );
+
+
+                    window.location.href =
+                        "owner-home.html";
+
+                    return;
+
+                }
+
+            }
+
+
+            /* =========================
+               INVALID LOGIN
+            ========================== */
+
+            alert(
+                "Invalid email/phone or password."
+            );
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

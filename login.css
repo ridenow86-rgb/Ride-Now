@@ -1,0 +1,388 @@
+/* Remove default spacing */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Whole page */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #ffffff,
+
+}
+
+
+/* Login Page */
+
+.login-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.login-left {
+
+    width: 50%;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #d8e7fc,
+        #ffffff,
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+
+/* Logo */
+
+.login-left img {
+
+    width: 300px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* Welcome heading */
+
+.login-left h1 {
+
+    color: #06366f;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Description */
+
+.login-left p {
+
+    color: #64748b;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.login-right {
+
+    width: 50%;
+
+    min-height: 100vh;
+
+    background-color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+
+/* Login box */
+
+.login-box {
+
+    width: 420px;
+
+    padding: 40px;
+
+}
+
+
+/* Login heading */
+
+.login-box h2 {
+
+    color: #06366f;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* Small text */
+
+.login-text {
+
+    color: #718096;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* Labels */
+
+.login-box > label {
+
+    display: block;
+
+    color: #243b53;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    margin-top: 20px;
+
+}
+
+
+/* Input */
+
+.login-box > input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d5deea;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+/* Input when clicked */
+
+.login-box > input:focus {
+
+    border-color: #ff720e;
+
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 18px 0 25px;
+
+    font-size: 13px;
+
+}
+
+
+/* Remember */
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #64748b;
+
+}
+
+
+/* Forgot password */
+
+.login-options a {
+
+    color: #ff7900;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-box button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #ff7700;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* Button hover */
+
+.login-box button:hover {
+
+    background-color: #e87203;
+
+}
+
+
+/* =========================
+   CREATE ACCOUNT
+========================= */
+
+.create-account {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #718096;
+
+    font-size: 14px;
+
+}
+
+
+.create-account a {
+
+    color: #06366f;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.create-account a:hover {
+
+    color: #ff7900;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .login-page {
+
+        flex-direction: column;
+
+    }
+
+
+    .login-left {
+
+        width: 100%;
+
+        min-height: 40vh;
+
+        padding: 25px;
+
+    }
+
+
+    .login-left img {
+
+        width: 220px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .login-left h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .login-left p {
+
+        font-size: 15px;
+
+    }
+
+
+    .login-right {
+
+        width: 100%;
+
+        min-height: 60vh;
+
+        padding: 25px;
+
+    }
+
+
+    .login-box {
+
+        width: 100%;
+
+        max-width: 420px;
+
+        padding: 20px;
+
+    }
+
+}

@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Home</title>
+
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <img src="ride_now_logo.jpeg" alt="Ride Now">
+
+    </div>
+
+
+    <nav>
+
+        <a href="home.html" class="active">
+            Home
+        </a>
+
+        <a href="#">
+            Browse Vehicles 
+        </a>
+
+        <a href="#">
+            About
+        </a>
+
+        <a href="#">
+            Help
+        </a>
+
+    </nav>
+
+
+    <div class="user-section" id="profileButton">
+
+    <img 
+        id="userPhoto" 
+        src="default-user.png" 
+        alt="User Photo" 
+    >
+
+    <span> 
+        Hello, <span id="userName">User</span>
+    </span>
+
+
+    <button id="logoutButton" class="logout-button"> 
+        Logout 
+    </button>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+            Find Your Perfect Ride!
+        </h1>
+
+        <p>
+            Explore our wide range of cars and bikes
+            for rent at the best prices.
+        </p>
+
+    </div>
+
+     <div class="hero-image">
+        <img src="home_page.png" alt="Car and Bike">
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     SEARCH SECTION
+========================= -->
+
+<section class="search-section">
+
+
+    <!-- Car / Bike -->
+
+    <div class="vehicle-type">
+
+        <button
+            class="type-button active-type"
+            id="carButton"
+            type="button"
+        >
+            🚗 &nbsp; Cars
+        </button>
+
+        <button
+            class="type-button"
+            id="bikeButton"
+            type="button"
+        >
+            🏍️ &nbsp; Bikes
+        </button>
+
+    </div>
+
+
+    <!-- Price -->
+
+    <div class="filter-box">
+
+        <span class="filter-icon">₹</span>
+
+        <div>
+
+            <small>Price Range</small>
+
+            <select id="priceFilter">
+
+                <option value="all">
+                    Any
+                </option>
+
+                <option value="1000">
+                    Under ₹1,000
+                </option>
+
+                <option value="2000">
+                    Under ₹2,000
+                </option>
+
+                <option value="3000">
+                    Under ₹3,000
+                </option>
+
+                <option value="5000">
+                    Under ₹5,000
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Brand -->
+
+    <div class="filter-box">
+
+        <span class="filter-icon">◇</span>
+
+        <div>
+
+            <small>Brand</small>
+
+            <select id="brandFilter">
+
+                <option value="all">
+                    All Brands
+                </option>
+
+                <option value="hyundai">
+                    Hyundai
+                </option>
+
+                <option value="toyota">
+                    Toyota
+                </option>
+
+                <option value="maruti">
+                    Maruti Suzuki
+                </option>
+
+                <option value="tata">
+                    Tata
+                </option>
+
+                <option value="honda">
+                    Honda
+                </option>
+
+                <option value="yamaha">
+                    Yamaha
+                </option>
+
+                <option value="royal-enfield">
+                    Royal Enfield
+                </option>
+
+                <option value="ktm">
+                    KTM
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Fuel -->
+
+    <div class="filter-box">
+
+        <span class="filter-icon">⛽</span>
+
+        <div>
+
+            <small>Fuel Type</small>
+
+            <select id="fuelFilter">
+
+                <option value="all">
+                    All Types
+                </option>
+
+                <option value="petrol">
+                    Petrol
+                </option>
+
+                <option value="diesel">
+                    Diesel
+                </option>
+
+                <option value="hybrid">
+                    Hybrid
+                </option>
+
+                <option value="electric">
+                    Electric
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Transmission -->
+
+    <div class="filter-box">
+
+        <span class="filter-icon">⚙</span>
+
+        <div>
+
+            <small>Transmission</small>
+
+            <select id="transmissionFilter">
+
+                <option value="all">
+                    Any
+                </option>
+
+                <option value="manual">
+                    Manual
+                </option>
+
+                <option value="automatic">
+                    Automatic
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search Button -->
+
+    <button
+        class="search-button"
+        id="searchButton"
+        type="button"
+    >
+
+        🔍 &nbsp; Search
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================
+     VEHICLE HEADER
+========================= -->
+
+<div class="vehicle-header">
+
+    <p>
+        Showing <b id="vehicleCount">8</b> vehicles
+    </p>
+
+
+    <div class="sort">
+
+        <span>
+            Sort by:
+        </span>
+
+        <select>
+
+            <option>
+                Recommended
+            </option>
+
+            <option>
+                Price: Low to High
+            </option>
+
+            <option>
+                Price: High to Low
+            </option>
+
+            <option>
+                Highest Rated
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     VEHICLE CARDS
+========================= -->
+
+<section class="vehicle-container">
+
+
+    <!-- CAR 1 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1,199"
+        data-brand="hyundai"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car1.avif" alt="Hyundai i20">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Grand i10 Nios
+                </h2>
+
+                <span class="rating">
+                    ★ 4.8 (124)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,199
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Grand i10 Nios"
+    data-type="Car"
+    data-price="1199"
+    data-brand="Hyundai"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.8 (124)"
+    data-image="car1.avif"
+    data-description="Hyundai Grand i10 Nios is a compact and comfortable car suitable for city travel, daily commuting and short trips.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CAR 2 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1,399"
+        data-brand="hyundai"
+        data-fuel="petrol"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car2.jpg" alt="hyundai">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Grand i10 Nios
+                </h2>
+
+                <span class="rating">
+                    ★ 4.7 (98)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,399
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Grand i10 Nios"
+    data-type="Car"
+    data-price="1399"
+    data-brand="Hyundai"
+    data-fuel="Petrol"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.7 (98)"
+    data-image="car2.jpg"
+    data-description="Hyundai Grand i10 Nios Automatic offers comfortable city driving with easy handling and a practical interior for everyday travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CAR 3 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1399"
+        data-brand="hyundai"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car3.avif" alt="Maruti Suzuki Brezza">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    i20
+                </h2>
+
+                <span class="rating">
+                    ★ 4.6 (87)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,399
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Grand i10 Nios"
+    data-type="Car"
+    data-price="1399"
+    data-brand="Hyundai"
+    data-fuel="Petrol"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.7 (98)"
+    data-image="car3.avif"
+    data-description="Hyundai Grand i10 Nios Automatic offers comfortable city driving with easy handling and a practical interior for everyday travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CAR 4 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2199"
+        data-brand="hyundai"
+        data-fuel="diesel"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car4.avif" alt="verna">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Venue
+                </h2>
+
+                <span class="rating">
+                    ★ 4.5 (76)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Diesel</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,199
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Venue"
+    data-type="Car"
+    data-price="2199"
+    data-brand="Hyundai"
+    data-fuel="Diesel"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.5 (78)"
+    data-image="car4.avif"
+    data-description="Hyundai Venue is a compact SUV offering a comfortable ride, practical space and convenient automatic driving for city and highway travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- CAR 5 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1399"
+        data-brand="toyota"
+        data-fuel="diesel"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car5.avif" alt="glaza">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Glanza
+                </h2>
+
+                <span class="rating">
+                    ★ 4.3 (86)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Diesel</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,399
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+               <button
+    class="view-details"
+    data-name="Glanza"
+    data-type="Car"
+    data-price="1399"
+    data-brand="Toyota"
+    data-fuel="Diesel"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.3 (86)"
+    data-image="car5.avif"
+    data-description="Toyota Glanza is a practical hatchback designed for comfortable city travel, daily commuting and economical journeys.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- CAR 6 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2199"
+        data-brand="venue"
+        data-fuel="petrol"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car6.avif" alt="toyota">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Urban Cruiser Hyryder
+                </h2>
+
+                <span class="rating">
+                    ★ 4.0 (99)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,499
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Urban Cruiser Hyryder"
+    data-type="Car"
+    data-price="2499"
+    data-brand="Toyota"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.0 (99)"
+    data-image="car6.avif"
+    data-description="Toyota Urban Cruiser Hyryder is a spacious SUV suitable for family trips, city driving and comfortable long-distance travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- CAR 7 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="3899"
+        data-brand="venue"
+        data-fuel="diesel"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car7.avif" alt="toyota">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Innoca Crysta
+                </h2>
+
+                <span class="rating">
+                    ★ 4.8 (50)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol/Diesel</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,199
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Innova Crysta"
+    data-type="Car"
+    data-price="2199"
+    data-brand="Toyota"
+    data-fuel="Petrol/Diesel"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.8 (50)"
+    data-image="car7.avif"
+    data-description="Toyota Innova Crysta is a spacious and comfortable vehicle suitable for family travel, group journeys and long-distance trips.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 8 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1199"
+        data-brand="swift"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car8.avif" alt="maruti suzuki">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Swift
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (150)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,199
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Swift"
+    data-type="Car"
+    data-price="1199"
+    data-brand="Maruti Suzuki"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.9 (150)"
+    data-image="car8.avif"
+    data-description="Maruti Suzuki Swift is a compact and efficient hatchback suitable for daily commuting, city travel and comfortable trips.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 9 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2699"
+        data-brand="grand vitara"
+        data-fuel="hybrid"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car9.avif" alt="maruti suzuki">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Grand Vitara
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (50)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Hybrid</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,699
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Grand Vitara"
+    data-type="Car"
+    data-price="2699"
+    data-brand="Maruti Suzuki"
+    data-fuel="Hybrid"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.9 (50)"
+    data-image="car9.avif"
+    data-description="Maruti Suzuki Grand Vitara is a spacious hybrid SUV offering comfortable seating, smooth driving and suitability for city and highway journeys.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 10 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="1299"
+        data-brand="altroz"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car10.avif" alt="tata">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Altroz
+                </h2>
+
+                <span class="rating">
+                    ★ 4.5 (200)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,299
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+
+                <button
+    class="view-details"
+    data-name="Altroz"
+    data-type="Car"
+    data-price="1299"
+    data-brand="Tata"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.5 (200)"
+    data-image="car10.avif"
+    data-description="Tata Altroz is a stylish hatchback with comfortable seating and practical features, suitable for everyday city and highway travel.">
+
+    View Details
+
+</button>
+
+            <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 11 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2499"
+        data-brand="nexon ev"
+        data-fuel="electric"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car11.avif" alt="nexon ev">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Nexon EV
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (25)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Electric</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,499
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Nexon EV"
+    data-type="Car"
+    data-price="2499"
+    data-brand="Tata"
+    data-fuel="Electric"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.9 (25)"
+    data-image="car11.avif"
+    data-description="Tata Nexon EV is an electric SUV offering quiet and smooth driving, making it suitable for modern city travel and daily commuting.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 12 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2099"
+        data-brand="punch ev"
+        data-fuel="electric"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car12.avif" alt="punch ev">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Punch EV
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (50)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Electric</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,099
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Punch EV"
+    data-type="Car"
+    data-price="2099"
+    data-brand="Tata"
+    data-fuel="Electric"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.9 (50)"
+    data-image="car12.avif"
+    data-description="Tata Punch EV is a compact electric SUV designed for comfortable city driving, daily commuting and efficient travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 13 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2099"
+        data-brand="city"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car13.avif" alt="city">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    City
+                </h2>
+
+                <span class="rating">
+                    ★ 4.2 (150)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ petrol</span>
+
+                <span>⚙ manual</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,099
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="City"
+    data-type="Car"
+    data-price="2099"
+    data-brand="Honda"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="5"
+    data-rating="4.2 (150)"
+    data-image="car13.avif"
+    data-description="Honda City is a comfortable sedan suitable for daily commuting, city travel, family journeys and long-distance driving.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CAR 14 -->
+
+    <div
+        class="vehicle-card"
+        data-type="car"
+        data-price="2499"
+        data-brand="elevate"
+        data-fuel="petrol"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="car14.avif" alt="elevate">
+
+            <span class="vehicle-tag">
+                Car
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Elevate
+                </h2>
+
+                <span class="rating">
+                    ★ 4.8 (59)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ petrol</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 5 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 2,499
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Elevate"
+    data-type="Car"
+    data-price="2499"
+    data-brand="Honda"
+    data-fuel="Petrol"
+    data-transmission="Automatic"
+    data-seats="5"
+    data-rating="4.8 (59)"
+    data-image="car14.avif"
+    data-description="Honda Elevate is a spacious SUV offering comfortable seating, smooth automatic driving and suitability for city and long-distance travel.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 1 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="599"
+        data-brand="honda"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike1.avif" alt="shine 125">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Shine 125
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (110)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 599
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Shine 125"
+    data-type="Bike"
+    data-price="599"
+    data-brand="Honda"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.9 (110)"
+    data-image="bike1.avif"
+    data-description="Honda Shine 125 is a practical and efficient commuter bike suitable for daily city travel, college commuting and regular use.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 2-->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="499"
+        data-brand="honda"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike2.avif" alt="activa 6g">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Activa 6G
+                </h2>
+
+                <span class="rating">
+                    ★ 4.7 (95)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 499
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Activa 6G"
+    data-type="Bike"
+    data-price="499"
+    data-brand="Honda"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.7 (86)"
+    data-image="bike2.avif"
+    data-description="Honda Activa 6G is a comfortable scooter suitable for daily commuting, city travel and convenient short-distance journeys.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 3 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="1199"
+        data-brand="honda"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike3.avif" alt="cb350">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    CB350
+                </h2>
+
+                <span class="rating">
+                    ★ 4.6 (82)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,199
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="CB350"
+    data-type="Bike"
+    data-price="1199"
+    data-brand="Honda"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.6 (82)"
+    data-image="bike3.avif"
+    data-description="Honda CB350 is a classic-style motorcycle offering comfortable riding and suitable performance for city rides and longer journeys.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 4 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="999"
+        data-brand="yamaha"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike4.avif" alt="mt-15">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    MT-15
+                </h2>
+
+                <span class="rating">
+                    ★ 4.8 (104)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 999
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="MT-15"
+    data-type="Bike"
+    data-price="999"
+    data-brand="Yamaha"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.8 (104)"
+    data-image="bike4.avif"
+    data-description="Yamaha MT-15 is a sporty motorcycle suitable for city rides, daily commuting and riders looking for an energetic riding experience.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- bike 5 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="599"
+        data-brand="yamaha"
+        data-fuel="petrol"
+        data-transmission="automatic"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike5.avif" alt="fascino 125">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    fascino 125
+                </h2>
+
+                <span class="rating">
+                    ★ 4.3 (60)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Automatic</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 599
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Fascino 125"
+    data-type="Bike"
+    data-price="599"
+    data-brand="Yamaha"
+    data-fuel="Petrol"
+    data-transmission="Automatic"
+    data-seats="2"
+    data-rating="4.3 (60)"
+    data-image="bike5.avif"
+    data-description="Yamaha Fascino 125 is a stylish scooter designed for comfortable city commuting, daily travel and convenient short-distance rides.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 6 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="1599"
+        data-brand="royal enfield"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike6.avif" alt="classic 350">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Classic 350
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (50)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,599
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Classic 350"
+    data-type="Bike"
+    data-price="1599"
+    data-brand="Royal Enfield"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.9 (50)"
+    data-image="bike6.avif"
+    data-description="Royal Enfield Classic 350 is a comfortable and iconic motorcycle suitable for city rides, highway journeys and long-distance touring.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- bike 7 -->
+
+    <div
+        class="vehicle-card"
+        data-type="bike"
+        data-price="1999"
+        data-brand="ktm"
+        data-fuel="petrol"
+        data-transmission="manual"
+    >
+
+        <div class="vehicle-image">
+
+            <img src="bike7.jpg" alt="duke 390">
+
+            <span class="vehicle-tag bike">
+                Bike
+            </span>
+
+            <button class="heart">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="vehicle-details">
+
+            <div class="name-rating">
+
+                <h2>
+                    Duke 390
+                </h2>
+
+                <span class="rating">
+                    ★ 4.9 (30)
+                </span>
+
+            </div>
+
+
+            <div class="features">
+
+                <span>⛽ Petrol</span>
+
+                <span>⚙ Manual</span>
+
+                <span>💺 2 Seats</span>
+
+            </div>
+
+
+            <div class="price">
+
+                ₹ 1,999
+
+                <small>
+                    / hr
+                </small>
+
+            </div>
+
+
+            <div class="card-buttons">
+
+                <button
+    class="view-details"
+    data-name="Duke 390"
+    data-type="Bike"
+    data-price="1999"
+    data-brand="KTM"
+    data-fuel="Petrol"
+    data-transmission="Manual"
+    data-seats="2"
+    data-rating="4.9 (30)"
+    data-image="bike7.jpg"
+    data-description="KTM Duke 390 is a powerful and sporty motorcycle suitable for city rides, highway travel and riders looking for a performance-oriented experience.">
+
+    View Details
+
+</button>
+
+                <button class="rent-button">
+                    Rent Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+
+// =====================================================
+// CHECK LOGIN STATUS
+// =====================================================
+
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+// If user is not logged in, send them to login page
+if (isLoggedIn !== "true") {
+    window.location.href = "login.html";
+}
+
+
+// =====================================================
+// USER INFORMATION
+// =====================================================
+
+// Get saved user information
+const savedName = localStorage.getItem("userName");
+const savedPhoto = localStorage.getItem("userPhoto");
+
+// Get elements
+const userName = document.getElementById("userName");
+const userPhoto = document.getElementById("userPhoto");
+
+// Display user name
+if (savedName && userName) {
+    userName.textContent = savedName;
+}
+
+// Display profile photo
+if (savedPhoto && userPhoto) {
+    userPhoto.src = savedPhoto;
+}
+
+
+// =====================================================
+// OPEN PROFILE PAGE
+// =====================================================
+
+const profileButton = document.getElementById("profileButton");
+
+if (profileButton) {
+
+    profileButton.addEventListener("click", function () {
+
+        window.location.href = "profile.html";
+
+    });
+
+}
+
+
+// =====================================================
+// LOGOUT
+// =====================================================
+
+const logoutButton = document.getElementById("logoutButton");
+
+if (logoutButton) {
+
+    logoutButton.addEventListener("click", function (event) {
+
+        // IMPORTANT:
+        // Prevent logout click from opening profile page
+        event.stopPropagation();
+
+        // Remove only login status
+        localStorage.removeItem("isLoggedIn");
+
+        // DO NOT DELETE ACCOUNT DATA
+        //
+        // rideNowAccount
+        // userName
+        // userEmail
+        // userPhone
+        // userAddress
+        // userPhoto
+        //
+        // These will remain so the user can login again.
+
+        // Go to login page
+        window.location.href = "login.html";
+
+    });
+
+}
+
+
+// =====================================================
+// VEHICLE FILTERING
+// =====================================================
+
+// Get filter elements
+
+const priceFilter =
+    document.getElementById("priceFilter");
+
+const brandFilter =
+    document.getElementById("brandFilter");
+
+const fuelFilter =
+    document.getElementById("fuelFilter");
+
+const transmissionFilter =
+    document.getElementById("transmissionFilter");
+
+
+// Get buttons
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const carButton =
+    document.getElementById("carButton");
+
+const bikeButton =
+    document.getElementById("bikeButton");
+
+
+// Get vehicle count
+
+const vehicleCount =
+    document.getElementById("vehicleCount");
+
+
+// Default vehicle type
+
+let selectedType = "car";
+
+
+// =====================================================
+// CAR BUTTON
+// =====================================================
+
+if (carButton) {
+
+    carButton.addEventListener("click", function () {
+
+        selectedType = "car";
+
+        carButton.classList.add("active-type");
+
+        if (bikeButton) {
+            bikeButton.classList.remove("active-type");
+        }
+
+    });
+
+}
+
+
+// =====================================================
+// BIKE BUTTON
+// =====================================================
+
+if (bikeButton) {
+
+    bikeButton.addEventListener("click", function () {
+
+        selectedType = "bike";
+
+        bikeButton.classList.add("active-type");
+
+        if (carButton) {
+            carButton.classList.remove("active-type");
+        }
+
+    });
+
+}
+
+
+// =====================================================
+// SEARCH BUTTON
+// =====================================================
+
+if (searchButton) {
+
+    searchButton.addEventListener("click", function () {
+
+        // Get selected filters
+
+        const selectedPrice =
+            priceFilter.value;
+
+        const selectedBrand =
+            brandFilter.value;
+
+        const selectedFuel =
+            fuelFilter.value;
+
+        const selectedTransmission =
+            transmissionFilter.value;
+
+
+        // Get all vehicle cards
+
+        const vehicles =
+            document.querySelectorAll(".vehicle-card");
+
+
+        // Count matching vehicles
+
+        let foundVehicles = 0;
+
+
+        // Check every vehicle
+
+        vehicles.forEach(function (vehicle) {
+
+            // Get vehicle information
+
+            const type =
+                vehicle.dataset.type;
+
+            const price =
+                Number(vehicle.dataset.price);
+
+            const brand =
+                vehicle.dataset.brand;
+
+            const fuel =
+                vehicle.dataset.fuel;
+
+            const transmission =
+                vehicle.dataset.transmission;
+
+
+            // Initially show vehicle
+
+            let showVehicle = true;
+
+
+            // =================================================
+            // CAR / BIKE FILTER
+            // =================================================
+
+            if (type !== selectedType) {
+
+                showVehicle = false;
+
+            }
+
+
+            // =================================================
+            // PRICE FILTER
+            // =================================================
+
+            if (selectedPrice !== "all") {
+
+                const maxPrice =
+                    Number(selectedPrice);
+
+                if (price > maxPrice) {
+
+                    showVehicle = false;
+
+                }
+
+            }
+
+
+            // =================================================
+            // BRAND FILTER
+            // =================================================
+
+            if (
+                selectedBrand !== "all" &&
+                brand !== selectedBrand
+            ) {
+
+                showVehicle = false;
+
+            }
+
+
+            // =================================================
+            // FUEL FILTER
+            // =================================================
+
+            if (
+                selectedFuel !== "all" &&
+                fuel !== selectedFuel
+            ) {
+
+                showVehicle = false;
+
+            }
+
+
+            // =================================================
+            // TRANSMISSION FILTER
+            // =================================================
+
+            if (
+                selectedTransmission !== "all" &&
+                transmission !== selectedTransmission
+            ) {
+
+                showVehicle = false;
+
+            }
+
+
+            // =================================================
+            // SHOW / HIDE VEHICLE
+            // =================================================
+
+            if (showVehicle) {
+
+                vehicle.style.display = "";
+
+                foundVehicles++;
+
+            }
+
+            else {
+
+                vehicle.style.display = "none";
+
+            }
+
+        });
+
+
+        // =================================================
+        // UPDATE VEHICLE COUNT
+        // =================================================
+
+        if (vehicleCount) {
+
+            vehicleCount.textContent =
+                foundVehicles;
+
+        }
+
+    });
+
+}
+
+
+// =====================================================
+// VIEW VEHICLE DETAILS
+// =====================================================
+
+const detailButtons =
+    document.querySelectorAll(".view-details");
+
+
+detailButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const vehicle = {
+
+            name:
+                button.dataset.name,
+
+            type:
+                button.dataset.type,
+
+            price:
+                Number(button.dataset.price),
+
+            brand:
+                button.dataset.brand,
+
+            fuel:
+                button.dataset.fuel,
+
+            transmission:
+                button.dataset.transmission,
+
+            seats:
+                button.dataset.seats,
+
+            rating:
+                button.dataset.rating,
+
+            image:
+                button.dataset.image,
+
+            description:
+                button.dataset.description
+
+        };
+
+
+        // Save selected vehicle
+
+        localStorage.setItem(
+            "selectedVehicle",
+            JSON.stringify(vehicle)
+        );
+
+
+        // Open vehicle details page
+
+        window.location.href =
+            "vehicle-details.html";
+
+    });
+
+});
+
+
+/* =====================================================
+   RENT NOW / BOOK VEHICLE
+===================================================== */
+
+const rentButtons =
+    document.querySelectorAll(".rent-button");
+
+
+rentButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+
+        /* Find the vehicle card */
+
+        const card =
+            button.closest(".vehicle-card");
+
+
+        /* Find View Details button */
+
+        const detailsButton =
+            card.querySelector(".view-details");
+
+
+        /* Get vehicle information */
+
+        const booking = {
+
+            name:
+                detailsButton.dataset.name,
+
+            type:
+                detailsButton.dataset.type,
+
+            price:
+                Number(
+                    detailsButton.dataset.price
+                ),
+
+            brand:
+                detailsButton.dataset.brand,
+
+            fuel:
+                detailsButton.dataset.fuel,
+
+            transmission:
+                detailsButton.dataset.transmission,
+
+            seats:
+                detailsButton.dataset.seats,
+
+            rating:
+                detailsButton.dataset.rating,
+
+            image:
+                detailsButton.dataset.image,
+
+            date:
+                new Date().toLocaleDateString(
+                    "en-IN",
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                ),
+
+            status:
+                "Booked"
+
+        };
+
+
+        /* Get existing bookings */
+
+        const bookings =
+            JSON.parse(
+                localStorage.getItem(
+                    "bookingHistory"
+                ) || "[]"
+            );
+
+
+        /* Add new booking */
+
+        bookings.push(booking);
+
+
+        /* Save bookings */
+
+        localStorage.setItem(
+            "bookingHistory",
+            JSON.stringify(bookings)
+        );
+
+
+        /* Success message */
+
+        alert(
+            booking.name +
+            " booked successfully!"
+        );
+
+
+    });
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>

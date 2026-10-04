@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Vehicle Details</title>
+
+    <link rel="stylesheet"
+          href="owner-vehicle-details.css">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Back -->
+
+        <button class="back-button"
+                onclick="goBack()">
+
+            ← Back
+
+        </button>
+
+
+        <!-- Progress -->
+
+       <div class="progress-container">
+
+    <div class="progress-line"></div>
+
+    <div class="progress-line-active"></div>
+
+
+    <div class="step completed">
+
+        <div class="step-circle">
+            ✓
+        </div>
+
+        <div class="step-text">
+            Owner Details
+        </div>
+
+    </div>
+
+
+    <div class="step completed">
+
+        <div class="step-circle">
+            ✓
+        </div>
+
+        <div class="step-text">
+            Profile Photo
+        </div>
+
+    </div>
+
+
+    <div class="step completed">
+
+        <div class="step-circle">
+            ✓
+        </div>
+
+        <div class="step-text">
+            Documents
+        </div>
+
+    </div>
+
+
+    <div class="step active">
+
+        <div class="step-circle">
+            4
+        </div>
+
+        <div class="step-text">
+            Vehicle Details
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-circle">
+            5
+        </div>
+
+        <div class="step-text">
+            Password
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-circle">
+            6
+        </div>
+
+        <div class="step-text">
+            Complete
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- Vehicle Card -->
+
+        <div class="form-card">
+
+            <h1>
+                Add Your Vehicle Details
+            </h1>
+
+            <p class="subtitle">
+                Provide accurate details about your vehicle
+            </p>
+
+
+            <!-- Vehicle Type -->
+
+            <div class="vehicle-type">
+
+                <button
+                    type="button"
+                    id="carButton"
+                    class="type-button active"
+                    onclick="selectVehicleType('Car')">
+
+                    🚗 Car
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="bikeButton"
+                    class="type-button"
+                    onclick="selectVehicleType('Bike')">
+
+                    🏍 Bike
+
+                </button>
+
+            </div>
+
+
+            <!-- Vehicle Form -->
+
+            <form id="vehicleForm">
+
+
+                <!-- Brand + Model -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="vehicleBrand">
+
+                            Vehicle Brand
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="vehicleBrand"
+                            placeholder="e.g. Hyundai"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="vehicleModel">
+
+                            Model
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="vehicleModel"
+                            placeholder="e.g. Creta"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Year + Rent -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="vehicleYear">
+
+                            Year
+                            <span>*</span>
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="vehicleYear"
+                            placeholder="e.g. 2024"
+                            min="1990"
+                            max="2030"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="dailyRent">
+
+                            Rent Price / hr
+                            <span>*</span>
+
+                        </label>
+
+                        <div class="price-input">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="dailyRent"
+                                placeholder="e.g. 2500"
+                                min="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Location -->
+
+                <div class="form-group">
+
+                    <label for="vehicleLocation">
+
+                        Location
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vehicleLocation"
+                        placeholder="e.g. Badlapur, Maharashtra"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Fuel + Transmission -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fuelType">
+
+                            Fuel Type
+                            <span>*</span>
+
+                        </label>
+
+                        <select id="fuelType" required>
+
+                            <option value="">
+                                Select fuel type
+                            </option>
+
+                            <option value="Petrol">
+                                Petrol
+                            </option>
+
+                            <option value="Diesel">
+                                Diesel
+                            </option>
+
+                            <option value="Electric">
+                                Electric
+                            </option>
+
+                            <option value="Hybrid">
+                                Hybrid
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="transmission">
+
+                            Transmission
+                            <span>*</span>
+
+                        </label>
+
+                        <select id="transmission" required>
+
+                            <option value="">
+                                Select transmission
+                            </option>
+
+                            <option value="Manual">
+                                Manual
+                            </option>
+
+                            <option value="Automatic">
+                                Automatic
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Seats -->
+
+                <div class="form-group">
+
+                    <label for="seats">
+
+                        Number of Seats
+                        <span>*</span>
+
+                    </label>
+
+                    <select id="seats" required>
+
+                        <option value="">
+                            Select seats
+                        </option>
+
+                        <option value="2">
+                            2 Seats
+                        </option>
+
+                        <option value="4">
+                            4 Seats
+                        </option>
+
+                        <option value="5">
+                            5 Seats
+                        </option>
+
+                        <option value="6">
+                            6 Seats
+                        </option>
+
+                        <option value="7">
+                            7 Seats
+                        </option>
+
+                        <option value="8">
+                            8 Seats
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Vehicle Photos -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Upload Vehicle Photos
+                        <span>*</span>
+
+                    </label>
+
+                    <p class="upload-info">
+                        Add clear photos of your vehicle
+                    </p>
+
+
+                    <div class="photo-upload-area">
+
+                        <label for="vehiclePhotos"
+                               class="add-photo">
+
+                            <span class="plus">
+                                +
+                            </span>
+
+                            <span>
+                                Add Photos
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="vehiclePhotos"
+                            accept="image/jpeg,image/jpg,image/png"
+                            multiple
+                        >
+
+
+                        <div id="photoPreview"
+                             class="photo-preview">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="vehicleDescription">
+
+                        Description
+                        <span>*</span>
+
+                    </label>
+
+                    <textarea
+                        id="vehicleDescription"
+                        placeholder="Tell renters about your vehicle..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Error -->
+
+                <p id="errorMessage"
+                   class="error-message">
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="back-form-button"
+                        onclick="goBack()">
+
+                        Back
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="next-button">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* ================================
+           VEHICLE TYPE
+        ================================= */
+
+        let vehicleType = "Car";
+
+
+        function selectVehicleType(type) {
+
+            vehicleType = type;
+
+
+            const carButton =
+                document.getElementById("carButton");
+
+            const bikeButton =
+                document.getElementById("bikeButton");
+
+
+            if (type === "Car") {
+
+                carButton.classList.add("active");
+
+                bikeButton.classList.remove("active");
+
+            }
+            else {
+
+                bikeButton.classList.add("active");
+
+                carButton.classList.remove("active");
+
+            }
+
+        }
+
+
+        /* ================================
+           BACK
+        ================================= */
+
+        function goBack() {
+
+            window.location.href =
+                "owner-documents.html";
+
+        }
+
+
+/* ================================
+   PHOTO UPLOAD
+================================ */
+
+const vehiclePhotos =
+    document.getElementById("vehiclePhotos");
+
+const photoPreview =
+    document.getElementById("photoPreview");
+
+let selectedPhotos = [];
+
+
+/* Select photos */
+
+vehiclePhotos.addEventListener(
+    "change",
+    function() {
+
+        const files =
+            Array.from(this.files);
+
+
+        if (files.length === 0) {
+            return;
+        }
+
+
+        /* Maximum 6 photos */
+
+        if (files.length > 6) {
+
+            alert(
+                "You can upload a maximum of 6 photos."
+            );
+
+            this.value = "";
+
+            return;
+        }
+
+
+        selectedPhotos = files.filter(
+            function(file) {
+
+                return (
+                    (
+                        file.type === "image/jpeg" ||
+                        file.type === "image/jpg" ||
+                        file.type === "image/png"
+                    )
+                    &&
+                    file.size <= 5 * 1024 * 1024
+                );
+
+            }
+        );
+
+
+        renderPhotoPreview();
+
+    }
+);
+
+
+/* ================================
+   SHOW PHOTO PREVIEWS
+================================ */
+
+function renderPhotoPreview() {
+
+    photoPreview.innerHTML = "";
+
+
+    selectedPhotos.forEach(
+        function(file, index) {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event) {
+
+                    const photoBox =
+                        document.createElement("div");
+
+                    photoBox.className =
+                        "photo-item";
+
+
+                    photoBox.innerHTML = `
+
+                        <img
+                            src="${event.target.result}"
+                            alt="Vehicle Photo"
+                        >
+
+                        <button
+                            type="button"
+                            class="delete-photo"
+                            onclick="deletePhoto(${index})"
+                        >
+                            ×
+                        </button>
+
+                    `;
+
+
+                    photoPreview.appendChild(
+                        photoBox
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+/* ================================
+   DELETE PHOTO
+================================ */
+
+function deletePhoto(index) {
+
+    selectedPhotos.splice(
+        index,
+        1
+    );
+
+
+    renderPhotoPreview();
+
+
+    /*
+       Reset file input so the
+       same photo can be selected again.
+    */
+
+    vehiclePhotos.value = "";
+
+}
+
+
+ /*
+    Convert and compress vehicle photos
+*/
+
+
+
+    /* ================================
+   COMPRESS VEHICLE PHOTO
+================================ */
+
+function compressVehiclePhoto(file) {
+
+    return new Promise(
+        function(resolve, reject) {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event) {
+
+                    const image =
+                        new Image();
+
+
+                    image.onload =
+                        function() {
+
+                            const maxWidth = 1200;
+                            const maxHeight = 1200;
+
+                            let width =
+                                image.width;
+
+                            let height =
+                                image.height;
+
+
+                            /* Resize */
+
+                            if (
+                                width > maxWidth ||
+                                height > maxHeight
+                            ) {
+
+                                const ratio =
+                                    Math.min(
+                                        maxWidth / width,
+                                        maxHeight / height
+                                    );
+
+
+                                width =
+                                    Math.round(
+                                        width * ratio
+                                    );
+
+
+                                height =
+                                    Math.round(
+                                        height * ratio
+                                    );
+
+                            }
+
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+
+                            canvas.width =
+                                width;
+
+                            canvas.height =
+                                height;
+
+
+                            const context =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+
+                            context.drawImage(
+                                image,
+                                0,
+                                0,
+                                width,
+                                height
+                            );
+
+
+                            const compressed =
+                                canvas.toDataURL(
+                                    "image/jpeg",
+                                    0.7
+                                );
+
+
+                            resolve(
+                                compressed
+                            );
+
+                        };
+
+
+                    image.onerror =
+                        function() {
+
+                            reject(
+                                "Unable to read vehicle photo."
+                            );
+
+                        };
+
+
+                    image.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                function() {
+
+                    reject(
+                        "Unable to process vehicle photo."
+                    );
+
+                };
+
+
+            reader.readAsDataURL(
+                file
+            );
+
+        }
+    );
+
+}
+
+
+/* ================================
+   FORM SUBMIT
+================================ */
+
+document
+    .getElementById("vehicleForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            const errorMessage =
+                document.getElementById(
+                    "errorMessage"
+                );
+
+            errorMessage.style.display =
+                "none";
+
+
+            /* ================================
+               CHECK PHOTOS
+            ================================= */
+
+            if (selectedPhotos.length === 0) {
+
+                errorMessage.textContent =
+                    "Please upload at least one vehicle photo.";
+
+                errorMessage.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            /* ================================
+               READ VEHICLE INFORMATION
+            ================================= */
+
+            const brand =
+                document
+                    .getElementById("vehicleBrand")
+                    .value
+                    .trim();
+
+
+            const model =
+                document
+                    .getElementById("vehicleModel")
+                    .value
+                    .trim();
+
+
+            const year =
+                document
+                    .getElementById("vehicleYear")
+                    .value;
+
+
+            const dailyRent =
+                document
+                    .getElementById("dailyRent")
+                    .value;
+
+
+            const location =
+                document
+                    .getElementById("vehicleLocation")
+                    .value
+                    .trim();
+
+
+            const fuel =
+                document
+                    .getElementById("fuelType")
+                    .value;
+
+
+            const transmission =
+                document
+                    .getElementById("transmission")
+                    .value;
+
+
+            const seats =
+                document
+                    .getElementById("seats")
+                    .value;
+
+
+            const description =
+                document
+                    .getElementById(
+                        "vehicleDescription"
+                    )
+                    .value
+                    .trim();
+
+
+            /* ================================
+               SAVE VEHICLE DETAILS
+            ================================= */
+
+            const vehicleDetails = {
+
+                type:
+                    vehicleType,
+
+                brand:
+                    brand,
+
+                model:
+                    model,
+
+                year:
+                    year,
+
+                dailyRent:
+                    dailyRent,
+
+                location:
+                    location,
+
+                fuel:
+                    fuel,
+
+                transmission:
+                    transmission,
+
+                seats:
+                    seats,
+
+                description:
+                    description
+
+            };
+
+
+            localStorage.setItem(
+                "rideNowOwnerVehicle",
+                JSON.stringify(
+                    vehicleDetails
+                )
+            );
+
+
+            /* ================================
+               COMPRESS VEHICLE PHOTOS
+            ================================= */
+
+            const photoPromises =
+                selectedPhotos.map(
+                    function(file) {
+
+                        return compressVehiclePhoto(
+                            file
+                        );
+
+                    }
+                );
+
+
+            Promise
+                .all(photoPromises)
+                .then(
+                    function(photoData) {
+
+                        try {
+
+                            localStorage.setItem(
+                                "rideNowOwnerVehiclePhotos",
+                                JSON.stringify(
+                                    photoData
+                                )
+                            );
+
+
+                            /* =========================
+                               GO TO PASSWORD
+                            ========================= */
+
+                            window.location.href =
+                                "owner-password.html";
+
+                        }
+
+                        catch (error) {
+
+                            console.error(
+                                "Vehicle photo save error:",
+                                error
+                            );
+
+                            errorMessage.textContent =
+                                "Unable to save vehicle photos. Please try smaller images.";
+
+                            errorMessage.style.display =
+                                "block";
+
+                        }
+
+                    }
+                )
+                .catch(
+                    function(error) {
+
+                        console.error(
+                            "Vehicle photo processing error:",
+                            error
+                        );
+
+                        errorMessage.textContent =
+                            "Unable to process vehicle photos. Please try again.";
+
+                        errorMessage.style.display =
+                            "block";
+
+                    }
+                );
+
+        }
+    );
+
+    </script>
+
+</body>
+
+</html>

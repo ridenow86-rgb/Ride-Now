@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Vehicles - Ride Now</title>
+
+    <link
+        rel="stylesheet"
+        href="owner-vehicles.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <img
+                src="ride_now_logo.jpeg"
+                alt="Ride Now"
+            >
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="owner-home.html">
+                Home
+            </a>
+
+            <a
+                href="owner-vehicles.html"
+                class="active"
+            >
+                My Vehicles
+            </a>
+
+            <a href="#">
+                Bookings
+            </a>
+
+            <a href="#">
+                Earnings
+            </a>
+
+            <a href="#">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <div class="owner-user">
+
+            <img
+                id="ownerPhoto"
+                src="default-user.png"
+                alt="Owner"
+            >
+
+            <span>
+                Hello,
+                <strong id="ownerName">Owner</strong>
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                My Vehicles
+            </h1>
+
+            <p>
+                Add and manage the cars and bikes you want to list on Ride Now.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="home-button"
+            onclick="goToOwnerHome()"
+        >
+            ← Owner Home
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================
+             VEHICLE SELECTION
+        ================================== -->
+
+        <section
+            id="vehicleSelection"
+            class="vehicle-selection"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    List Your Vehicle
+                </h2>
+
+                <p>
+                    Choose what you want to upload.
+                </p>
+
+            </div>
+
+
+            <div class="upload-options">
+
+
+                <!-- =============================
+                     CAR
+                ============================== -->
+
+                <div class="upload-card">
+
+                    <div class="vehicle-icon car-icon">
+                        🚗
+                    </div>
+
+                    
+
+                    <h3>
+                        Add Car
+                    </h3>
+
+                    <p>
+                        List your car for rent.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="upload-button"
+                        onclick="openCarForm()"
+                    >
+                        Upload Car
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================
+                     BIKE
+                ============================== -->
+
+                <div class="upload-card">
+
+                    <div class="vehicle-icon bike-icon">
+                        🏍️
+                    </div>
+                    
+
+                    <h3>
+                        Add Bike
+                    </h3>
+
+                    <p>
+                        List your bike for rent.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="upload-button"
+                        onclick="openBikeForm()"
+                    >
+                        Upload Bike
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CAR FORM
+        ====================================== -->
+
+        <section
+            id="carFormSection"
+            class="vehicle-form-section"
+            style="display: none;"
+        >
+
+            <div class="form-header">
+
+                <div>
+
+                    <h2>
+                        🚗 Add Car
+                    </h2>
+
+                    <p>
+                        Enter your car details below.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="back-form-button"
+                    onclick="closeVehicleForm()"
+                >
+                    ← Back
+                </button>
+
+            </div>
+
+
+            <div class="vehicle-form">
+
+
+                <!-- Brand -->
+
+                <div class="form-group">
+
+                    <label for="carBrand">
+                        Brand
+                    </label>
+
+                    <input
+                        type="text"
+                        id="carBrand"
+                        placeholder="e.g. Hyundai"
+                    >
+
+                </div>
+
+
+
+                <!-- Model -->
+
+                <div class="form-group">
+
+                    <label for="carModel">
+                        Model
+                    </label>
+
+                    <input
+                        type="text"
+                        id="carModel"
+                        placeholder="e.g. i20"
+                    >
+
+                </div>
+
+
+
+                <!-- Year -->
+
+                <div class="form-group">
+
+                    <label for="carYear">
+                        Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="carYear"
+                        placeholder="e.g. 2024"
+                        min="1900"
+                        max="2100"
+                    >
+
+                </div>
+
+
+
+                <!-- Daily Rent -->
+
+                <div class="form-group">
+
+                    <label for="carRent">
+                        Daily Rent
+                    </label>
+
+                    <input
+                        type="number"
+                        id="carRent"
+                        placeholder="e.g. 1500"
+                        min="1"
+                    >
+
+                </div>
+
+
+
+                <!-- Location -->
+
+                <div class="form-group">
+
+                    <label for="carLocation">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="carLocation"
+                        placeholder="e.g. Mumbai"
+                    >
+
+                </div>
+
+
+
+                <!-- Fuel -->
+
+                <div class="form-group">
+
+                    <label for="carFuel">
+                        Fuel
+                    </label>
+
+                    <select id="carFuel">
+
+                        <option value="">
+                            Select Fuel
+                        </option>
+
+                        <option value="Petrol">
+                            Petrol
+                        </option>
+
+                        <option value="Diesel">
+                            Diesel
+                        </option>
+
+                        <option value="Hybrid">
+                            Hybrid
+                        </option>
+
+                        <option value="Electric">
+                            Electric
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Transmission -->
+
+                <div class="form-group">
+
+                    <label for="carTransmission">
+                        Transmission
+                    </label>
+
+                    <select id="carTransmission">
+
+                        <option value="">
+                            Select Transmission
+                        </option>
+
+                        <option value="Manual">
+                            Manual
+                        </option>
+
+                        <option value="Automatic">
+                            Automatic
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Seats -->
+
+                <div class="form-group">
+
+                    <label for="carSeats">
+                        Seats
+                    </label>
+
+                    <select id="carSeats">
+
+                        <option value="">
+                            Select Seats
+                        </option>
+
+                        <option value="2">
+                            2 Seats
+                        </option>
+
+                        <option value="4">
+                            4 Seats
+                        </option>
+
+                        <option value="5">
+                            5 Seats
+                        </option>
+
+                        <option value="6">
+                            6 Seats
+                        </option>
+
+                        <option value="7">
+                            7 Seats
+                        </option>
+
+                        <option value="8">
+                            8 Seats
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Photos -->
+
+                <div class="form-group full-width">
+
+                    <label for="carPhotos">
+                        Vehicle Photos
+                    </label>
+
+                    <input
+                        type="file"
+                        id="carPhotos"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        multiple
+                    >
+
+                    <small>
+                        Upload maximum 6 photos. JPG, PNG or WEBP.
+                    </small>
+
+                    <div
+                        id="carPhotoPreview"
+                        class="photo-preview"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="form-group full-width">
+
+                    <label for="carDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="carDescription"
+                        rows="5"
+                        placeholder="Describe your car..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- Save -->
+
+                <div class="form-actions full-width">
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        onclick="saveCar()"
+                    >
+                        Save Car
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BIKE FORM
+        ====================================== -->
+
+        <section
+            id="bikeFormSection"
+            class="vehicle-form-section"
+            style="display: none;"
+        >
+
+            <div class="form-header">
+
+                <div>
+
+                    <h2>
+                        🏍️ Add Bike
+                    </h2>
+
+                    <p>
+                        Enter your bike details below.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="back-form-button"
+                    onclick="closeVehicleForm()"
+                >
+                    ← Back
+                </button>
+
+            </div>
+
+
+            <div class="vehicle-form">
+
+
+                <!-- Brand -->
+
+                <div class="form-group">
+
+                    <label for="bikeBrand">
+                        Brand
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bikeBrand"
+                        placeholder="e.g. Honda"
+                    >
+
+                </div>
+
+
+
+                <!-- Model -->
+
+                <div class="form-group">
+
+                    <label for="bikeModel">
+                        Model
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bikeModel"
+                        placeholder="e.g. Activa 6G"
+                    >
+
+                </div>
+
+
+
+                <!-- Year -->
+
+                <div class="form-group">
+
+                    <label for="bikeYear">
+                        Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="bikeYear"
+                        placeholder="e.g. 2024"
+                        min="1900"
+                        max="2100"
+                    >
+
+                </div>
+
+
+
+                <!-- Daily Rent -->
+
+                <div class="form-group">
+
+                    <label for="bikeRent">
+                        Daily Rent
+                    </label>
+
+                    <input
+                        type="number"
+                        id="bikeRent"
+                        placeholder="e.g. 600"
+                        min="1"
+                    >
+
+                </div>
+
+
+
+                <!-- Location -->
+
+                <div class="form-group">
+
+                    <label for="bikeLocation">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bikeLocation"
+                        placeholder="e.g. Badlapur"
+                    >
+
+                </div>
+
+
+
+                <!-- Fuel -->
+
+                <div class="form-group">
+
+                    <label for="bikeFuel">
+                        Fuel
+                    </label>
+
+                    <select id="bikeFuel">
+
+                        <option value="">
+                            Select Fuel
+                        </option>
+
+                        <option value="Petrol">
+                            Petrol
+                        </option>
+
+                        <option value="Electric">
+                            Electric
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Transmission -->
+
+                <div class="form-group">
+
+                    <label for="bikeTransmission">
+                        Transmission
+                    </label>
+
+                    <select id="bikeTransmission">
+
+                        <option value="">
+                            Select Transmission
+                        </option>
+
+                        <option value="Manual">
+                            Manual
+                        </option>
+
+                        <option value="Automatic">
+                            Automatic
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Seats -->
+
+                <div class="form-group">
+
+                    <label for="bikeSeats">
+                        Seats
+                    </label>
+
+                    <select id="bikeSeats">
+
+                        <option value="">
+                            Select Seats
+                        </option>
+
+                        <option value="2">
+                            2 Seats
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Photos -->
+
+                <div class="form-group full-width">
+
+                    <label for="bikePhotos">
+                        Vehicle Photos
+                    </label>
+
+                    <input
+                        type="file"
+                        id="bikePhotos"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        multiple
+                    >
+
+                    <small>
+                        Upload maximum 6 photos. JPG, PNG or WEBP.
+                    </small>
+
+                    <div
+                        id="bikePhotoPreview"
+                        class="photo-preview"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="form-group full-width">
+
+                    <label for="bikeDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="bikeDescription"
+                        rows="5"
+                        placeholder="Describe your bike..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- Save -->
+
+                <div class="form-actions full-width">
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        onclick="saveBike()"
+                    >
+                        Save Bike
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SAVED VEHICLES
+        ====================================== -->
+
+        <section class="saved-section">
+
+            <div class="section-heading left">
+
+                <h2>
+                    My Uploaded Vehicles
+                </h2>
+
+                <p>
+                    All cars and bikes you have added.
+                </p>
+
+            </div>
+
+
+            <div id="savedVehicles"></div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        /* =====================================
+           INDEXED DB
+        ===================================== */
+
+        let rideNowDB = null;
+
+
+        function openDatabase() {
+
+            return new Promise(
+                function(resolve, reject) {
+
+                    const request =
+                        indexedDB.open(
+                            "RideNowDatabase",
+                            2
+                        );
+
+
+                    request.onupgradeneeded =
+                        function(event) {
+
+                            const db =
+                                event.target.result;
+
+
+                            if (
+                                !db.objectStoreNames.contains(
+                                    "vehiclePhotos"
+                                )
+                            ) {
+
+                                db.createObjectStore(
+                                    "vehiclePhotos"
+                                );
+
+                            }
+
+                        };
+
+
+                    request.onsuccess =
+                        function(event) {
+
+                            rideNowDB =
+                                event.target.result;
+
+                            resolve(
+                                rideNowDB
+                            );
+
+                        };
+
+
+                    request.onerror =
+                        function() {
+
+                            reject(
+                                request.error
+                            );
+
+                        };
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           SAVE PHOTOS TO DATABASE
+        ====================================== */
+
+        async function savePhotosToDatabase(
+            vehicleId,
+            files
+        ) {
+
+            if (
+                !files ||
+                files.length === 0
+            ) {
+
+                return [];
+
+            }
+
+
+            const db =
+                rideNowDB ||
+                await openDatabase();
+
+
+            const photoData = [];
+
+
+            for (
+                let i = 0;
+                i < files.length && i < 6;
+                i++
+            ) {
+
+                const file =
+                    files[i];
+
+
+                const compressed =
+                    await compressImage(
+                        file
+                    );
+
+
+                photoData.push(
+                    compressed
+                );
+
+            }
+
+
+            return new Promise(
+                function(resolve, reject) {
+
+                    const transaction =
+                        db.transaction(
+                            "vehiclePhotos",
+                            "readwrite"
+                        );
+
+
+                    const store =
+                        transaction.objectStore(
+                            "vehiclePhotos"
+                        );
+
+
+                    store.put(
+                        photoData,
+                        vehicleId
+                    );
+
+
+                    transaction.oncomplete =
+                        function() {
+
+                            resolve(
+                                photoData.length
+                            );
+
+                        };
+
+
+                    transaction.onerror =
+                        function() {
+
+                            reject(
+                                transaction.error
+                            );
+
+                        };
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           IMAGE COMPRESSION
+        ====================================== */
+
+        function compressImage(file) {
+
+            return new Promise(
+                function(resolve, reject) {
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function(event) {
+
+                            const image =
+                                new Image();
+
+
+                            image.onload =
+                                function() {
+
+                                    const maxWidth =
+                                        1200;
+
+                                    const maxHeight =
+                                        900;
+
+
+                                    let width =
+                                        image.width;
+
+                                    let height =
+                                        image.height;
+
+
+                                    if (
+                                        width > maxWidth
+                                    ) {
+
+                                        height =
+                                            height *
+                                            (
+                                                maxWidth /
+                                                width
+                                            );
+
+                                        width =
+                                            maxWidth;
+
+                                    }
+
+
+                                    if (
+                                        height > maxHeight
+                                    ) {
+
+                                        width =
+                                            width *
+                                            (
+                                                maxHeight /
+                                                height
+                                            );
+
+                                        height =
+                                            maxHeight;
+
+                                    }
+
+
+                                    const canvas =
+                                        document.createElement(
+                                            "canvas"
+                                        );
+
+
+                                    canvas.width =
+                                        width;
+
+                                    canvas.height =
+                                        height;
+
+
+                                    const context =
+                                        canvas.getContext(
+                                            "2d"
+                                        );
+
+
+                                    context.drawImage(
+                                        image,
+                                        0,
+                                        0,
+                                        width,
+                                        height
+                                    );
+
+
+                                    resolve(
+                                        canvas.toDataURL(
+                                            "image/jpeg",
+                                            0.65
+                                        )
+                                    );
+
+                                };
+
+
+                            image.onerror =
+                                function() {
+
+                                    reject(
+                                        new Error(
+                                            "Image could not be loaded."
+                                        )
+                                    );
+
+                                };
+
+
+                            image.src =
+                                event.target.result;
+
+                        };
+
+
+                    reader.onerror =
+                        function() {
+
+                            reject(
+                                reader.error
+                            );
+
+                        };
+
+
+                    reader.readAsDataURL(
+                        file
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           OWNER INFORMATION
+        ====================================== */
+
+        function loadOwnerInfo() {
+
+            let account = {};
+
+            let ownerDetails = {};
+
+
+            try {
+
+                account =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "rideNowOwnerAccount"
+                        ) || "{}"
+                    );
+
+            }
+            catch (error) {
+
+                account = {};
+
+            }
+
+
+            try {
+
+                ownerDetails =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "rideNowOwnerDetails"
+                        ) || "{}"
+                    );
+
+            }
+            catch (error) {
+
+                ownerDetails = {};
+
+            }
+
+
+            const name =
+                account.name ||
+                ownerDetails.name ||
+                "Owner";
+
+
+            const photo =
+                account.profilePhoto ||
+                localStorage.getItem(
+                    "rideNowOwnerProfilePhoto"
+                );
+
+
+            document.getElementById(
+                "ownerName"
+            ).textContent =
+                name;
+
+
+            if (photo) {
+
+                document.getElementById(
+                    "ownerPhoto"
+                ).src =
+                    photo;
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           OPEN CAR FORM
+        ====================================== */
+
+        function openCarForm() {
+
+            document.getElementById(
+                "vehicleSelection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "bikeFormSection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "carFormSection"
+            ).style.display =
+                "block";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =====================================
+           OPEN BIKE FORM
+        ====================================== */
+
+        function openBikeForm() {
+
+            document.getElementById(
+                "vehicleSelection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "carFormSection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "bikeFormSection"
+            ).style.display =
+                "block";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =====================================
+           CLOSE VEHICLE FORM
+        ====================================== */
+
+        function closeVehicleForm() {
+
+            document.getElementById(
+                "carFormSection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "bikeFormSection"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "vehicleSelection"
+            ).style.display =
+                "block";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =====================================
+           PHOTO PREVIEW
+        ====================================== */
+
+        function setupPhotoPreview(
+            inputId,
+            previewId
+        ) {
+
+            const input =
+                document.getElementById(
+                    inputId
+                );
+
+
+            const preview =
+                document.getElementById(
+                    previewId
+                );
+
+
+            input.addEventListener(
+                "change",
+                function() {
+
+                    preview.innerHTML =
+                        "";
+
+
+                    const files =
+                        Array.from(
+                            input.files
+                        ).slice(0, 6);
+
+
+                    if (
+                        input.files.length > 6
+                    ) {
+
+                        alert(
+                            "You can upload maximum 6 photos."
+                        );
+
+                    }
+
+
+                    files.forEach(
+                        function(file) {
+
+                            if (
+                                !file.type.startsWith(
+                                    "image/"
+                                )
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            const reader =
+                                new FileReader();
+
+
+                            reader.onload =
+                                function(event) {
+
+                                    const image =
+                                        document.createElement(
+                                            "img"
+                                        );
+
+
+                                    image.src =
+                                        event.target.result;
+
+
+                                    preview.appendChild(
+                                        image
+                                    );
+
+                                };
+
+
+                            reader.readAsDataURL(
+                                file
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           GET VEHICLES
+        ====================================== */
+
+        function getVehicles() {
+
+            try {
+
+                const vehicles =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "rideNowOwnerVehicles"
+                        ) || "[]"
+                    );
+
+
+                return Array.isArray(
+                    vehicles
+                )
+                    ? vehicles
+                    : [];
+
+            }
+            catch (error) {
+
+                return [];
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           SAVE VEHICLES
+        ====================================== */
+
+        function saveVehicles(
+            vehicles
+        ) {
+
+            try {
+
+                localStorage.setItem(
+                    "rideNowOwnerVehicles",
+                    JSON.stringify(
+                        vehicles
+                    )
+                );
+
+
+                return true;
+
+            }
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+
+                alert(
+                    "Unable to save vehicle details."
+                );
+
+
+                return false;
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           SAVE CAR
+        ====================================== */
+
+        async function saveCar() {
+
+            const brand =
+                document.getElementById(
+                    "carBrand"
+                ).value.trim();
+
+
+            const model =
+                document.getElementById(
+                    "carModel"
+                ).value.trim();
+
+
+            const year =
+                document.getElementById(
+                    "carYear"
+                ).value.trim();
+
+
+            const dailyRent =
+                document.getElementById(
+                    "carRent"
+                ).value.trim();
+
+
+            const location =
+                document.getElementById(
+                    "carLocation"
+                ).value.trim();
+
+
+            const fuel =
+                document.getElementById(
+                    "carFuel"
+                ).value;
+
+
+            const transmission =
+                document.getElementById(
+                    "carTransmission"
+                ).value;
+
+
+            const seats =
+                document.getElementById(
+                    "carSeats"
+                ).value;
+
+
+            const description =
+                document.getElementById(
+                    "carDescription"
+                ).value.trim();
+
+
+            const photoInput =
+                document.getElementById(
+                    "carPhotos"
+                );
+
+
+            /* Validation */
+
+            if (
+                !brand ||
+                !model ||
+                !year ||
+                !dailyRent ||
+                !location ||
+                !fuel ||
+                !transmission ||
+                !seats ||
+                !description
+            ) {
+
+                alert(
+                    "Please fill all car details."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                photoInput.files.length === 0
+            ) {
+
+                alert(
+                    "Please upload at least one car photo."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                photoInput.files.length > 6
+            ) {
+
+                alert(
+                    "You can upload maximum 6 photos."
+                );
+
+                return;
+
+            }
+
+
+            const id =
+                "vehicle_" +
+                Date.now();
+
+
+            try {
+
+                await savePhotosToDatabase(
+                    id,
+                    photoInput.files
+                );
+
+
+                const vehicle = {
+
+                    id: id,
+
+                    type: "Car",
+
+                    brand: brand,
+
+                    model: model,
+
+                    year: year,
+
+                    dailyRent:
+                        Number(
+                            dailyRent
+                        ),
+
+                    location:
+                        location,
+
+                    fuel:
+                        fuel,
+
+                    transmission:
+                        transmission,
+
+                    seats:
+                        Number(
+                            seats
+                        ),
+
+                    photoCount:
+                        Math.min(
+                            photoInput.files.length,
+                            6
+                        ),
+
+                    description:
+                        description,
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                const vehicles =
+                    getVehicles();
+
+
+                vehicles.push(
+                    vehicle
+                );
+
+
+                if (
+                    saveVehicles(
+                        vehicles
+                    )
+                ) {
+
+                    alert(
+                        "Car saved successfully!"
+                    );
+
+
+                    resetCarForm();
+
+                    closeVehicleForm();
+
+                    loadSavedVehicles();
+
+                }
+
+            }
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+
+                alert(
+                    "Unable to save car photos. Please try again."
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           SAVE BIKE
+        ====================================== */
+
+        async function saveBike() {
+
+            const brand =
+                document.getElementById(
+                    "bikeBrand"
+                ).value.trim();
+
+
+            const model =
+                document.getElementById(
+                    "bikeModel"
+                ).value.trim();
+
+
+            const year =
+                document.getElementById(
+                    "bikeYear"
+                ).value.trim();
+
+
+            const dailyRent =
+                document.getElementById(
+                    "bikeRent"
+                ).value.trim();
+
+
+            const location =
+                document.getElementById(
+                    "bikeLocation"
+                ).value.trim();
+
+
+            const fuel =
+                document.getElementById(
+                    "bikeFuel"
+                ).value;
+
+
+            const transmission =
+                document.getElementById(
+                    "bikeTransmission"
+                ).value;
+
+
+            const seats =
+                document.getElementById(
+                    "bikeSeats"
+                ).value;
+
+
+            const description =
+                document.getElementById(
+                    "bikeDescription"
+                ).value.trim();
+
+
+            const photoInput =
+                document.getElementById(
+                    "bikePhotos"
+                );
+
+
+            /* Validation */
+
+            if (
+                !brand ||
+                !model ||
+                !year ||
+                !dailyRent ||
+                !location ||
+                !fuel ||
+                !transmission ||
+                !seats ||
+                !description
+            ) {
+
+                alert(
+                    "Please fill all bike details."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                photoInput.files.length === 0
+            ) {
+
+                alert(
+                    "Please upload at least one bike photo."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                photoInput.files.length > 6
+            ) {
+
+                alert(
+                    "You can upload maximum 6 photos."
+                );
+
+                return;
+
+            }
+
+
+            const id =
+                "vehicle_" +
+                Date.now();
+
+
+            try {
+
+                await savePhotosToDatabase(
+                    id,
+                    photoInput.files
+                );
+
+
+                const vehicle = {
+
+                    id: id,
+
+                    type: "Bike",
+
+                    brand: brand,
+
+                    model: model,
+
+                    year: year,
+
+                    dailyRent:
+                        Number(
+                            dailyRent
+                        ),
+
+                    location:
+                        location,
+
+                    fuel:
+                        fuel,
+
+                    transmission:
+                        transmission,
+
+                    seats:
+                        Number(
+                            seats
+                        ),
+
+                    photoCount:
+                        Math.min(
+                            photoInput.files.length,
+                            6
+                        ),
+
+                    description:
+                        description,
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                const vehicles =
+                    getVehicles();
+
+
+                vehicles.push(
+                    vehicle
+                );
+
+
+                if (
+                    saveVehicles(
+                        vehicles
+                    )
+                ) {
+
+                    alert(
+                        "Bike saved successfully!"
+                    );
+
+
+                    resetBikeForm();
+
+                    closeVehicleForm();
+
+                    loadSavedVehicles();
+
+                }
+
+            }
+            catch (error) {
+
+                console.error(
+                    error
+                );
+
+
+                alert(
+                    "Unable to save bike photos. Please try again."
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           RESET CAR
+        ====================================== */
+
+        function resetCarForm() {
+
+            document.getElementById(
+                "carBrand"
+            ).value = "";
+
+
+            document.getElementById(
+                "carModel"
+            ).value = "";
+
+
+            document.getElementById(
+                "carYear"
+            ).value = "";
+
+
+            document.getElementById(
+                "carRent"
+            ).value = "";
+
+
+            document.getElementById(
+                "carLocation"
+            ).value = "";
+
+
+            document.getElementById(
+                "carFuel"
+            ).value = "";
+
+
+            document.getElementById(
+                "carTransmission"
+            ).value = "";
+
+
+            document.getElementById(
+                "carSeats"
+            ).value = "";
+
+
+            document.getElementById(
+                "carPhotos"
+            ).value = "";
+
+
+            document.getElementById(
+                "carDescription"
+            ).value = "";
+
+
+            document.getElementById(
+                "carPhotoPreview"
+            ).innerHTML = "";
+
+        }
+
+
+
+        /* =====================================
+           RESET BIKE
+        ====================================== */
+
+        function resetBikeForm() {
+
+            document.getElementById(
+                "bikeBrand"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeModel"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeYear"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeRent"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeLocation"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeFuel"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeTransmission"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeSeats"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikePhotos"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikeDescription"
+            ).value = "";
+
+
+            document.getElementById(
+                "bikePhotoPreview"
+            ).innerHTML = "";
+
+        }
+
+
+
+        /* =====================================
+           GET FIRST VEHICLE PHOTO
+        ====================================== */
+
+        async function getVehicleFirstPhoto(
+            vehicleId
+        ) {
+
+            if (!rideNowDB) {
+
+                return null;
+
+            }
+
+
+            return new Promise(
+                function(resolve) {
+
+                    try {
+
+                        const transaction =
+                            rideNowDB.transaction(
+                                "vehiclePhotos",
+                                "readonly"
+                            );
+
+
+                        const store =
+                            transaction.objectStore(
+                                "vehiclePhotos"
+                            );
+
+
+                        const request =
+                            store.get(
+                                vehicleId
+                            );
+
+
+                        request.onsuccess =
+                            function() {
+
+                                const photos =
+                                    request.result;
+
+
+                                if (
+                                    photos &&
+                                    photos.length > 0
+                                ) {
+
+                                    resolve(
+                                        photos[0]
+                                    );
+
+                                }
+                                else {
+
+                                    resolve(
+                                        null
+                                    );
+
+                                }
+
+                            };
+
+
+                        request.onerror =
+                            function() {
+
+                                resolve(
+                                    null
+                                );
+
+                            };
+
+                    }
+                    catch (error) {
+
+                        resolve(
+                            null
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           LOAD SAVED VEHICLES
+        ====================================== */
+
+        async function loadSavedVehicles() {
+
+            const container =
+                document.getElementById(
+                    "savedVehicles"
+                );
+
+
+            const vehicles =
+                getVehicles();
+
+
+            if (
+                vehicles.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-message">
+                        No vehicles uploaded yet.
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                "";
+
+
+            for (
+                let index = 0;
+                index < vehicles.length;
+                index++
+            ) {
+
+                const vehicle =
+                    vehicles[index];
+
+
+                const firstPhoto =
+                    await getVehicleFirstPhoto(
+                        vehicle.id
+                    );
+
+
+                /*
+                 * Uploaded photo appears
+                 * inside the SAME small box
+                 * used for the vehicle icon.
+                 */
+
+                const vehicleImage =
+                    firstPhoto
+                        ? `
+
+                            <img
+                                src="${firstPhoto}"
+                                alt="${escapeHTML(
+                                    vehicle.brand +
+                                    " " +
+                                    vehicle.model
+                                )}"
+                            >
+
+                          `
+                        : `
+
+                            <div class="saved-vehicle-icon">
+
+                                ${
+                                    vehicle.type === "Bike"
+                                        ? "🏍️"
+                                        : "🚗"
+                                }
+
+                            </div>
+
+                          `;
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "vehicle-item";
+
+
+                item.innerHTML = `
+
+                    <div class="vehicle-item-left">
+
+                        <div class="saved-vehicle-image">
+
+                            ${vehicleImage}
+
+                        </div>
+
+
+                        <div class="vehicle-info">
+
+                            <h3>
+
+                                ${escapeHTML(
+                                    vehicle.brand
+                                )}
+
+                                ${escapeHTML(
+                                    vehicle.model
+                                )}
+
+                            </h3>
+
+
+                            <p>
+
+                                ${escapeHTML(
+                                    vehicle.type
+                                )}
+
+                                &nbsp; • &nbsp;
+
+                                ₹${Number(
+                                    vehicle.dailyRent || 0
+                                ).toLocaleString(
+                                    "en-IN"
+                                )}/day
+
+                            </p>
+
+
+                            <p>
+
+                                ${escapeHTML(
+                                    vehicle.location || ""
+                                )}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vehicle-item-actions">
+
+                        <span class="photo-count">
+
+                            📷
+                            ${vehicle.photoCount || 0}
+
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="delete-button"
+                            onclick="deleteVehicle(${index})"
+                        >
+                            Delete
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                container.appendChild(
+                    item
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           DELETE VEHICLE
+        ====================================== */
+
+        function deleteVehicle(index) {
+
+            const vehicles =
+                getVehicles();
+
+
+            const vehicle =
+                vehicles[index];
+
+
+            if (!vehicle) {
+
+                return;
+
+            }
+
+
+            if (
+                !confirm(
+                    "Are you sure you want to delete this vehicle?"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+             * Delete photos from IndexedDB.
+             */
+
+            deleteVehiclePhotos(
+                vehicle.id
+            );
+
+
+            vehicles.splice(
+                index,
+                1
+            );
+
+
+            saveVehicles(
+                vehicles
+            );
+
+
+            loadSavedVehicles();
+
+        }
+
+
+
+        /* =====================================
+           DELETE PHOTOS FROM INDEXED DB
+        ====================================== */
+
+        function deleteVehiclePhotos(
+            vehicleId
+        ) {
+
+            if (!rideNowDB) {
+
+                return;
+
+            }
+
+
+            try {
+
+                const transaction =
+                    rideNowDB.transaction(
+                        "vehiclePhotos",
+                        "readwrite"
+                    );
+
+
+                const store =
+                    transaction.objectStore(
+                        "vehiclePhotos"
+                    );
+
+
+                store.delete(
+                    vehicleId
+                );
+
+            }
+            catch (error) {
+
+                console.log(
+                    "Photo deletion error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           ESCAPE HTML
+        ====================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                value == null
+                    ? ""
+                    : String(value);
+
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =====================================
+           OWNER HOME
+        ====================================== */
+
+        function goToOwnerHome() {
+
+            window.location.href =
+                "owner-home.html";
+
+        }
+
+
+
+        /* =====================================
+           INITIALIZE
+        ====================================== */
+
+        async function initializePage() {
+
+            try {
+
+                await openDatabase();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "IndexedDB error:",
+                    error
+                );
+
+            }
+
+
+            loadOwnerInfo();
+
+            loadSavedVehicles();
+
+        }
+
+
+        /* Start */
+
+        initializePage();
+
+
+        /* Photo previews */
+
+        setupPhotoPreview(
+            "carPhotos",
+            "carPhotoPreview"
+        );
+
+
+        setupPhotoPreview(
+            "bikePhotos",
+            "bikePhotoPreview"
+        );
+
+    </script>
+
+</body>
+
+</html>

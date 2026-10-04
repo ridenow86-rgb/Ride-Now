@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Owner Documents</title>
+
+    <link rel="stylesheet"
+          href="owner-documents.css">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- BACK BUTTON -->
+
+    <button
+        class="back-button"
+        onclick="goBack()">
+
+        ← Back
+
+    </button>
+
+
+
+    <!-- PROGRESS BAR -->
+
+    <div class="progress-container">
+
+        <div class="progress-line"></div>
+
+        <div class="progress-line-active"></div>
+
+
+        <!-- STEP 1 -->
+
+        <div class="step completed">
+
+            <div class="step-circle">
+                ✓
+            </div>
+
+            <div class="step-text">
+                Owner Details
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 2 -->
+
+        <div class="step completed">
+
+            <div class="step-circle">
+                ✓
+            </div>
+
+            <div class="step-text">
+                Profile Photo
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 3 -->
+
+        <div class="step active">
+
+            <div class="step-circle">
+                3
+            </div>
+
+            <div class="step-text">
+                Documents
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 4 -->
+
+        <div class="step">
+
+            <div class="step-circle">
+                4
+            </div>
+
+            <div class="step-text">
+                Vehicle Details
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 5 -->
+
+        <div class="step">
+
+            <div class="step-circle">
+                5
+            </div>
+
+            <div class="step-text">
+                Password
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 6 -->
+
+        <div class="step">
+
+            <div class="step-circle">
+                6
+            </div>
+
+            <div class="step-text">
+                Complete
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+
+        <h1>
+            Upload Required Documents
+        </h1>
+
+
+        <p class="subtitle">
+            Please upload all required documents
+        </p>
+
+
+
+        <!-- AADHAAR -->
+
+        <div class="document-group">
+
+            <label>
+                Aadhaar Card *
+            </label>
+
+            <input
+                type="file"
+                id="aadhaar"
+                accept=".jpg,.jpeg,.png,.pdf">
+
+        </div>
+
+
+
+        <!-- PAN -->
+
+        <div class="document-group">
+
+            <label>
+                PAN Card *
+            </label>
+
+            <input
+                type="file"
+                id="pan"
+                accept=".jpg,.jpeg,.png,.pdf">
+
+        </div>
+
+
+
+        <!-- DRIVING LICENCE -->
+
+        <div class="document-group">
+
+            <label>
+                Driving Licence *
+            </label>
+
+            <input
+                type="file"
+                id="drivingLicence"
+                accept=".jpg,.jpeg,.png,.pdf">
+
+        </div>
+
+
+
+        <!-- VEHICLE PAPERS -->
+
+        <div class="document-group">
+
+            <label>
+                Car/Bike Papers *
+            </label>
+
+            <input
+                type="file"
+                id="vehiclePapers"
+                accept=".jpg,.jpeg,.png,.pdf">
+
+        </div>
+
+
+
+        <!-- OTHER DOCUMENTS -->
+
+        <div class="document-group">
+
+            <label>
+                Other Documents *
+            </label>
+
+            <input
+                type="file"
+                id="otherDocuments"
+                accept=".jpg,.jpeg,.png,.pdf">
+
+        </div>
+
+
+
+        <!-- ERROR -->
+
+        <p
+            id="errorMessage"
+            class="error-message">
+        </p>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-row">
+
+
+            <button
+                type="button"
+                class="back-form-button"
+                onclick="goBack()">
+
+                Back
+
+            </button>
+
+
+
+            <button
+                type="button"
+                class="next-button"
+                onclick="saveDocuments()">
+
+                Next
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+function goBack() {
+
+    window.location.href =
+        "owner-profile-photo.html";
+
+}
+
+
+
+function saveDocuments() {
+
+
+    const aadhaar =
+        document.getElementById("aadhaar");
+
+    const pan =
+        document.getElementById("pan");
+
+    const drivingLicence =
+        document.getElementById("drivingLicence");
+
+    const vehiclePapers =
+        document.getElementById("vehiclePapers");
+
+    const otherDocuments =
+        document.getElementById("otherDocuments");
+
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+
+    errorMessage.textContent = "";
+
+
+
+    if (!aadhaar.files.length) {
+
+        errorMessage.textContent =
+            "Aadhaar Card is required.";
+
+        return;
+
+    }
+
+
+
+    if (!pan.files.length) {
+
+        errorMessage.textContent =
+            "PAN Card is required.";
+
+        return;
+
+    }
+
+
+
+    if (!drivingLicence.files.length) {
+
+        errorMessage.textContent =
+            "Driving Licence is required.";
+
+        return;
+
+    }
+
+
+
+    if (!vehiclePapers.files.length) {
+
+        errorMessage.textContent =
+            "Car/Bike Papers are required.";
+
+        return;
+
+    }
+
+
+
+    if (!otherDocuments.files.length) {
+
+        errorMessage.textContent =
+            "Other Documents are required.";
+
+        return;
+
+    }
+
+
+
+    const documents = {
+
+        aadhaar:
+            aadhaar.files[0].name,
+
+        pan:
+            pan.files[0].name,
+
+        drivingLicence:
+            drivingLicence.files[0].name,
+
+        vehiclePapers:
+            vehiclePapers.files[0].name,
+
+        otherDocuments:
+            otherDocuments.files[0].name
+
+    };
+
+
+
+    localStorage.setItem(
+        "rideNowOwnerDocuments",
+        JSON.stringify(documents)
+    );
+
+
+
+    window.location.href =
+        "owner-vehicle-details.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

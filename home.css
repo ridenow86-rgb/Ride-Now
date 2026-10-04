@@ -1,0 +1,1177 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5faff;
+
+    color: #062e63;
+
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+
+    height: 65px;
+
+    background-color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid #e5eaf0;
+
+}
+
+
+/* Logo */
+
+.logo img {
+
+    width: 60px;
+    height: 69px;
+   
+
+}
+
+
+/* Navigation */
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-left: 20px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #14213d;
+
+    font-size: 15px;
+
+    padding: 22px 5px;
+
+}
+
+
+nav a:hover {
+
+    color: #ff7200;
+
+}
+
+
+nav a.active {
+
+    color: #ff7200;
+
+    border-bottom: 3px solid #ff7200;
+
+}
+
+
+/* Right navigation */
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: #062e63;
+
+}
+
+
+.nav-icon {
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+.line {
+
+    height: 30px;
+
+    width: 1px;
+
+    background-color: #dce3eb;
+
+}
+
+
+.user-icon {
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background-color: #e8f2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.user-name {
+
+    font-size: 14px;
+
+}
+
+
+.arrow {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #eaf5ff;
+
+    padding-left: 38px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero-text {
+    position: relative;
+
+    z-index: 2;
+
+    width: 48%;
+
+    flex-shrink: 0;
+}
+
+
+.hero-text h1 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+
+    color: #062e63;
+
+    white-space: nowrap;
+}
+
+
+.hero-text p {
+    font-size: 16px;
+
+    color: #1f3b5d;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 68%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            to right,
+            #eaf5ff 0%,
+            rgba(234, 245, 255, 0.98) 5%,
+            rgba(234, 245, 255, 0.75) 15%,
+            rgba(234, 245, 255, 0.25) 30%,
+            rgba(234, 245, 255, 0) 45%
+        ),
+        url("home_page.png");
+
+    background-size: cover;
+
+    background-position: center bottom;
+
+    background-repeat: no-repeat;
+
+    z-index: 1;
+}
+
+
+/* Hide old image */
+
+.hero-image {
+    display: none;
+}
+
+
+/* =========================
+   SEARCH SECTION
+========================= */
+
+.search-section {
+
+    width: 96%;
+
+    margin: -5px auto 15px;
+
+    min-height: 80px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 50, 100, 0.08);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 12px 16px;
+
+}
+
+
+/* Car and bike buttons */
+
+.vehicle-type {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.type-button {
+
+    height: 52px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #e5f2ff;
+
+    color: #06366f;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.active-type {
+
+    background-color: #063f80;
+
+    color: white;
+
+}
+
+
+/* =========================
+   FILTER BOX
+========================= */
+
+.filter-box {
+
+    height: 52px;
+
+    flex: 1;
+
+    min-width: 150px;
+
+    border: 1px solid #d9e2ec;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 13px;
+
+}
+
+
+.filter-icon {
+
+    font-size: 22px;
+
+    color: #ff7200;
+
+}
+
+
+.filter-box small {
+
+    display: block;
+
+    color: #61758a;
+
+    font-size: 11px;
+
+}
+
+
+.filter-box p {
+
+    margin-top: 3px;
+
+    color: #183b63;
+
+    font-size: 14px;
+
+}
+
+
+.down-arrow {
+
+    margin-left: auto;
+
+    font-size: 18px;
+
+}
+
+
+/* Search button */
+
+.search-button {
+
+    height: 52px;
+
+    min-width: 170px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #ff7200;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.search-button:hover {
+
+    background-color: #e96600;
+
+}
+
+
+/* =========================
+   VEHICLE HEADER
+========================= */
+
+.vehicle-header {
+
+    width: 96%;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.vehicle-header p {
+
+    font-size: 14px;
+
+    color: #183b63;
+
+}
+
+
+.sort {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 13px;
+
+}
+
+
+.sort select {
+
+    padding: 9px 15px;
+
+    border: 1px solid #d7e0e9;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    color: #183b63;
+
+}
+
+
+/* =========================
+   VEHICLE GRID
+========================= */
+
+.vehicle-container {
+
+    width: 96%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    padding-bottom: 30px;
+
+}
+
+
+/* =========================
+   VEHICLE CARD
+========================= */
+
+.vehicle-card {
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e9f0;
+
+    box-shadow: 0 3px 12px rgba(0, 50, 100, 0.06);
+
+    transition: 0.3s;
+
+}
+
+
+.vehicle-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 50, 100, 0.12);
+
+}
+
+
+/* =========================
+   VEHICLE IMAGE
+========================= */
+
+.vehicle-image {
+
+    height: 165px;
+
+    position: relative;
+
+    background-color: #eaf1f7;
+
+}
+
+
+.vehicle-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* Vehicle tag */
+
+.vehicle-tag {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 12px;
+
+    background-color: #eaf4ff;
+
+    color: #063f80;
+
+    padding: 7px 13px;
+
+    border-radius: 18px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.vehicle-tag.bike {
+
+    background-color: #c9ffd7;
+
+    color: #08752b;
+
+}
+
+
+/* Heart */
+
+.heart {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 10px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background-color: white;
+
+    color: #06366f;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   CARD DETAILS
+========================= */
+
+.vehicle-details {
+
+    padding: 12px;
+
+}
+
+
+/* Name + rating */
+
+.name-rating {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+}
+
+
+.name-rating h2 {
+
+    color: #082f63;
+
+    font-size: 17px;
+
+}
+
+
+.rating {
+
+    color: #173f69;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+.rating::first-letter {
+
+    color: #ff8a00;
+
+}
+
+
+/* Features */
+
+.features {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 14px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #e0e6ed;
+
+}
+
+
+.features span {
+
+    color: #173f69;
+
+    font-size: 11px;
+
+}
+
+
+/* Price */
+
+.price {
+
+    color: #f56f00;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    margin-top: 9px;
+
+}
+
+
+.price small {
+
+    color: #233f60;
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+}
+
+
+/* =========================
+   CARD BUTTONS
+========================= */
+
+.card-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+
+.card-buttons button {
+
+    height: 42px;
+
+    flex: 1;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* View Details */
+
+.details-button {
+
+    border: 1px solid #ff7200;
+
+    background-color: white;
+
+    color: #ff7200;
+
+}
+
+
+/* Rent */
+
+.rent-button {
+
+    border: none;
+
+    background-color: #ff7200;
+
+    color: white;
+
+}
+
+
+.rent-button:hover {
+
+    background-color: #e96600;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+
+        gap: 20px;
+
+    }
+
+
+    .search-section {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .filter-box {
+
+        min-width: 180px;
+
+    }
+
+
+    .vehicle-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+.logout-button {
+    margin-left: 15px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-button:hover {
+    background: #c0392b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+    }
+
+
+    .logo img {
+
+        width: 160px;
+
+    }
+
+
+    nav {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 5px;
+
+    }
+
+
+    nav a {
+
+        padding: 8px;
+
+        font-size: 13px;
+
+    }
+
+
+    .nav-right {
+
+        gap: 8px;
+
+    }
+
+
+    .user-name {
+
+        display: none;
+
+    }
+
+
+    /* =========================
+   MOBILE HERO
+========================= */
+
+.hero {
+    height: 220px;
+
+    padding: 25px 20px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+}
+
+
+.hero-text {
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+}
+
+
+.hero-text h1 {
+    font-size: 27px;
+
+    white-space: normal;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+
+.hero-text p {
+    font-size: 13px;
+
+    white-space: normal;
+
+    line-height: 1.4;
+
+    max-width: 320px;
+}
+
+
+/* Mobile image */
+
+.hero::after {
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0.75;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(234, 245, 255, 0.15) 0%,
+            rgba(234, 245, 255, 0.05) 35%,
+            rgba(234, 245, 255, 0) 65%
+        ),
+        url("home_page.png");
+
+    background-size: cover;
+
+    background-position: center bottom;
+
+    z-index: 1;
+}
+
+
+/* Don't display the old image */
+
+.hero-image {
+    display: none;
+}
+
+
+    .search-section {
+
+        width: 94%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 15px;
+
+    }
+
+
+    .vehicle-type {
+
+        width: 100%;
+
+    }
+
+
+    .type-button {
+
+        flex: 1;
+
+    }
+
+
+    .filter-box {
+
+        width: 100%;
+
+    }
+
+
+    .search-button {
+
+        width: 100%;
+
+    }
+
+
+    .vehicle-header {
+
+        width: 94%;
+
+    }
+
+
+    .vehicle-container {
+
+        width: 94%;
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .logout-button {
+        padding: 7px 10px;
+        font-size: 12px;
+        margin-left: 8px;
+    }
+
+
+    .vehicle-image {
+
+        height: 210px;
+
+    }
+
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.user-section img {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #e8eef7;
+}
+
+
+.user-section span {
+    color: #0b2855;
+    font-size: 15px;
+}
+
+
+.user-section .arrow {
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+.filter-box {
+    background: white;
+
+    border: 1px solid #dce4ef;
+
+    border-radius: 12px;
+
+    height: 58px;
+
+    padding: 8px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 180px;
+}
+
+
+.filter-icon {
+    font-size: 22px;
+
+    color: #ff7200;
+
+    font-weight: bold;
+}
+
+
+.filter-box small {
+    display: block;
+
+    color: #60708a;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.filter-box select {
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #102d58;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    min-width: 130px;
+}
+
+/* =========================
+   PROFILE CLICK
+========================= */
+
+#profileButton {
+    cursor: pointer;
+}
+
+#profileButton:hover {
+    opacity: 0.9;
+}
+
+#logoutButton {
+    cursor: pointer;
+}
+
+

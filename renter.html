@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Create Account</title>
+
+    <link rel="stylesheet" href="renter.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="signup-card">
+
+        
+
+
+        <!-- =========================
+             PROGRESS BAR
+        ========================= -->
+
+        <div class="progress-area">
+
+            <div
+                class="progress-step active"
+                id="stepIndicator1"
+            >
+
+                <span>1</span>
+
+                <small>
+                    Personal Details
+                </small>
+
+            </div>
+
+
+            <div
+                class="progress-line"
+                id="line1"
+            ></div>
+
+
+            <div
+                class="progress-step"
+                id="stepIndicator2"
+            >
+
+                <span>2</span>
+
+                <small>
+                    Documents
+                </small>
+
+            </div>
+
+
+            <div
+                class="progress-line"
+                id="line2"
+            ></div>
+
+
+            <div
+                class="progress-step"
+                id="stepIndicator3"
+            >
+
+                <span>3</span>
+
+                <small>
+                    Profile Photo
+                </small>
+
+            </div>
+
+
+            <div
+                class="progress-line"
+                id="line3"
+            ></div>
+
+
+            <div
+                class="progress-step"
+                id="stepIndicator4"
+            >
+
+                <span>4</span>
+
+                <small>
+                    Password
+                </small>
+
+            </div>
+
+
+            <div
+                class="progress-line"
+                id="line4"
+            ></div>
+
+
+            <div
+                class="progress-step"
+                id="stepIndicator5"
+            >
+
+                <span>✓</span>
+
+                <small>
+                    Complete
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STEP 1
+             PERSONAL DETAILS
+        ========================= -->
+
+        <section
+            class="step-panel active-panel"
+            id="step1"
+        >
+
+            <button
+                class="back-top"
+                type="button"
+                onclick="goBackToJourney()"
+            >
+                ←
+            </button>
+
+
+            <h1>
+                Create Your Account
+            </h1>
+
+            <p class="subtitle">
+                Tell us about yourself
+            </p>
+
+
+            <!-- NAME -->
+
+            <label for="name">
+
+                Full Name
+                <b>*</b>
+
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+            >
+
+            <small
+                class="error"
+                id="nameError"
+            ></small>
+
+
+            <!-- PHONE -->
+
+            <label for="phone">
+
+                Phone Number
+                <b>*</b>
+
+            </label>
+
+
+            <div class="phone-input">
+
+                <span>
+                    +91
+                </span>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                >
+
+            </div>
+
+
+            <small
+                class="error"
+                id="phoneError"
+            ></small>
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+
+                Email Address
+                <b>*</b>
+
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+            >
+
+            <small
+                class="error"
+                id="emailError"
+            ></small>
+
+
+            <!-- ADDRESS -->
+
+            <label for="address">
+
+                Address
+                <b>*</b>
+
+            </label>
+
+            <textarea
+                id="address"
+                placeholder="Enter your complete address"
+                rows="3"
+            ></textarea>
+
+            <small
+                class="error"
+                id="addressError"
+            ></small>
+
+
+            <button
+                class="next-button"
+                type="button"
+                onclick="validateStep1()"
+            >
+
+                Next
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             STEP 2
+             DOCUMENTS
+        ========================= -->
+
+        <section
+            class="step-panel"
+            id="step2"
+        >
+
+            <button
+                class="back-top"
+                type="button"
+                onclick="showStep(1)"
+            >
+                ←
+            </button>
+
+
+            <h1>
+                Upload Required Documents
+            </h1>
+
+            <p class="subtitle">
+                Please upload clear and valid documents
+            </p>
+
+
+            <div class="document-grid">
+
+
+                <!-- DRIVING LICENCE -->
+
+                <div class="document-box">
+
+                    <div class="document-icon">
+                        🪪
+                    </div>
+
+                    <h3>
+
+                        Driving Licence
+                        <b>*</b>
+
+                    </h3>
+
+                    <p id="licenseName">
+                        No file selected
+                    </p>
+
+
+                    <label class="upload-button">
+
+                        Upload
+
+                        <input
+                            type="file"
+                            id="license"
+                            accept=".jpg,.jpeg,.png,.pdf"
+                        >
+
+                    </label>
+
+
+                    <small
+                        class="error"
+                        id="licenseError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- AADHAAR -->
+
+                <div class="document-box">
+
+                    <div class="document-icon">
+                        🆔
+                    </div>
+
+                    <h3>
+
+                        Aadhaar Card
+                        <b>*</b>
+
+                    </h3>
+
+                    <p id="aadhaarName">
+                        No file selected
+                    </p>
+
+
+                    <label class="upload-button">
+
+                        Upload
+
+                        <input
+                            type="file"
+                            id="aadhaar"
+                            accept=".jpg,.jpeg,.png,.pdf"
+                        >
+
+                    </label>
+
+
+                    <small
+                        class="error"
+                        id="aadhaarError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- PAN -->
+
+                <div class="document-box">
+
+                    <div class="document-icon">
+                        📄
+                    </div>
+
+                    <h3>
+
+                        PAN Card
+                        <b>*</b>
+
+                    </h3>
+
+                    <p id="panName">
+                        No file selected
+                    </p>
+
+
+                    <label class="upload-button">
+
+                        Upload
+
+                        <input
+                            type="file"
+                            id="pan"
+                            accept=".jpg,.jpeg,.png,.pdf"
+                        >
+
+                    </label>
+
+
+                    <small
+                        class="error"
+                        id="panError"
+                    ></small>
+
+                </div>
+
+            </div>
+
+
+            <p class="document-note">
+
+                Accepted formats:
+                JPG, JPEG, PNG or PDF
+
+            </p>
+
+
+            <div class="button-row">
+
+                <button
+                    class="back-button"
+                    type="button"
+                    onclick="showStep(1)"
+                >
+
+                    Back
+
+                </button>
+
+
+                <button
+                    class="next-button half"
+                    type="button"
+                    onclick="validateStep2()"
+                >
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STEP 3
+             PROFILE PHOTO
+        ========================= -->
+
+        <section
+            class="step-panel"
+            id="step3"
+        >
+
+            <button
+                class="back-top"
+                type="button"
+                onclick="showStep(2)"
+            >
+                ←
+            </button>
+
+
+            <h1>
+                Add Your Profile Photo
+            </h1>
+
+            <p class="subtitle">
+                Upload a clear photo of yourself
+            </p>
+
+
+            <div class="profile-preview">
+
+                <img
+                    id="profilePreview"
+                    src=""
+                    alt="Profile Preview"
+                >
+
+
+                <div
+                    class="profile-placeholder"
+                    id="profilePlaceholder"
+                >
+
+                    <span>
+                        👤
+                    </span>
+
+                </div>
+
+
+                <div class="camera-badge">
+                    📷
+                </div>
+
+            </div>
+
+
+            <label class="choose-photo">
+
+                <span>
+                    ◉
+                </span>
+
+                Choose Photo
+
+                <input
+                    type="file"
+                    id="profilePhoto"
+                    accept="image/jpeg,image/png"
+                >
+
+            </label>
+
+
+            <p class="photo-format">
+
+                JPG, PNG
+                (Max 5MB)
+
+            </p>
+
+
+            <small
+                class="error center-error"
+                id="profileError"
+            ></small>
+
+
+            <div class="button-row bottom-buttons">
+
+                <button
+                    class="back-button"
+                    type="button"
+                    onclick="showStep(2)"
+                >
+
+                    Back
+
+                </button>
+
+
+                <button
+                    class="next-button half"
+                    type="button"
+                    onclick="validateStep3()"
+                >
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STEP 4
+             PASSWORD
+        ========================= -->
+
+        <section
+            class="step-panel"
+            id="step4"
+        >
+
+            <button
+                class="back-top"
+                type="button"
+                onclick="showStep(3)"
+            >
+                ←
+            </button>
+
+
+            <h1>
+                Create Your Password
+            </h1>
+
+            <p class="subtitle">
+
+                Create a password to securely
+                access your account
+
+            </p>
+
+
+            <!-- PASSWORD -->
+
+            <label for="password">
+
+                Password
+                <b>*</b>
+
+            </label>
+
+
+            <div class="password-wrap">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                >
+
+                <button
+                    type="button"
+                    onclick="togglePassword('password', this)"
+                >
+
+                    👁
+
+                </button>
+
+            </div>
+
+
+            <small
+                class="error"
+                id="passwordError"
+            ></small>
+
+
+            <!-- PASSWORD RULES -->
+
+            <div class="password-rules">
+
+                <p id="ruleLength">
+                    ○ At least 6 characters
+                </p>
+
+                <p id="ruleLetter">
+                    ○ At least one letter
+                </p>
+
+                <p id="ruleNumber">
+                    ○ At least one number
+                </p>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <label for="confirmPassword">
+
+                Confirm Password
+                <b>*</b>
+
+            </label>
+
+
+            <div class="password-wrap">
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    autocomplete="new-password"
+                >
+
+                <button
+                    type="button"
+                    onclick="togglePassword('confirmPassword', this)"
+                >
+
+                    👁
+
+                </button>
+
+            </div>
+
+
+            <small
+                class="error"
+                id="confirmPasswordError"
+            ></small>
+
+
+            <div class="button-row bottom-buttons">
+
+                <button
+                    class="back-button"
+                    type="button"
+                    onclick="showStep(3)"
+                >
+
+                    Back
+
+                </button>
+
+
+                <button
+                    class="next-button half"
+                    type="button"
+                    onclick="createAccount()"
+                >
+
+                    Create Account
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STEP 5
+             COMPLETE
+        ========================= -->
+
+        <section
+            class="step-panel complete-panel"
+            id="step5"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h1>
+                Account Created Successfully!
+            </h1>
+
+
+            <p class="success-text">
+
+                Your Ride Now account has been
+                created successfully.
+
+                You can now login using your
+                email or phone number and password.
+
+            </p>
+
+
+            <div class="account-summary">
+
+                <p>
+
+                    <b>Name:</b>
+
+                    <span id="summaryName"></span>
+
+                </p>
+
+
+                <p>
+
+                    <b>Email:</b>
+
+                    <span id="summaryEmail"></span>
+
+                </p>
+
+
+                <p>
+
+                    <b>Phone:</b>
+
+                    +91
+
+                    <span id="summaryPhone"></span>
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="next-button"
+                type="button"
+                onclick="goToLogin()"
+            >
+
+                Go to Login
+
+            </button>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+let currentStep = 1;
+
+
+
+// =========================
+// SHOW STEP
+// =========================
+
+function showStep(step) {
+
+    document
+        .querySelectorAll(".step-panel")
+        .forEach(function(panel) {
+
+            panel.classList.remove(
+                "active-panel"
+            );
+
+        });
+
+
+    document
+        .getElementById("step" + step)
+        .classList.add("active-panel");
+
+
+    currentStep = step;
+
+
+    updateProgress(step);
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+// =========================
+// UPDATE PROGRESS
+// =========================
+
+function updateProgress(step) {
+
+    for (
+        let i = 1;
+        i <= 5;
+        i++
+    ) {
+
+        const element =
+            document.getElementById(
+                "stepIndicator" + i
+            );
+
+
+        element.classList.toggle(
+            "completed",
+            i <= step
+        );
+
+
+        element.classList.toggle(
+            "active",
+            i === step
+        );
+
+    }
+
+
+    for (
+        let i = 1;
+        i <= 4;
+        i++
+    ) {
+
+        document
+            .getElementById("line" + i)
+            .classList.toggle(
+                "filled",
+                i < step
+            );
+
+    }
+
+}
+
+
+
+// =========================
+// BACK TO JOURNEY
+// =========================
+
+function goBackToJourney() {
+
+    window.location.href =
+        "journey.html";
+
+}
+
+
+
+// =========================
+// STEP 1 VALIDATION
+// =========================
+
+function validateStep1() {
+
+    document.getElementById(
+        "nameError"
+    ).textContent = "";
+
+    document.getElementById(
+        "phoneError"
+    ).textContent = "";
+
+    document.getElementById(
+        "emailError"
+    ).textContent = "";
+
+    document.getElementById(
+        "addressError"
+    ).textContent = "";
+
+
+    let valid = true;
+
+
+    const name =
+        document.getElementById("name")
+        .value.trim();
+
+
+    const phone =
+        document.getElementById("phone")
+        .value.trim();
+
+
+    const email =
+        document.getElementById("email")
+        .value.trim();
+
+
+    const address =
+        document.getElementById("address")
+        .value.trim();
+
+
+
+    // NAME
+
+    if (!name) {
+
+        document.getElementById(
+            "nameError"
+        ).textContent =
+            "Full name is required.";
+
+        valid = false;
+
+    }
+
+    else if (
+        !/^[A-Za-z ]{3,}$/.test(name)
+    ) {
+
+        document.getElementById(
+            "nameError"
+        ).textContent =
+            "Please enter a valid name.";
+
+        valid = false;
+
+    }
+
+
+
+    // PHONE
+
+    if (!phone) {
+
+        document.getElementById(
+            "phoneError"
+        ).textContent =
+            "Phone number is required.";
+
+        valid = false;
+
+    }
+
+    else if (
+        !/^[0-9]{10}$/.test(phone)
+    ) {
+
+        document.getElementById(
+            "phoneError"
+        ).textContent =
+            "Phone number must contain exactly 10 digits.";
+
+        valid = false;
+
+    }
+
+
+
+    // EMAIL
+
+    if (!email) {
+
+        document.getElementById(
+            "emailError"
+        ).textContent =
+            "Email address is required.";
+
+        valid = false;
+
+    }
+
+    else if (
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+
+        document.getElementById(
+            "emailError"
+        ).textContent =
+            "Please enter a valid email address.";
+
+        valid = false;
+
+    }
+
+
+
+    // ADDRESS
+
+    if (!address) {
+
+        document.getElementById(
+            "addressError"
+        ).textContent =
+            "Complete address is required.";
+
+        valid = false;
+
+    }
+
+    else if (address.length < 10) {
+
+        document.getElementById(
+            "addressError"
+        ).textContent =
+            "Please enter a complete address.";
+
+        valid = false;
+
+    }
+
+
+
+    if (valid) {
+
+        showStep(2);
+
+    }
+
+}
+
+
+
+// =========================
+// DOCUMENT INPUTS
+// =========================
+
+const docInputs = [
+
+    [
+        "license",
+        "licenseName",
+        "licenseError"
+    ],
+
+    [
+        "aadhaar",
+        "aadhaarName",
+        "aadhaarError"
+    ],
+
+    [
+        "pan",
+        "panName",
+        "panError"
+    ]
+
+];
+
+
+
+docInputs.forEach(function(data) {
+
+    const input =
+        document.getElementById(data[0]);
+
+
+    input.addEventListener(
+        "change",
+        function() {
+
+            const file =
+                this.files[0];
+
+
+            const nameElement =
+                document.getElementById(data[1]);
+
+
+            const errorElement =
+                document.getElementById(data[2]);
+
+
+            errorElement.textContent = "";
+
+
+            if (!file) {
+
+                nameElement.textContent =
+                    "No file selected";
+
+                return;
+
+            }
+
+
+            const allowedTypes = [
+
+                "image/jpeg",
+                "image/png",
+                "application/pdf"
+
+            ];
+
+
+            if (
+                !allowedTypes.includes(
+                    file.type
+                )
+            ) {
+
+                errorElement.textContent =
+                    "Only JPG, JPEG, PNG or PDF files are allowed.";
+
+                this.value = "";
+
+                nameElement.textContent =
+                    "No file selected";
+
+                return;
+
+            }
+
+
+            nameElement.textContent =
+                file.name;
+
+        }
+
+    );
+
+});
+
+
+
+// =========================
+// STEP 2 VALIDATION
+// =========================
+
+function validateStep2() {
+
+    document.getElementById(
+        "licenseError"
+    ).textContent = "";
+
+
+    document.getElementById(
+        "aadhaarError"
+    ).textContent = "";
+
+
+    document.getElementById(
+        "panError"
+    ).textContent = "";
+
+
+    let valid = true;
+
+
+
+    if (
+        !document.getElementById(
+            "license"
+        ).files.length
+    ) {
+
+        document.getElementById(
+            "licenseError"
+        ).textContent =
+            "Driving Licence is required.";
+
+        valid = false;
+
+    }
+
+
+
+    if (
+        !document.getElementById(
+            "aadhaar"
+        ).files.length
+    ) {
+
+        document.getElementById(
+            "aadhaarError"
+        ).textContent =
+            "Aadhaar Card is required.";
+
+        valid = false;
+
+    }
+
+
+
+    if (
+        !document.getElementById(
+            "pan"
+        ).files.length
+    ) {
+
+        document.getElementById(
+            "panError"
+        ).textContent =
+            "PAN Card is required.";
+
+        valid = false;
+
+    }
+
+
+
+    if (valid) {
+
+        showStep(3);
+
+    }
+
+}
+
+
+
+// =========================
+// PROFILE PHOTO
+// =========================
+
+document
+    .getElementById("profilePhoto")
+    .addEventListener(
+        "change",
+        function() {
+
+            const file =
+                this.files[0];
+
+
+            const error =
+                document.getElementById(
+                    "profileError"
+                );
+
+
+            error.textContent = "";
+
+
+            if (!file) {
+
+                return;
+
+            }
+
+
+            const allowedTypes = [
+
+                "image/jpeg",
+                "image/png"
+
+            ];
+
+
+            if (
+                !allowedTypes.includes(
+                    file.type
+                )
+            ) {
+
+                error.textContent =
+                    "Please upload a JPG or PNG image.";
+
+                this.value = "";
+
+                return;
+
+            }
+
+
+            if (
+                file.size >
+                5 * 1024 * 1024
+            ) {
+
+                error.textContent =
+                    "Profile photo must be smaller than 5MB.";
+
+                this.value = "";
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event) {
+
+                    document.getElementById(
+                        "profilePreview"
+                    ).src =
+                        event.target.result;
+
+
+                    document.getElementById(
+                        "profilePreview"
+                    ).style.display =
+                        "block";
+
+
+                    document.getElementById(
+                        "profilePlaceholder"
+                    ).style.display =
+                        "none";
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+
+// =========================
+// STEP 3 VALIDATION
+// =========================
+
+function validateStep3() {
+
+    document.getElementById(
+        "profileError"
+    ).textContent = "";
+
+
+    if (
+        !document.getElementById(
+            "profilePhoto"
+        ).files.length
+    ) {
+
+        document.getElementById(
+            "profileError"
+        ).textContent =
+            "Profile photo is required.";
+
+        return;
+
+    }
+
+
+    showStep(4);
+
+}
+
+
+
+// =========================
+// PASSWORD RULES
+// =========================
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "input",
+        function() {
+
+            const password =
+                this.value;
+
+
+            document.getElementById(
+                "ruleLength"
+            ).textContent =
+                (
+                    password.length >= 6
+                    ? "✓"
+                    : "○"
+                )
+                +
+                " At least 6 characters";
+
+
+            document.getElementById(
+                "ruleLetter"
+            ).textContent =
+                (
+                    /[A-Za-z]/.test(password)
+                    ? "✓"
+                    : "○"
+                )
+                +
+                " At least one letter";
+
+
+            document.getElementById(
+                "ruleNumber"
+            ).textContent =
+                (
+                    /[0-9]/.test(password)
+                    ? "✓"
+                    : "○"
+                )
+                +
+                " At least one number";
+
+        }
+    );
+
+
+
+// =========================
+// SHOW / HIDE PASSWORD
+// =========================
+
+function togglePassword(
+    id,
+    button
+) {
+
+    const input =
+        document.getElementById(id);
+
+
+    if (
+        input.type === "password"
+    ) {
+
+        input.type = "text";
+
+    }
+
+    else {
+
+        input.type = "password";
+
+    }
+
+}
+
+
+
+// =========================
+// CREATE ACCOUNT
+// =========================
+
+function createAccount() {
+
+    document.getElementById(
+        "passwordError"
+    ).textContent = "";
+
+
+    document.getElementById(
+        "confirmPasswordError"
+    ).textContent = "";
+
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+
+    const confirmPassword =
+        document.getElementById(
+            "confirmPassword"
+        ).value;
+
+
+    let valid = true;
+
+
+
+    // PASSWORD
+
+    if (!password) {
+
+        document.getElementById(
+            "passwordError"
+        ).textContent =
+            "Password is required.";
+
+        valid = false;
+
+    }
+
+    else if (
+        password.length < 6 ||
+        !/[A-Za-z]/.test(password) ||
+        !/[0-9]/.test(password)
+    ) {
+
+        document.getElementById(
+            "passwordError"
+        ).textContent =
+            "Use at least 6 characters, one letter and one number.";
+
+        valid = false;
+
+    }
+
+
+
+    // CONFIRM PASSWORD
+
+    if (!confirmPassword) {
+
+        document.getElementById(
+            "confirmPasswordError"
+        ).textContent =
+            "Please confirm your password.";
+
+        valid = false;
+
+    }
+
+    else if (
+        password !== confirmPassword
+    ) {
+
+        document.getElementById(
+            "confirmPasswordError"
+        ).textContent =
+            "Passwords do not match.";
+
+        valid = false;
+
+    }
+
+
+
+    if (!valid) {
+
+        return;
+
+    }
+
+
+
+
+
+
+
+    // USER INFORMATION
+
+    const name =
+        document.getElementById(
+            "name"
+        ).value.trim();
+
+
+    const email =
+        document.getElementById(
+            "email"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "phone"
+        ).value.trim();
+
+
+    const address =
+        document.getElementById(
+            "address"
+        ).value.trim();
+
+
+
+    // SAVE ACCOUNT
+
+    const account = {
+
+    name: name,
+
+    email: email,
+
+    phone: phone,
+
+    address: address,
+
+    password: password
+
+};
+
+
+// Get existing renter accounts
+let renterAccounts =
+    JSON.parse(
+        localStorage.getItem("rideNowAccounts") || "[]"
+    );
+
+
+// Add the new account
+renterAccounts.push(account);
+
+
+// Save all renter accounts
+localStorage.setItem(
+    "rideNowAccounts",
+    JSON.stringify(renterAccounts)
+);
+
+
+// Keep latest account available for compatibility
+localStorage.setItem(
+    "rideNowAccount",
+    JSON.stringify(account)
+);
+
+
+    // SAVE USER INFORMATION
+
+    localStorage.setItem(
+        "userName",
+        name
+    );
+
+
+    localStorage.setItem(
+        "userEmail",
+        email
+    );
+
+
+    localStorage.setItem(
+        "userPhone",
+        phone
+    );
+
+
+    localStorage.setItem(
+        "userAddress",
+        address
+    );
+
+
+
+    // SAVE DOCUMENT NAMES
+
+    const documents = {
+
+        drivingLicense:
+            document.getElementById(
+                "license"
+            ).files[0].name,
+
+        aadhaar:
+            document.getElementById(
+                "aadhaar"
+            ).files[0].name,
+
+        pan:
+            document.getElementById(
+                "pan"
+            ).files[0].name
+
+    };
+
+
+    localStorage.setItem(
+        "rideNowDocuments",
+        JSON.stringify(documents)
+    );
+
+
+
+    // SAVE PROFILE PHOTO
+
+    const photoFile =
+        document.getElementById(
+            "profilePhoto"
+        ).files[0];
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(event) {
+
+            const image =
+                new Image();
+
+
+            image.onload =
+                function() {
+
+                    const canvas =
+                        document.createElement(
+                            "canvas"
+                        );
+
+
+                    const max = 300;
+
+
+                    let width =
+                        image.width;
+
+
+                    let height =
+                        image.height;
+
+
+
+                    if (
+                        width > height &&
+                        width > max
+                    ) {
+
+                        height =
+                            height * max / width;
+
+                        width = max;
+
+                    }
+
+                    else if (
+                        height >= width &&
+                        height > max
+                    ) {
+
+                        width =
+                            width * max / height;
+
+                        height = max;
+
+                    }
+
+
+
+                    canvas.width =
+                        width;
+
+
+                    canvas.height =
+                        height;
+
+
+
+                    const context =
+                        canvas.getContext(
+                            "2d"
+                        );
+
+
+                    context.drawImage(
+                        image,
+                        0,
+                        0,
+                        width,
+                        height
+                    );
+
+
+
+                    const compressedPhoto =
+                        canvas.toDataURL(
+                            "image/jpeg",
+                            0.8
+                        );
+
+
+                    localStorage.setItem(
+                        "userPhoto",
+                        compressedPhoto
+                    );
+
+
+
+                    // VERY IMPORTANT:
+                    // Account is created,
+                    // but user is NOT logged in yet.
+
+                    localStorage.removeItem(
+                        "isLoggedIn"
+                    );
+
+
+
+                    // SHOW SUCCESS INFORMATION
+
+                    document.getElementById(
+                        "summaryName"
+                    ).textContent =
+                        name;
+
+
+                    document.getElementById(
+                        "summaryEmail"
+                    ).textContent =
+                        email;
+
+
+                    document.getElementById(
+                        "summaryPhone"
+                    ).textContent =
+                        phone;
+
+
+                    showStep(5);
+
+                };
+
+
+            image.src =
+                event.target.result;
+
+        };
+
+
+    reader.readAsDataURL(
+        photoFile
+    );
+
+}
+
+
+
+// =========================
+// GO TO LOGIN
+// =========================
+
+function goToLogin() {
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+
+// =========================
+// PHONE ONLY NUMBERS
+// =========================
+
+document
+    .getElementById("phone")
+    .addEventListener(
+        "input",
+        function() {
+
+            this.value =
+                this.value.replace(
+                    /[^0-9]/g,
+                    ""
+                );
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>

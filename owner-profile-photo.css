@@ -1,0 +1,429 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7faff;
+    min-height: 100vh;
+    color: #12345b;
+}
+
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.page {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px 35px 40px;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    border: none;
+    background: none;
+    color: #315d8c;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.back-button:hover {
+    color: #ff6b00;
+}
+
+
+/* ================================
+   PROGRESS
+================================ */
+
+.progress-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto 35px;
+    max-width: 700px;
+}
+
+
+.progress-line {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: #e5eaf0;
+    z-index: 0;
+}
+
+
+.progress-line-active {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    width: 17%;
+    height: 3px;
+    background: #ff6b00;
+    z-index: 1;
+}
+
+
+/* ================================
+   STEPS
+================================ */
+
+.step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 20%;
+}
+
+
+.step-circle {
+    width: 31px;
+    height: 31px;
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    background: #edf1f6;
+    color: #78889b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.step.active .step-circle {
+    background: #ff6b00;
+    color: white;
+}
+
+
+.step.completed .step-circle {
+    background: #ff6b00;
+    color: white;
+}
+
+
+.step-text {
+    font-size: 11px;
+    color: #8a98a8;
+    white-space: nowrap;
+}
+
+
+.step.active .step-text,
+.step.completed .step-text {
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+
+/* ================================
+   FORM CARD
+================================ */
+
+.form-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 5px 25px rgba(35, 75, 120, 0.10);
+
+    border: 1px solid #edf1f5;
+}
+
+
+.form-card h1 {
+    font-size: 27px;
+    color: #103a67;
+    margin-bottom: 7px;
+}
+
+
+.subtitle {
+    color: #8290a0;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   PHOTO SECTION
+================================ */
+
+.photo-section {
+    text-align: center;
+    padding: 10px 0 20px;
+}
+
+
+/* ================================
+   PHOTO PREVIEW
+================================ */
+
+.photo-preview {
+    width: 150px;
+    height: 150px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #eef4fa;
+
+    border: 3px dashed #c9d6e3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #8290a0;
+    font-size: 48px;
+
+    transition: 0.2s;
+}
+
+
+.photo-preview.has-photo {
+    border: 3px solid #ff6b00;
+}
+
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+}
+
+
+/* ================================
+   FILE INPUT
+================================ */
+
+#profilePhoto {
+    display: none;
+}
+
+
+/* ================================
+   UPLOAD BUTTON
+================================ */
+
+.upload-button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #ff6b00;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.upload-button:hover {
+    background: #e85e00;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   PHOTO INFORMATION
+================================ */
+
+.photo-info {
+    margin-top: 12px;
+
+    color: #94a1af;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+    color: #d93025;
+
+    font-size: 13px;
+
+    margin-top: 12px;
+
+    display: none;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.button-row {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.back-form-button,
+.next-button {
+    width: 50%;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* Back */
+
+.back-form-button {
+    background: white;
+
+    border: 1px solid #dce4ec;
+
+    color: #34506c;
+}
+
+
+.back-form-button:hover {
+    background: #f4f7fa;
+}
+
+
+/* Next */
+
+.next-button {
+    background: #ff6b00;
+
+    border: none;
+
+    color: white;
+}
+
+
+.next-button:hover {
+    background: #e85e00;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px 15px 30px;
+    }
+
+
+    .form-card {
+        padding: 25px 20px 28px;
+    }
+
+
+    .form-card h1 {
+        font-size: 23px;
+    }
+
+
+    .progress-container {
+        margin-bottom: 28px;
+    }
+
+
+    .step-text {
+        font-size: 9px;
+    }
+
+
+    .step-circle {
+        width: 27px;
+        height: 27px;
+        font-size: 11px;
+    }
+
+
+    .progress-line,
+    .progress-line-active {
+        top: 13px;
+    }
+
+
+    .photo-preview {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .button-row {
+        gap: 10px;
+    }
+
+
+    .back-form-button,
+    .next-button {
+        padding: 13px 8px;
+        font-size: 14px;
+    }
+
+}

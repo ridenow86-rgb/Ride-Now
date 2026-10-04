@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account Created - Ride Now</title>
+
+    <link
+        rel="stylesheet"
+        href="owner-success.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Progress Steps -->
+
+        <div class="progress-container">
+
+            <div class="step completed">
+                <div class="step-number">✓</div>
+                <span>Owner Details</span>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <div class="step-number">✓</div>
+                <span>Profile Photo</span>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <div class="step-number">✓</div>
+                <span>Vehicle Details</span>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <div class="step-number">✓</div>
+                <span>Password</span>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step active">
+                <div class="step-number">✓</div>
+                <span>Complete</span>
+            </div>
+
+        </div>
+
+
+        <!-- Success Card -->
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Account Created Successfully!
+            </h1>
+
+            <p class="success-message">
+                Your Ride Now owner account has been created successfully.
+            </p>
+
+
+            <!-- Owner Information -->
+
+            <div class="owner-info">
+
+                <div class="info-row">
+
+                    <span class="label">
+                        Owner Name
+                    </span>
+
+                    <span
+                        class="value"
+                        id="ownerName"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="label">
+                        Email
+                    </span>
+
+                    <span
+                        class="value"
+                        id="ownerEmail"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="label">
+                        Vehicle
+                    </span>
+
+                    <span
+                        class="value"
+                        id="vehicleName"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="label">
+                        Vehicle Type
+                    </span>
+
+                    <span
+                        class="value"
+                        id="vehicleType"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="next-message">
+
+                <strong>
+                    You're ready to list your ride!
+                </strong>
+
+                <p>
+                    Login to your owner account to manage your vehicle and bookings.
+                </p>
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button
+                type="button"
+                class="login-button"
+                onclick="goToLogin()"
+            >
+                Continue to Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* Get saved owner account */
+
+        const savedAccount =
+            localStorage.getItem(
+                "rideNowOwnerAccount"
+            );
+
+
+        if (savedAccount) {
+
+            const account =
+                JSON.parse(savedAccount);
+
+
+            /* Owner Name */
+
+            document.getElementById(
+                "ownerName"
+            ).textContent =
+                account.name || "—";
+
+
+            /* Owner Email */
+
+            document.getElementById(
+                "ownerEmail"
+            ).textContent =
+                account.email || "—";
+
+
+            /* Vehicle */
+
+            if (account.vehicle) {
+
+                document.getElementById(
+                    "vehicleName"
+                ).textContent =
+                    (
+                        account.vehicle.brand || ""
+                    ) +
+                    " " +
+                    (
+                        account.vehicle.model || ""
+                    );
+
+
+                document.getElementById(
+                    "vehicleType"
+                ).textContent =
+                    account.vehicle.type || "—";
+
+            }
+
+        }
+
+
+        /* Continue to Login */
+
+        function goToLogin() {
+
+            window.location.href =
+                "login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

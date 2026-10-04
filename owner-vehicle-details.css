@@ -1,0 +1,669 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7faff;
+    min-height: 100vh;
+    color: #12345b;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+.page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px 35px 40px;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    border: none;
+    background: none;
+    color: #315d8c;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.back-button:hover {
+    color: #ff6b00;
+}
+
+
+/* ================================
+   PROGRESS
+================================ */
+
+.progress-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto 35px;
+    max-width: 700px;
+}
+
+
+.progress-line {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: #e5eaf0;
+    z-index: 0;
+}
+
+
+.progress-line-active {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    width: 37%;
+    height: 3px;
+    background: #ff6b00;
+    z-index: 1;
+}
+
+
+/* ================================
+   STEPS
+================================ */
+
+.step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 20%;
+}
+
+
+.step-circle {
+    width: 31px;
+    height: 31px;
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    background: #edf1f6;
+    color: #78889b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.step.active .step-circle,
+.step.completed .step-circle {
+    background: #ff6b00;
+    color: white;
+}
+
+
+.step-text {
+    font-size: 11px;
+    color: #8a98a8;
+    white-space: nowrap;
+}
+
+
+.step.active .step-text,
+.step.completed .step-text {
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+
+/* ================================
+   FORM CARD
+================================ */
+
+.form-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 30px 35px 35px;
+
+    box-shadow:
+        0 5px 25px rgba(35, 75, 120, 0.10);
+
+    border: 1px solid #edf1f5;
+}
+
+
+.form-card h1 {
+    font-size: 27px;
+    color: #103a67;
+    margin-bottom: 7px;
+}
+
+
+.subtitle {
+    color: #8290a0;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   VEHICLE TYPE
+================================ */
+
+.vehicle-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+
+.type-button {
+    border: 1px solid #dce4ec;
+
+    background: #f4f7fa;
+
+    color: #526b82;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.type-button:hover {
+    border-color: #ff6b00;
+}
+
+
+.type-button.active {
+    background: #103a67;
+
+    color: white;
+
+    border-color: #103a67;
+}
+
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #34506c;
+
+    margin-bottom: 7px;
+}
+
+
+.form-group label span {
+    color: #ff6b00;
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dce4ec;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #243f5c;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff6b00;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 0, 0.08);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aab5c0;
+}
+
+
+/* ================================
+   TWO COLUMNS
+================================ */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* ================================
+   PRICE
+================================ */
+
+.price-input {
+    position: relative;
+}
+
+
+.price-input > span {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #526b82;
+}
+
+
+.price-input input {
+    padding-left: 32px;
+}
+
+
+/* ================================
+   SELECT
+================================ */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.form-group textarea {
+    height: 110px;
+
+    resize: vertical;
+}
+
+
+/* ================================
+   PHOTO UPLOAD
+================================ */
+
+.upload-info {
+    font-size: 12px;
+
+    color: #8d9aa8;
+
+    margin-bottom: 10px;
+}
+
+
+.photo-upload-area {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* Hide original file input */
+
+#vehiclePhotos {
+    display: none;
+}
+
+
+/* Add photo box */
+
+.add-photo {
+    width: 105px;
+    height: 90px;
+
+    border: 2px dashed #cbd8e4;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #678098;
+
+    font-size: 12px;
+
+    background: #f9fbfd;
+
+    transition: 0.2s;
+}
+
+
+.add-photo:hover {
+    border-color: #ff6b00;
+
+    color: #ff6b00;
+
+    background: #fff8f2;
+}
+
+
+.plus {
+    font-size: 28px;
+
+    line-height: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================
+   PHOTO PREVIEW
+================================ */
+
+.photo-preview {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   PHOTO ITEM
+================================ */
+
+.photo-item {
+    width: 105px;
+    height: 90px;
+    position: relative;
+}
+
+
+/* Vehicle photo */
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    border: 1px solid #dce4ec;
+
+    display: block;
+}
+
+
+/* ================================
+   DELETE BUTTON
+================================ */
+
+.delete-photo {
+    position: absolute;
+
+    top: -7px;
+    right: -7px;
+
+    width: 24px;
+    height: 24px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #e53935;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 24px;
+
+    text-align: center;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    z-index: 5;
+}
+
+
+.delete-photo:hover {
+    background: #c62828;
+
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+    color: #d93025;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+
+    display: none;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.button-row {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+
+.back-form-button,
+.next-button {
+    width: 50%;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* Back */
+
+.back-form-button {
+    background: white;
+
+    border: 1px solid #dce4ec;
+
+    color: #34506c;
+}
+
+
+.back-form-button:hover {
+    background: #f4f7fa;
+}
+
+
+/* Next */
+
+.next-button {
+    background: #ff6b00;
+
+    border: none;
+
+    color: white;
+}
+
+
+.next-button:hover {
+    background: #e85e00;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px 15px 30px;
+    }
+
+
+    .form-card {
+        padding: 25px 20px 28px;
+    }
+
+
+    .form-card h1 {
+        font-size: 23px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    .progress-container {
+        margin-bottom: 28px;
+    }
+
+
+    .step-text {
+        font-size: 9px;
+    }
+
+
+    .step-circle {
+        width: 27px;
+        height: 27px;
+        font-size: 11px;
+    }
+
+
+    .progress-line,
+    .progress-line-active {
+        top: 13px;
+    }
+
+
+   .photo-item,
+   .add-photo {
+    width: 90px;
+    height: 78px;
+}
+
+
+    .button-row {
+        gap: 10px;
+    }
+
+
+    .back-form-button,
+    .next-button {
+        padding: 13px 8px;
+        font-size: 14px;
+    }
+
+}
+

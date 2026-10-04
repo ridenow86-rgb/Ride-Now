@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ride Now - Owner Home</title>
+
+    <link rel="stylesheet" href="owner-home.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <img
+            src="ride_now_logo.jpeg"
+            alt="Ride Now"
+        >
+
+    </div>
+
+
+    <nav>
+
+        <a
+            href="owner-home.html"
+            class="active"
+        >
+            Home
+        </a>
+
+        <a href="owner-vehicles.html">
+            My Vehicles
+        </a>
+
+        <a href="#bookingsSection">
+            Bookings
+        </a>
+
+        <a href="#earningsSection">
+            Earnings
+        </a>
+
+        <a href="#profileSection">
+            Profile
+        </a>
+
+        <a href="#reminderSection">
+            Reminder
+        </a>
+
+    </nav>
+
+
+    <div
+        class="owner-user"
+        id="profileButton"
+    >
+
+        <img
+            id="ownerNavPhoto"
+            src="default-user.png"
+            alt="Owner Photo"
+        >
+
+        <span>
+            Hello,
+            <strong id="ownerName">
+                Owner
+            </strong>
+        </span>
+
+        <span class="arrow">
+            ▼
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="owner-hero">
+
+    <div class="hero-content">
+
+       
+
+        <h1>
+            Welcome,
+            <span id="heroOwnerName">
+                Owner
+            </span>
+            👋
+        </h1>
+
+        <p>
+            Manage your vehicles, bookings and earnings
+            from one place.
+        </p>
+
+        <button
+            type="button"
+            class="hero-button"
+            onclick="goToMyVehicles()"
+        >
+            + Add Vehicle
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<section class="stats-container">
+
+
+    <!-- TOTAL VEHICLES -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon blue">
+            🚗
+        </div>
+
+        <div>
+
+            <h2 id="totalVehicles">
+                0
+            </h2>
+
+            <p>
+                Total Vehicles
+            </p>
+
+        </div>
+
+        <span class="stat-arrow">
+            →
+        </span>
+
+    </div>
+
+
+
+    <!-- TOTAL BOOKINGS -->
+
+    <div
+        class="stat-card"
+        id="bookingsSection"
+    >
+
+        <div class="stat-icon orange">
+            📅
+        </div>
+
+        <div>
+
+            <h2 id="totalBookings">
+                0
+            </h2>
+
+            <p>
+                Total Bookings
+            </p>
+
+        </div>
+
+        <span class="stat-arrow">
+            →
+        </span>
+
+    </div>
+
+
+
+    <!-- TOTAL EARNINGS -->
+
+    <div
+        class="stat-card"
+        id="earningsSection"
+    >
+
+        <div class="stat-icon green">
+            ₹
+        </div>
+
+        <div>
+
+            <h2>
+                ₹ <span id="totalEarnings">0</span>
+            </h2>
+
+            <p>
+                Total Earnings
+            </p>
+
+        </div>
+
+        <span class="stat-arrow">
+            →
+        </span>
+
+    </div>
+
+
+
+    <!-- RATING -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon yellow">
+            ⭐
+        </div>
+
+        <div>
+
+            <h2>
+                <span id="ownerRating">
+                    0.0
+                </span>
+            </h2>
+
+            <p>
+                Average Rating
+            </p>
+
+        </div>
+
+        <span class="stat-arrow">
+            →
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-container">
+
+
+    <!-- =================================================
+         LEFT COLUMN
+    ================================================= -->
+
+    <div class="left-column">
+
+
+        <!-- =============================================
+             YOUR VEHICLES
+        ============================================== -->
+
+        <section class="vehicles-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Your Vehicles
+                    </h2>
+
+                    <p>
+                        Manage your vehicles and update
+                        their availability.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-vehicle-button"
+                    onclick="goToMyVehicles()"
+                >
+                    + Add New Vehicle
+                </button>
+
+            </div>
+
+
+
+            <!-- VEHICLE LIST -->
+
+            <div
+                id="vehicleList"
+                class="vehicle-list"
+            >
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =============================================
+             UPCOMING BOOKINGS
+        ============================================== -->
+
+        <section
+            class="bookings-section"
+            id="upcomingBookingsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Upcoming Bookings
+                    </h2>
+
+                    <p>
+                        See your latest vehicle bookings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="bookingList"
+                class="booking-list"
+            >
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         RIGHT COLUMN
+    ================================================= -->
+
+    <div class="right-column">
+
+
+        <!-- =============================================
+             OWNER PROFILE
+        ============================================== -->
+
+        <section
+            class="owner-profile-card"
+            id="profileSection"
+        >
+
+            <div class="profile-card-heading">
+
+                <h2>
+                    Owner Profile
+                </h2>
+
+            </div>
+
+
+            <div class="owner-profile-content">
+
+                <img
+                    id="profilePhoto"
+                    src="default-user.png"
+                    alt="Owner Profile"
+                    class="profile-image"
+                >
+
+
+                <h3 id="profileOwnerName">
+                    Owner
+                </h3>
+
+
+                <p id="profileOwnerEmail">
+                    Email
+                </p>
+
+
+                <p id="profileOwnerPhone">
+                    Phone
+                </p>
+
+
+                <p id="profileOwnerAddress">
+                    Address
+                </p>
+
+
+                <button
+                    type="button"
+                    class="profile-button"
+                    onclick="goToOwnerProfile()"
+                >
+                    View Profile
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             REMINDER
+        ============================================== -->
+
+        <section
+            class="reminder-card"
+            id="reminderSection"
+        >
+
+            <div class="reminder-icon">
+                🔔
+            </div>
+
+            <div>
+
+                <h3>
+                    Reminder
+                </h3>
+
+                <p>
+                    Keep your vehicle documents
+                    and availability updated.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             QUICK ACTIONS
+        ============================================== -->
+
+        <section class="quick-actions">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <button
+                type="button"
+                onclick="goToMyVehicles()"
+            >
+                🚗 Manage My Vehicles
+            </button>
+
+
+            <button
+                type="button"
+                onclick="goToMyVehicles()"
+            >
+                + Add New Vehicle
+            </button>
+
+
+            <button
+                type="button"
+                onclick="logoutOwner()"
+            >
+                ↪ Logout
+            </button>
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Ride Now. All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     NO SEPARATE JS FILE
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   LOGIN CHECK
+===================================================== */
+
+const ownerAccount =
+    localStorage.getItem(
+        "rideNowOwnerAccount"
+    );
+
+
+if (!ownerAccount) {
+
+    const ownerDetails =
+        localStorage.getItem(
+            "rideNowOwnerDetails"
+        );
+
+    if (!ownerDetails) {
+
+        console.log(
+            "Owner account not found."
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   OWNER INFORMATION
+===================================================== */
+
+function loadOwnerInformation() {
+
+
+    let account = null;
+
+
+    const savedAccount =
+        localStorage.getItem(
+            "rideNowOwnerAccount"
+        );
+
+
+    if (savedAccount) {
+
+        try {
+
+            account =
+                JSON.parse(
+                    savedAccount
+                );
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Owner account error:",
+                error
+            );
+
+        }
+
+    }
+
+
+
+    if (!account) {
+
+        const savedDetails =
+            localStorage.getItem(
+                "rideNowOwnerDetails"
+            );
+
+
+        if (savedDetails) {
+
+            try {
+
+                account =
+                    JSON.parse(
+                        savedDetails
+                    );
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Owner details error:",
+                    error
+                );
+
+            }
+
+        }
+
+    }
+
+
+
+    if (!account) {
+
+        account = {};
+
+    }
+
+
+
+    const name =
+        account.name ||
+        "Owner";
+
+
+    const email =
+        account.email ||
+        "Email";
+
+
+    const phone =
+        account.phone ||
+        "Phone";
+
+
+    const address =
+        account.address ||
+        "Address";
+
+
+
+    const ownerName =
+        document.getElementById(
+            "ownerName"
+        );
+
+
+    if (ownerName) {
+
+        ownerName.textContent =
+            name;
+
+    }
+
+
+
+    const heroOwnerName =
+        document.getElementById(
+            "heroOwnerName"
+        );
+
+
+    if (heroOwnerName) {
+
+        heroOwnerName.textContent =
+            name;
+
+    }
+
+
+
+    const profileOwnerName =
+        document.getElementById(
+            "profileOwnerName"
+        );
+
+
+    if (profileOwnerName) {
+
+        profileOwnerName.textContent =
+            name;
+
+    }
+
+
+
+    const profileOwnerEmail =
+        document.getElementById(
+            "profileOwnerEmail"
+        );
+
+
+    if (profileOwnerEmail) {
+
+        profileOwnerEmail.textContent =
+            email;
+
+    }
+
+
+
+    const profileOwnerPhone =
+        document.getElementById(
+            "profileOwnerPhone"
+        );
+
+
+    if (profileOwnerPhone) {
+
+        profileOwnerPhone.textContent =
+            phone;
+
+    }
+
+
+
+    const profileOwnerAddress =
+        document.getElementById(
+            "profileOwnerAddress"
+        );
+
+
+    if (profileOwnerAddress) {
+
+        profileOwnerAddress.textContent =
+            address;
+
+    }
+
+
+
+    /*
+       OWNER PROFILE PHOTO
+    */
+
+    let ownerPhoto =
+        account.profilePhoto ||
+        localStorage.getItem(
+            "rideNowOwnerProfilePhoto"
+        );
+
+
+    if (ownerPhoto) {
+
+        const navPhoto =
+            document.getElementById(
+                "ownerNavPhoto"
+            );
+
+
+        const profilePhoto =
+            document.getElementById(
+                "profilePhoto"
+            );
+
+
+        if (navPhoto) {
+
+            navPhoto.src =
+                ownerPhoto;
+
+        }
+
+
+        if (profilePhoto) {
+
+            profilePhoto.src =
+                ownerPhoto;
+
+        }
+
+    }
+
+}
+
+
+
+/* =====================================================
+   GET ALL OWNER VEHICLES
+===================================================== */
+
+function getOwnerVehicles() {
+
+
+    const savedVehicles =
+        localStorage.getItem(
+            "rideNowOwnerVehicles"
+        );
+
+
+    if (savedVehicles) {
+
+        try {
+
+            const vehicles =
+                JSON.parse(
+                    savedVehicles
+                );
+
+
+            if (Array.isArray(vehicles)) {
+
+                return vehicles;
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Vehicle storage error:",
+                error
+            );
+
+        }
+
+    }
+
+
+
+    /*
+       OLD SINGLE VEHICLE SYSTEM
+    */
+
+    const oldVehicle =
+        localStorage.getItem(
+            "rideNowOwnerVehicle"
+        );
+
+
+    if (oldVehicle) {
+
+        try {
+
+            const vehicle =
+                JSON.parse(
+                    oldVehicle
+                );
+
+
+            const oldPhotos =
+                JSON.parse(
+                    localStorage.getItem(
+                        "rideNowOwnerVehiclePhotos"
+                    ) || "[]"
+                );
+
+
+            const migratedVehicle = {
+
+                ...vehicle,
+
+                id:
+                    "legacy-" +
+                    Date.now(),
+
+                photos:
+                    Array.isArray(oldPhotos)
+                        ? oldPhotos
+                        : []
+
+            };
+
+
+            const vehicles = [
+                migratedVehicle
+            ];
+
+
+            localStorage.setItem(
+                "rideNowOwnerVehicles",
+                JSON.stringify(
+                    vehicles
+                )
+            );
+
+
+            return vehicles;
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Old vehicle migration error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    return [];
+
+}
+
+
+
+/* =====================================================
+   GET UPLOADED VEHICLE PHOTOS
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   Your uploaded vehicle photos are stored in:
+
+   IndexedDB
+   Database:
+   RideNowDatabase
+
+   Object Store:
+   vehiclePhotos
+
+   Key:
+   ownerVehiclePhotos
+
+   So we read the photos using
+   "ownerVehiclePhotos".
+*/
+
+
+/* =====================================================
+   GET PHOTOS FOR ONE VEHICLE
+===================================================== */
+
+function getOwnerVehiclePhotos(vehicleId) {
+
+    return new Promise(function(resolve) {
+
+        /*
+            IMPORTANT:
+
+            owner-vehicles.html uses
+            RideNowDatabase version 2
+
+            So Owner Home must also use version 2.
+        */
+
+        const request =
+            indexedDB.open(
+                "RideNowDatabase",
+                2
+            );
+
+
+        request.onerror = function() {
+
+            console.log(
+                "Unable to open vehicle photo database."
+            );
+
+            resolve([]);
+
+        };
+
+
+        request.onsuccess = function(event) {
+
+            const db =
+                event.target.result;
+
+
+            /*
+                Check that vehiclePhotos
+                object store exists.
+            */
+
+            if (
+                !db.objectStoreNames.contains(
+                    "vehiclePhotos"
+                )
+            ) {
+
+                db.close();
+
+                resolve([]);
+
+                return;
+            }
+
+
+            /*
+                Open the photo store.
+            */
+
+            const transaction =
+                db.transaction(
+                    ["vehiclePhotos"],
+                    "readonly"
+                );
+
+
+            const store =
+                transaction.objectStore(
+                    "vehiclePhotos"
+                );
+
+
+            /*
+                IMPORTANT:
+
+                owner-vehicles.html saves
+                photos using vehicle.id.
+
+                Example:
+
+                vehicle_1759567890
+
+                So we must read using
+                the SAME vehicle ID.
+            */
+
+            const photoRequest =
+                store.get(vehicleId);
+
+
+            photoRequest.onsuccess =
+                function() {
+
+                    const photos =
+                        photoRequest.result;
+
+
+                    db.close();
+
+
+                    if (
+                        Array.isArray(photos) &&
+                        photos.length > 0
+                    ) {
+
+                        resolve(photos);
+
+                    } else {
+
+                        resolve([]);
+
+                    }
+
+                };
+
+
+            photoRequest.onerror =
+                function() {
+
+                    db.close();
+
+                    resolve([]);
+
+                };
+
+        };
+
+    });
+
+}
+
+
+/* =====================================================
+   DISPLAY ALL VEHICLES
+===================================================== */
+
+async function loadOwnerVehicles() {
+
+    const vehicles =
+        getOwnerVehicles();
+
+
+    const vehicleList =
+        document.getElementById(
+            "vehicleList"
+        );
+
+
+    const totalVehicles =
+        document.getElementById(
+            "totalVehicles"
+        );
+
+
+    /*
+        Update vehicle count
+    */
+
+    if (totalVehicles) {
+
+        totalVehicles.textContent =
+            vehicles.length;
+
+    }
+
+
+    /*
+        Clear old cards
+    */
+
+    vehicleList.innerHTML = "";
+
+
+    /*
+        No vehicles
+    */
+
+    if (vehicles.length === 0) {
+
+        vehicleList.innerHTML = `
+
+            <div class="empty-state">
+
+                <h3>
+                    No vehicles added yet
+                </h3>
+
+                <p>
+                    Add your first car or bike.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    /*
+        Load each vehicle
+        one by one.
+    */
+
+    for (
+        let index = 0;
+        index < vehicles.length;
+        index++
+    ) {
+
+        const vehicle =
+            vehicles[index];
+
+
+        /*
+            Get photos for THIS vehicle.
+
+            Example:
+
+            vehicle.id =
+            vehicle_1759567890
+
+            The function will find
+            the photos stored under
+            exactly that ID.
+        */
+
+        const uploadedPhotos =
+            await getOwnerVehiclePhotos(
+                vehicle.id
+            );
+
+
+        /*
+            Create the card.
+        */
+
+        await createVehicleCard(
+            vehicle,
+            index,
+            vehicleList,
+            uploadedPhotos
+        );
+
+    }
+
+}
+
+/* =====================================================
+   CREATE VEHICLE CARD
+===================================================== */
+
+async function createVehicleCard(
+    vehicle,
+    index,
+    container,
+    uploadedPhotos
+) {
+
+
+    const type =
+        vehicle.type ||
+        "Vehicle";
+
+
+    const brand =
+        vehicle.brand ||
+        "";
+
+
+    const model =
+        vehicle.model ||
+        "Vehicle";
+
+
+    const vehicleName =
+        brand
+            ? brand + " " + model
+            : model;
+
+
+    const year =
+        vehicle.year ||
+        "-";
+
+
+    const dailyRent =
+        vehicle.dailyRent ||
+        0;
+
+
+    const location =
+        vehicle.location ||
+        "-";
+
+
+    const fuel =
+        vehicle.fuel ||
+        "-";
+
+
+    const transmission =
+        vehicle.transmission ||
+        "-";
+
+
+    const seats =
+        vehicle.seats ||
+        "-";
+
+
+
+    /*
+       First check if the vehicle
+       already has photos stored
+       directly with it.
+    */
+
+    let photos =
+        Array.isArray(vehicle.photos)
+            ? vehicle.photos
+            : [];
+
+
+
+    /*
+       If vehicle.photos is empty,
+       use the photos uploaded in
+       My Vehicles.
+
+       This is the important part.
+    */
+
+    if (
+        photos.length === 0 &&
+        Array.isArray(uploadedPhotos)
+    ) {
+
+        photos =
+            uploadedPhotos;
+
+    }
+
+
+
+    /*
+       Vehicle ID
+    */
+
+    if (!vehicle.id) {
+
+        vehicle.id =
+            "vehicle-" +
+            Date.now() +
+            "-" +
+            index;
+
+    }
+
+
+
+    /*
+       MAIN IMAGE
+    */
+
+    let imageHTML = "";
+
+
+
+   if (
+    photos.length > 0 &&
+    photos[0]
+) {
+
+    imageHTML = `
+        <img
+            src="${photos[0]}"
+            alt="${vehicleName}"
+            class="vehicle-main-image"
+        >
+    `;
+
+}
+else {
+
+    imageHTML = `
+        <div class="vehicle-placeholder">
+            No vehicle photo
+        </div>
+    `;
+
+}
+
+    /*
+       Type class
+    */
+
+    const typeClass =
+        type.toLowerCase() === "bike"
+            ? "bike"
+            : "car";
+
+
+
+    /*
+       Vehicle card
+    */
+
+    const card =
+        document.createElement(
+            "article"
+        );
+
+
+    card.className =
+        "owner-vehicle-card";
+
+
+    card.setAttribute(
+        "data-id",
+        vehicle.id
+    );
+
+
+
+    card.innerHTML = `
+
+        <!-- =====================================
+             IMAGE
+        ====================================== -->
+
+        <div class="owner-vehicle-image">
+
+            ${imageHTML}
+
+
+            <span
+                class="vehicle-availability"
+            >
+                Available
+            </span>
+
+
+            <span
+                class="vehicle-type-badge ${typeClass}"
+            >
+                ${
+                    type.toLowerCase() === "bike"
+                        ? "🏍️ Bike"
+                        : "🚗 Car"
+                }
+            </span>
+
+
+            <div class="photo-count">
+
+                📷
+                ${photos.length}
+                Photo${photos.length === 1 ? "" : "s"}
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             DETAILS
+        ====================================== -->
+
+        <div class="owner-vehicle-details">
+
+
+            <div class="vehicle-title-row">
+
+                <div>
+
+                    <h2>
+                        ${vehicleName}
+                    </h2>
+
+                    <span class="vehicle-year">
+                        ${year}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <p class="vehicle-location">
+
+                📍
+                ${location}
+
+            </p>
+
+
+
+            <!-- PRICE -->
+
+            <div class="vehicle-price">
+
+                ₹ ${dailyRent}
+
+                <span>
+                    / day
+                </span>
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <div class="vehicle-features">
+
+
+                <span>
+
+                    💺
+                    ${seats}
+                    Seats
+
+                </span>
+
+
+                <span>
+
+                    ⚙
+                    ${transmission}
+
+                </span>
+
+
+                <span>
+
+                    ⛽
+                    ${fuel}
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="vehicle-description">
+
+                ${
+                    vehicle.description ||
+                    "Your listed vehicle is available for comfortable city and long drives."
+                }
+
+            </p>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="vehicle-actions">
+
+                <button
+                    type="button"
+                    class="edit-vehicle-button"
+                    onclick="editVehicle('${vehicle.id}')"
+                >
+                    ✏️ Edit
+                </button>
+
+
+                <button
+                    type="button"
+                    class="remove-vehicle-button"
+                    onclick="removeVehicle('${vehicle.id}')"
+                >
+                    🗑 Remove
+                </button>
+
+            </div>
+
+
+        </div>
+
+    `;
+
+
+
+    container.appendChild(
+        card
+    );
+
+}
+
+
+
+/* =====================================================
+   REMOVE VEHICLE
+===================================================== */
+
+function removeVehicle(
+    vehicleId
+) {
+
+
+    const confirmRemove =
+        confirm(
+            "Are you sure you want to remove this vehicle?"
+        );
+
+
+    if (!confirmRemove) {
+
+        return;
+
+    }
+
+
+
+    const vehicles =
+        getOwnerVehicles();
+
+
+    const updatedVehicles =
+        vehicles.filter(
+            function(vehicle) {
+
+                return String(
+                    vehicle.id
+                ) !== String(
+                    vehicleId
+                );
+
+            }
+        );
+
+
+
+    localStorage.setItem(
+        "rideNowOwnerVehicles",
+        JSON.stringify(
+            updatedVehicles
+        )
+    );
+
+
+
+    if (
+        updatedVehicles.length > 0
+    ) {
+
+        localStorage.setItem(
+            "rideNowOwnerVehicle",
+            JSON.stringify(
+                updatedVehicles[0]
+            )
+        );
+
+
+        localStorage.setItem(
+            "rideNowOwnerVehiclePhotos",
+            JSON.stringify(
+                updatedVehicles[0].photos || []
+            )
+        );
+
+    }
+
+    else {
+
+        localStorage.removeItem(
+            "rideNowOwnerVehicle"
+        );
+
+
+        localStorage.removeItem(
+            "rideNowOwnerVehiclePhotos"
+        );
+
+    }
+
+
+
+    loadOwnerVehicles();
+
+
+    alert(
+        "Vehicle removed successfully."
+    );
+
+}
+
+
+
+/* =====================================================
+   EDIT VEHICLE
+===================================================== */
+
+function editVehicle(
+    vehicleId
+) {
+
+
+    localStorage.setItem(
+        "rideNowEditingVehicleId",
+        vehicleId
+    );
+
+
+    window.location.href =
+        "owner-vehicles.html";
+
+}
+
+
+
+/* =====================================================
+   ADD / MY VEHICLES
+===================================================== */
+
+function goToMyVehicles() {
+
+    window.location.href =
+        "owner-vehicles.html";
+
+}
+
+
+
+/* =====================================================
+   OWNER PROFILE
+===================================================== */
+
+function goToOwnerProfile() {
+
+    window.location.href =
+        "owner-profile.html";
+
+}
+
+
+
+/* =====================================================
+   PROFILE CLICK
+===================================================== */
+
+const profileButton =
+    document.getElementById(
+        "profileButton"
+    );
+
+
+if (profileButton) {
+
+    profileButton.addEventListener(
+        "click",
+        function() {
+
+            goToOwnerProfile();
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   BOOKINGS
+===================================================== */
+
+function loadOwnerBookings() {
+
+
+    let bookings = [];
+
+
+    const savedBookings =
+        localStorage.getItem(
+            "rideNowOwnerBookings"
+        );
+
+
+    if (savedBookings) {
+
+        try {
+
+            bookings =
+                JSON.parse(
+                    savedBookings
+                );
+
+        }
+
+        catch {
+
+            bookings = [];
+
+        }
+
+    }
+
+
+
+    if (!Array.isArray(bookings)) {
+
+        bookings = [];
+
+    }
+
+
+
+    const totalBookings =
+        document.getElementById(
+            "totalBookings"
+        );
+
+
+    totalBookings.textContent =
+        bookings.length;
+
+
+
+    const bookingList =
+        document.getElementById(
+            "bookingList"
+        );
+
+
+    bookingList.innerHTML = "";
+
+
+
+    if (bookings.length === 0) {
+
+        bookingList.innerHTML = `
+
+            <div class="no-bookings">
+
+                <div>
+                    📅
+                </div>
+
+                <p>
+                    No upcoming bookings
+                </p>
+
+                <span>
+                    Your vehicle bookings will
+                    appear here.
+                </span>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    bookings
+        .slice()
+        .reverse()
+        .slice(0, 5)
+        .forEach(
+            function(booking) {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "booking-item";
+
+
+                item.innerHTML = `
+
+                    <div class="booking-icon">
+
+                        ${
+                            booking.type &&
+                            booking.type.toLowerCase() === "bike"
+                                ? "🏍️"
+                                : "🚗"
+                        }
+
+                    </div>
+
+
+                    <div class="booking-info">
+
+                        <h3>
+
+                            ${
+                                booking.name ||
+                                "Vehicle"
+                            }
+
+                        </h3>
+
+                        <p>
+
+                            ${
+                                booking.date ||
+                                "Date not available"
+                            }
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="booking-status">
+
+                        ${
+                            booking.status ||
+                            "Booked"
+                        }
+
+                    </div>
+
+                `;
+
+
+                bookingList.appendChild(
+                    item
+                );
+
+            }
+        );
+
+}
+
+
+
+/* =====================================================
+   EARNINGS
+===================================================== */
+
+function loadOwnerEarnings() {
+
+
+    const savedBookings =
+        localStorage.getItem(
+            "rideNowOwnerBookings"
+        );
+
+
+    if (!savedBookings) {
+
+        document.getElementById(
+            "totalEarnings"
+        ).textContent = "0";
+
+        return;
+
+    }
+
+
+    try {
+
+        const bookings =
+            JSON.parse(
+                savedBookings
+            );
+
+
+        if (!Array.isArray(bookings)) {
+
+            return;
+
+        }
+
+
+        let earnings = 0;
+
+
+        bookings.forEach(
+            function(booking) {
+
+                const price =
+                    Number(
+                        booking.price ||
+                        booking.dailyRent ||
+                        0
+                    );
+
+
+                earnings +=
+                    price;
+
+            }
+        );
+
+
+        document.getElementById(
+            "totalEarnings"
+        ).textContent =
+            earnings.toLocaleString(
+                "en-IN"
+            );
+
+    }
+
+    catch {
+
+        document.getElementById(
+            "totalEarnings"
+        ).textContent = "0";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logoutOwner() {
+
+
+    const confirmLogout =
+        confirm(
+            "Are you sure you want to logout?"
+        );
+
+
+    if (!confirmLogout) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "isOwnerLoggedIn"
+    );
+
+
+    localStorage.removeItem(
+        "ownerLoggedIn"
+    );
+
+
+    window.location.href =
+        "owner-login.html";
+
+}
+
+
+
+/* =====================================================
+   LOAD EVERYTHING
+===================================================== */
+
+function loadOwnerHome() {
+
+    loadOwnerInformation();
+
+    loadOwnerVehicles();
+
+    loadOwnerBookings();
+
+    loadOwnerEarnings();
+
+}
+
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadOwnerHome();
+
+
+</script>
+
+
+</body>
+
+</html>

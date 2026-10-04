@@ -1,0 +1,3051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+===================================================== -->
+
+<header class="navbar">
+
+
+    <div class="logo">
+
+        <img
+            src="ride_now_logo.jpeg"
+            alt="Ride Now"
+        >
+
+    </div>
+
+
+    <nav>
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="home.html">
+            Browse Vehicles
+        </a>
+
+        <a href="#">
+            About
+        </a>
+
+        <a href="#">
+            Help
+        </a>
+
+    </nav>
+
+
+    <div class="user-section">
+
+
+        <img
+            id="navUserPhoto"
+            src="default-user.png"
+            alt="User Photo"
+        >
+
+
+        <span>
+
+            Hi,
+            <span id="navUserName">
+                User
+            </span>
+
+        </span>
+
+
+        
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     PROFILE PAGE
+===================================================== -->
+
+<main class="profile-container">
+
+  <!-- =================================================
+         BACK BUTTON
+    ================================================== -->
+
+    <button class="back-button" onclick="goBackHome()">
+    ← Back
+</button>
+
+
+    <!-- =================================================
+         PROFILE HEADER
+    ================================================== -->
+
+    <section class="profile-header">
+
+
+        <div class="profile-cover">
+
+
+            <div class="profile-user">
+
+
+                <!-- =========================================
+                     PROFILE PHOTO
+                ========================================== -->
+
+                <div class="profile-photo-area">
+
+
+                    <div class="profile-photo-box">
+
+
+                        <img
+                            id="profilePhoto"
+                            src="default-user.png"
+                            alt="Profile Photo"
+                        >
+
+
+                    </div>
+
+
+                    <!-- CHANGE PHOTO BUTTON -->
+
+                    <label
+                        for="profilePhotoInput"
+                        class="change-photo-button"
+                    >
+
+                        📷 Change Photo
+
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="profilePhotoInput"
+                        accept="image/png, image/jpeg, image/jpg"
+                    >
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     BASIC INFORMATION
+                ========================================== -->
+
+                <div class="profile-basic-info">
+
+
+                    <h1 id="profileName">
+
+                        User
+
+                    </h1>
+
+
+                    <span class="renter-badge">
+
+                        Renter
+
+                    </span>
+
+
+                    <p id="profileEmail">
+
+                        Email
+
+                    </p>
+
+
+                    <p id="profilePhone">
+
+                        Phone
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- EDIT PROFILE -->
+
+            <button
+                class="edit-profile-button"
+                id="editProfileButton"
+                type="button"
+            >
+
+                ✎ Edit Profile
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <section class="stats-container">
+
+
+        <div class="stat-card">
+
+
+            <div class="stat-icon orange">
+
+                📅
+
+            </div>
+
+
+            <div>
+
+                <h2 id="totalBookings">
+
+                    0
+
+                </h2>
+
+
+                <p>
+
+                    Total Bookings
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+
+            <div class="stat-icon blue">
+
+                🚗
+
+            </div>
+
+
+            <div>
+
+                <h2 id="carBookings">
+
+                    0
+
+                </h2>
+
+
+                <p>
+
+                    Car Rentals
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+
+            <div class="stat-icon pink">
+
+                🏍️
+
+            </div>
+
+
+            <div>
+
+                <h2 id="bikeBookings">
+
+                    0
+
+                </h2>
+
+
+                <p>
+
+                    Bike Rentals
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+
+            <div class="stat-icon yellow">
+
+                ⭐
+
+            </div>
+
+
+            <div>
+
+                <h2>
+
+                    0
+
+                </h2>
+
+
+                <p>
+
+                    Average Rating
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         TWO COLUMN SECTION
+    ================================================== -->
+
+    <section class="profile-grid">
+
+
+        <!-- =============================================
+             PERSONAL INFORMATION
+        ============================================== -->
+
+        <div class="profile-card personal-card">
+
+
+            <div class="card-heading">
+
+
+                <div class="heading-left">
+
+
+                    <div class="heading-icon">
+
+                        👤
+
+                    </div>
+
+
+                    <h2>
+
+                        Personal Information
+
+                    </h2>
+
+
+                </div>
+
+
+                <button
+                    class="small-edit"
+                    id="editPersonalButton"
+                    type="button"
+                >
+
+                    ✎ Edit
+
+                </button>
+
+
+            </div>
+
+
+
+            <div class="personal-details">
+
+
+                <!-- NAME -->
+
+                <div class="detail-row">
+
+
+                    <div class="detail-icon">
+
+                        👤
+
+                    </div>
+
+
+                    <div>
+
+
+                        <small>
+
+                            Full Name
+
+                        </small>
+
+
+                        <p id="personalName">
+
+                            User
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="detail-row">
+
+
+                    <div class="detail-icon">
+
+                        ✉
+
+                    </div>
+
+
+                    <div>
+
+
+                        <small>
+
+                            Email Address
+
+                        </small>
+
+
+                        <p id="personalEmail">
+
+                            -
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="detail-row">
+
+
+                    <div class="detail-icon">
+
+                        ☎
+
+                    </div>
+
+
+                    <div>
+
+
+                        <small>
+
+                            Phone Number
+
+                        </small>
+
+
+                        <p id="personalPhone">
+
+                            -
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="detail-row">
+
+
+                    <div class="detail-icon">
+
+                        📍
+
+                    </div>
+
+
+                    <div>
+
+
+                        <small>
+
+                            Address
+
+                        </small>
+
+
+                        <p id="personalAddress">
+
+                            -
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             BOOKING HISTORY
+        ============================================== -->
+
+        <div class="profile-card booking-card">
+
+
+            <div class="card-heading">
+
+
+                <div class="heading-left">
+
+
+                    <div class="heading-icon">
+
+                        🕘
+
+                    </div>
+
+
+                    <h2>
+
+                        Booking History
+
+                    </h2>
+
+
+                </div>
+
+
+                <button
+                    class="view-all"
+                    id="viewAllBookings"
+                    type="button"
+                >
+
+                    View All
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                id="bookingHistory"
+                class="booking-history"
+            >
+
+                <!-- Booking items appear here -->
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         KYC + QUICK ACTIONS
+    ================================================== -->
+
+    <section class="bottom-grid">
+
+
+        <!-- =============================================
+             KYC VERIFICATION
+        ============================================== -->
+
+        <div class="profile-card">
+
+
+            <div class="card-heading">
+
+
+                <div class="heading-left">
+
+
+                    <div class="heading-icon">
+
+                        🛡️
+
+                    </div>
+
+
+                    <h2>
+
+                        KYC Verification
+
+                    </h2>
+
+
+                </div>
+
+
+                <span
+                    class="verified-badge"
+                    id="kycStatus"
+                >
+
+                    Verified
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="kyc-list">
+
+
+                <!-- AADHAAR -->
+
+                <div class="kyc-item">
+
+
+                    <div class="kyc-left">
+
+
+                        <span class="kyc-icon">
+
+                            ▣
+
+                        </span>
+
+
+                        <span>
+
+                            Aadhaar Card
+
+                        </span>
+
+
+                    </div>
+
+
+                    <span
+                        class="document-status"
+                        id="aadhaarStatus"
+                    >
+
+                        Not Uploaded
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- DRIVING LICENCE -->
+
+                <div class="kyc-item">
+
+
+                    <div class="kyc-left">
+
+
+                        <span class="kyc-icon">
+
+                            ▣
+
+                        </span>
+
+
+                        <span>
+
+                            Driving Licence
+
+                        </span>
+
+
+                    </div>
+
+
+                    <span
+                        class="document-status"
+                        id="drivingStatus"
+                    >
+
+                        Not Uploaded
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- PAN -->
+
+                <div class="kyc-item">
+
+
+                    <div class="kyc-left">
+
+
+                        <span class="kyc-icon">
+
+                            ▣
+
+                        </span>
+
+
+                        <span>
+
+                            PAN Card
+
+                        </span>
+
+
+                    </div>
+
+
+                    <span
+                        class="document-status"
+                        id="panStatus"
+                    >
+
+                        Not Uploaded
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="kyc-item">
+
+
+                    <div class="kyc-left">
+
+
+                        <span class="kyc-icon">
+
+                            👤
+
+                        </span>
+
+
+                        <span>
+
+                            Profile Photo
+
+                        </span>
+
+
+                    </div>
+
+
+                    <span
+                        class="document-status"
+                        id="photoStatus"
+                    >
+
+                        Not Uploaded
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             QUICK ACTIONS
+        ============================================== -->
+
+        <div class="profile-card">
+
+
+            <div class="card-heading">
+
+
+                <div class="heading-left">
+
+
+                    <div class="heading-icon">
+
+                        ⚡
+
+                    </div>
+
+
+                    <h2>
+
+                        Quick Actions
+
+                    </h2>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="quick-actions">
+
+
+                <!-- UPDATE DOCUMENTS -->
+
+                <button
+                    class="action-button"
+                    id="updateDocuments"
+                    type="button"
+                >
+
+
+                    <span class="action-icon">
+
+                        📄
+
+                    </span>
+
+
+                    <span>
+
+                        Update Documents
+
+                    </span>
+
+
+                    <span class="action-arrow">
+
+                        ›
+
+                    </span>
+
+
+                </button>
+
+                <div id="documentUpdateBox" style="display: none; margin-top: 15px;">
+
+    <div class="document-update-card">
+
+        <h3>Update Your Documents</h3>
+
+        <label>
+            Aadhaar Card
+        </label>
+
+        <input
+            type="file"
+            id="updateAadhaar"
+            accept=".jpg,.jpeg,.png,.pdf"
+        >
+
+        <label>
+            Driving Licence
+        </label>
+
+        <input
+            type="file"
+            id="updateDriving"
+            accept=".jpg,.jpeg,.png,.pdf"
+        >
+
+        <label>
+            PAN Card
+        </label>
+
+        <input
+            type="file"
+            id="updatePan"
+            accept=".jpg,.jpeg,.png,.pdf"
+        >
+
+        <button
+            type="button"
+            id="saveDocuments"
+            class="action-button"
+        >
+            Save Documents
+        </button>
+
+    </div>
+
+</div>
+
+
+
+                <!-- CHANGE PASSWORD -->
+
+                <button
+                    class="action-button"
+                    id="changePassword"
+                    type="button"
+                >
+
+
+                    <span class="action-icon">
+
+                        🔒
+
+                    </span>
+
+
+                    <span>
+
+                        Change Password
+
+                    </span>
+
+
+                    <span class="action-arrow">
+
+                        ›
+
+                    </span>
+
+
+                </button>
+
+
+
+                <!-- CONTACT SUPPORT -->
+
+                <button
+                    class="action-button"
+                    id="contactSupport"
+                    type="button"
+                >
+
+
+                    <span class="action-icon">
+
+                        🎧
+
+                    </span>
+
+
+                    <span>
+
+                        Contact Support
+
+                    </span>
+
+
+                    <span class="action-arrow">
+
+                        ›
+
+                    </span>
+
+
+                </button>
+
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    class="action-button logout-action"
+                    id="logoutButton"
+                    type="button"
+                >
+
+
+                    <span class="action-icon">
+
+                        ⇥
+
+                    </span>
+
+
+                    <span>
+
+                        Logout
+
+                    </span>
+
+
+                    <span class="action-arrow">
+
+                        ›
+
+                    </span>
+
+
+                </button>
+
+
+
+                <!-- DELETE ACCOUNT -->
+
+                <button
+                    class="action-button delete-action"
+                    id="deleteAccountButton"
+                    type="button"
+                >
+
+
+                    <span class="action-icon">
+
+                        🗑️
+
+                    </span>
+
+
+                    <span>
+
+                        Delete Account
+
+                    </span>
+
+
+                    <span class="action-arrow">
+
+                        ›
+
+                    </span>
+
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECURITY MESSAGE
+    ================================================== -->
+
+    <section class="security-card">
+
+
+        <div class="security-icon">
+
+            🛡️
+
+        </div>
+
+
+        <div>
+
+
+            <h3>
+
+                Ride Safe. Stay Updated.
+
+            </h3>
+
+
+            <p>
+
+                Your personal information, documents and bookings
+                are securely stored with Ride Now.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     EDIT PROFILE MODAL
+===================================================== -->
+
+<div
+    id="editModal"
+    class="modal"
+>
+
+
+    <div class="modal-box">
+
+
+        <button
+            class="close-modal"
+            id="closeModal"
+            type="button"
+        >
+
+            ×
+
+        </button>
+
+
+        <h2>
+
+            Edit Profile
+
+        </h2>
+
+
+
+        <!-- NAME -->
+
+        <label>
+
+            Full Name
+
+        </label>
+
+
+        <input
+            type="text"
+            id="editName"
+            placeholder="Enter your name"
+        >
+
+
+
+        <!-- EMAIL -->
+
+        <label>
+
+            Email
+
+        </label>
+
+
+        <input
+            type="email"
+            id="editEmail"
+            placeholder="Enter your email"
+        >
+
+
+
+        <!-- PHONE -->
+
+        <label>
+
+            Phone
+
+        </label>
+
+
+        <input
+            type="text"
+            id="editPhone"
+            placeholder="Enter your phone"
+        >
+
+
+
+        <!-- ADDRESS -->
+
+        <label>
+
+            Address
+
+        </label>
+
+
+        <textarea
+            id="editAddress"
+            placeholder="Enter your address"
+        ></textarea>
+
+
+
+        <button
+            class="save-button"
+            id="saveProfile"
+            type="button"
+        >
+
+            Save Changes
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+<!-- =====================================================
+     CHANGE PASSWORD BOX
+===================================================== -->
+
+<div
+    id="passwordModal"
+    class="password-modal"
+>
+
+    <div class="password-modal-content">
+
+        <button
+            type="button"
+            id="closePasswordModal"
+            class="password-close"
+        >
+            ×
+        </button>
+
+        <h2>Change Password</h2>
+
+        <p>
+            Create a new password for your Ride Now account.
+        </p>
+
+
+        <!-- NEW PASSWORD -->
+
+        <label for="newPassword">
+            New Password
+        </label>
+
+        <div class="password-input-wrap">
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="Enter new password"
+                autocomplete="new-password"
+            >
+
+            <button
+                type="button"
+                onclick="toggleNewPassword('newPassword', this)"
+            >
+                👁
+            </button>
+
+        </div>
+
+
+        <!-- PASSWORD RULES -->
+
+        <div class="change-password-rules">
+
+            <span id="newRuleLength">
+                ○ At least 6 characters
+            </span>
+
+            <span id="newRuleLetter">
+                ○ At least one letter
+            </span>
+
+            <span id="newRuleNumber">
+                ○ At least one number
+            </span>
+
+        </div>
+
+
+        <!-- CONFIRM PASSWORD -->
+
+        <label for="confirmNewPassword">
+            Confirm New Password
+        </label>
+
+        <div class="password-input-wrap">
+
+            <input
+                type="password"
+                id="confirmNewPassword"
+                placeholder="Confirm new password"
+                autocomplete="new-password"
+            >
+
+            <button
+                type="button"
+                onclick="toggleNewPassword('confirmNewPassword', this)"
+            >
+                👁
+            </button>
+
+        </div>
+
+
+        <p
+            id="changePasswordError"
+            class="change-password-error"
+        ></p>
+
+
+        <button
+            type="button"
+            id="saveNewPassword"
+            class="save-password-button"
+        >
+            Change Password
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   LOGIN PROTECTION
+===================================================== */
+
+const isLoggedIn =
+    localStorage.getItem("isLoggedIn");
+
+
+if (isLoggedIn !== "true") {
+
+    window.location.href = "login.html";
+
+}
+
+
+
+/* =====================================================
+   LOAD USER INFORMATION
+===================================================== */
+
+let savedName =
+    localStorage.getItem("userName") || "User";
+
+
+let savedEmail =
+    localStorage.getItem("userEmail") || "-";
+
+
+let savedPhone =
+    localStorage.getItem("userPhone") || "-";
+
+
+let savedAddress =
+    localStorage.getItem("userAddress") || "-";
+
+
+let savedPhoto =
+    localStorage.getItem("userPhoto");
+
+
+
+/* =====================================================
+   DISPLAY USER INFORMATION
+===================================================== */
+
+document.getElementById("profileName").textContent =
+    savedName;
+
+
+document.getElementById("profileEmail").textContent =
+    savedEmail;
+
+
+document.getElementById("profilePhone").textContent =
+    savedPhone;
+
+
+
+document.getElementById("personalName").textContent =
+    savedName;
+
+
+document.getElementById("personalEmail").textContent =
+    savedEmail;
+
+
+document.getElementById("personalPhone").textContent =
+    savedPhone;
+
+
+document.getElementById("personalAddress").textContent =
+    savedAddress;
+
+
+
+document.getElementById("navUserName").textContent =
+    savedName;
+
+
+
+/* =====================================================
+   DISPLAY SAVED PROFILE PHOTO
+===================================================== */
+
+if (savedPhoto) {
+
+    document.getElementById("profilePhoto").src =
+        savedPhoto;
+
+
+    document.getElementById("navUserPhoto").src =
+        savedPhoto;
+
+}
+
+
+
+/* =====================================================
+   PROFILE PHOTO UPLOAD
+===================================================== */
+
+const profilePhotoInput =
+    document.getElementById("profilePhotoInput");
+
+
+const profilePhoto =
+    document.getElementById("profilePhoto");
+
+
+profilePhotoInput.addEventListener(
+    "change",
+    function() {
+
+
+        const file =
+            profilePhotoInput.files[0];
+
+
+        if (!file) {
+
+            return;
+
+        }
+
+
+
+        /* Check image type */
+
+        if (!file.type.startsWith("image/")) {
+
+            alert(
+                "Please select a valid image file."
+            );
+
+            profilePhotoInput.value = "";
+
+            return;
+
+        }
+
+
+
+        /* Check file size */
+
+        if (file.size > 5 * 1024 * 1024) {
+
+            alert(
+                "Please select an image smaller than 5 MB."
+            );
+
+            profilePhotoInput.value = "";
+
+            return;
+
+        }
+
+
+
+        /* Read image */
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function(event) {
+
+
+                const image =
+                    new Image();
+
+
+                image.onload =
+                    function() {
+
+
+                        /*
+                           Compress image before storing.
+                           This prevents localStorage
+                           from becoming too large.
+                        */
+
+
+                        const canvas =
+                            document.createElement(
+                                "canvas"
+                            );
+
+
+                        const maxWidth = 400;
+
+                        const maxHeight = 400;
+
+
+                        let width =
+                            image.width;
+
+
+                        let height =
+                            image.height;
+
+
+
+                        /* Resize */
+
+                        if (width > height) {
+
+
+                            if (width > maxWidth) {
+
+                                height =
+                                    height *
+                                    (maxWidth / width);
+
+                                width =
+                                    maxWidth;
+
+                            }
+
+
+                        }
+
+                        else {
+
+
+                            if (height > maxHeight) {
+
+                                width =
+                                    width *
+                                    (maxHeight / height);
+
+                                height =
+                                    maxHeight;
+
+                            }
+
+                        }
+
+
+
+                        canvas.width =
+                            width;
+
+
+                        canvas.height =
+                            height;
+
+
+
+                        const context =
+                            canvas.getContext(
+                                "2d"
+                            );
+
+
+                        context.drawImage(
+                            image,
+                            0,
+                            0,
+                            width,
+                            height
+                        );
+
+
+
+                        /*
+                           Convert to compressed JPEG
+                        */
+
+                        const compressedPhoto =
+                            canvas.toDataURL(
+                                "image/jpeg",
+                                0.8
+                            );
+
+
+
+                        try {
+
+
+                            /*
+                               Save using the SAME
+                               userPhoto key.
+                            */
+
+                            localStorage.setItem(
+                                "userPhoto",
+                                compressedPhoto
+                            );
+
+
+                            /*
+                               Update profile image
+                            */
+
+                            profilePhoto.src =
+                                compressedPhoto;
+
+
+                            /*
+                               Update navbar image
+                            */
+
+                            document.getElementById(
+                                "navUserPhoto"
+                            ).src =
+                                compressedPhoto;
+
+
+
+                            /*
+                               Update KYC status
+                            */
+
+                            document.getElementById(
+                                "photoStatus"
+                            ).textContent =
+                                "✓ Uploaded";
+
+
+                            /*
+                               Add uploaded class
+                            */
+
+                            document.getElementById(
+                                "photoStatus"
+                            ).classList.add(
+                                "uploaded"
+                            );
+
+
+                            alert(
+                                "Profile photo updated successfully!"
+                            );
+
+
+                        }
+
+                        catch(error) {
+
+
+                            alert(
+                                "Unable to save the photo. Please try a smaller image."
+                            );
+
+
+                        }
+
+
+                    };
+
+
+                image.src =
+                    event.target.result;
+
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+
+    }
+);
+
+
+
+/* =====================================================
+   LOAD EDIT FORM
+===================================================== */
+
+document.getElementById("editName").value =
+    savedName;
+
+
+document.getElementById("editEmail").value =
+    savedEmail;
+
+
+document.getElementById("editPhone").value =
+    savedPhone;
+
+
+document.getElementById("editAddress").value =
+    savedAddress;
+
+
+
+/* =====================================================
+   BOOKING HISTORY
+===================================================== */
+
+const bookingHistory =
+    JSON.parse(
+        localStorage.getItem(
+            "bookingHistory"
+        ) || "[]"
+    );
+
+
+
+/* =====================================================
+   BOOKING STATISTICS
+===================================================== */
+
+const totalBookings =
+    bookingHistory.length;
+
+
+const carBookings =
+    bookingHistory.filter(
+        function(booking) {
+
+            return (
+                booking.type &&
+                booking.type.toLowerCase() ===
+                "car"
+            );
+
+        }
+    ).length;
+
+
+const bikeBookings =
+    bookingHistory.filter(
+        function(booking) {
+
+            return (
+                booking.type &&
+                booking.type.toLowerCase() ===
+                "bike"
+            );
+
+        }
+    ).length;
+
+
+
+document.getElementById(
+    "totalBookings"
+).textContent =
+    totalBookings;
+
+
+document.getElementById(
+    "carBookings"
+).textContent =
+    carBookings;
+
+
+document.getElementById(
+    "bikeBookings"
+).textContent =
+    bikeBookings;
+
+
+
+/* =====================================================
+   DISPLAY BOOKING HISTORY
+===================================================== */
+
+const bookingContainer =
+    document.getElementById(
+        "bookingHistory"
+    );
+
+
+
+if (bookingHistory.length === 0) {
+
+
+    bookingContainer.innerHTML = `
+
+        <div class="no-bookings">
+
+            <div class="no-booking-icon">
+                🚗
+            </div>
+
+            <p>
+                No bookings yet
+            </p>
+
+            <span>
+                Your rented cars and bikes will appear here.
+            </span>
+
+        </div>
+
+    `;
+
+
+}
+
+else {
+
+
+    bookingHistory
+        .slice()
+        .reverse()
+        .forEach(
+            function(booking) {
+
+
+                const bookingItem =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                bookingItem.className =
+                    "booking-item";
+
+
+                bookingItem.innerHTML = `
+
+                    <img
+                        src="${booking.image || "default-user.png"}"
+                        alt="${booking.name || "Vehicle"}"
+                        class="booking-image"
+                    >
+
+                    <div class="booking-info">
+
+                        <h3>
+                            ${booking.name || "Vehicle"}
+                        </h3>
+
+                        <span class="booking-type">
+                            ${booking.type || "Vehicle"}
+                        </span>
+
+                        <p>
+                            ${booking.date || "-"}
+                        </p>
+
+                    </div>
+
+                    <div class="booking-right">
+
+                        <span class="booking-status">
+                            ${booking.status || "Booked"}
+                        </span>
+
+                        <strong>
+                            ₹ ${booking.price || 0}/hr
+                        </strong>
+
+                    </div>
+
+                `;
+
+
+                bookingContainer.appendChild(
+                    bookingItem
+                );
+
+
+            }
+        );
+
+
+}
+
+
+
+/* =====================================================
+   VIEW ALL BOOKINGS
+===================================================== */
+
+document.getElementById(
+    "viewAllBookings"
+).addEventListener(
+    "click",
+    function() {
+
+
+        if (bookingHistory.length === 0) {
+
+            alert(
+                "You do not have any bookings yet."
+            );
+
+            return;
+
+        }
+
+
+        /*
+           The current page already displays
+           the complete booking history.
+        */
+
+        bookingContainer.scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+    }
+);
+
+
+
+/* =====================================================
+   DOCUMENT STATUS
+===================================================== */
+
+function checkDocument(
+    documentName,
+    elementId
+) {
+
+    const documents =
+        JSON.parse(
+            localStorage.getItem("rideNowDocuments") || "{}"
+        );
+
+    const element =
+        document.getElementById(elementId);
+
+    if (documents[documentName]) {
+
+        element.textContent =
+            "✓ Uploaded";
+
+        element.classList.add(
+            "uploaded"
+        );
+
+    }
+    else {
+
+        element.textContent =
+            "Not Uploaded";
+
+        element.classList.add(
+            "not-uploaded"
+        );
+
+    }
+
+}
+
+
+
+checkDocument(
+    "aadhaar",
+    "aadhaarStatus"
+);
+
+checkDocument(
+    "drivingLicense",
+    "drivingStatus"
+);
+
+checkDocument(
+    "pan",
+    "panStatus"
+);
+
+
+/* =====================================================
+   UPDATE DOCUMENTS
+===================================================== */
+
+document
+    .getElementById("updateDocuments")
+    .addEventListener("click", function () {
+
+        document.getElementById(
+            "documentUpdateBox"
+        ).style.display = "block";
+
+    });
+
+
+document
+    .getElementById("saveDocuments")
+    .addEventListener("click", function () {
+
+        const aadhaar =
+            document.getElementById(
+                "updateAadhaar"
+            ).files[0];
+
+        const driving =
+            document.getElementById(
+                "updateDriving"
+            ).files[0];
+
+        const pan =
+            document.getElementById(
+                "updatePan"
+            ).files[0];
+
+
+        /* Get existing documents */
+
+        const documents =
+            JSON.parse(
+                localStorage.getItem(
+                    "rideNowDocuments"
+                ) || "{}"
+            );
+
+
+        /* Update selected documents */
+
+        if (aadhaar) {
+
+            documents.aadhaar =
+                aadhaar.name;
+
+        }
+
+
+        if (driving) {
+
+            documents.drivingLicense =
+                driving.name;
+
+        }
+
+
+        if (pan) {
+
+            documents.pan =
+                pan.name;
+
+        }
+
+
+        /* Save */
+
+        localStorage.setItem(
+            "rideNowDocuments",
+            JSON.stringify(documents)
+        );
+
+
+        /* Update document status */
+
+        checkDocument(
+            "aadhaar",
+            "aadhaarStatus"
+        );
+
+        checkDocument(
+            "drivingLicense",
+            "drivingStatus"
+        );
+
+        checkDocument(
+            "pan",
+            "panStatus"
+        );
+
+
+        /* Update KYC */
+
+        updateKycStatus();
+
+
+        /* Close upload section */
+
+        document.getElementById(
+            "documentUpdateBox"
+        ).style.display = "none";
+
+    });
+
+/* =====================================================
+   PROFILE PHOTO STATUS
+===================================================== */
+
+if (savedPhoto) {
+
+
+    document.getElementById(
+        "photoStatus"
+    ).textContent =
+        "✓ Uploaded";
+
+
+    document.getElementById(
+        "photoStatus"
+    ).classList.add(
+        "uploaded"
+    );
+
+
+}
+
+else {
+
+
+    document.getElementById(
+        "photoStatus"
+    ).textContent =
+        "Not Uploaded";
+
+
+    document.getElementById(
+        "photoStatus"
+    ).classList.add(
+        "not-uploaded"
+    );
+
+
+}
+
+
+
+/* =====================================================
+   KYC STATUS
+===================================================== */
+
+function updateKycStatus() {
+
+    const documents =
+        JSON.parse(
+            localStorage.getItem("rideNowDocuments") || "{}"
+        );
+
+    const aadhaar =
+        documents.aadhaar;
+
+    const driving =
+        documents.drivingLicense;
+
+    const pan =
+        documents.pan;
+
+    const photo =
+        localStorage.getItem(
+            "userPhoto"
+        );
+
+    const kycStatus =
+        document.getElementById(
+            "kycStatus"
+        );
+
+    if (
+        aadhaar &&
+        driving &&
+        pan &&
+        photo
+    ) {
+
+        kycStatus.textContent =
+            "Verified";
+
+    }
+    else {
+
+        kycStatus.textContent =
+            "Pending";
+
+    }
+
+}
+
+
+updateKycStatus();
+
+
+
+/* =====================================================
+   EDIT PROFILE MODAL
+===================================================== */
+
+const editModal =
+    document.getElementById(
+        "editModal"
+    );
+
+
+
+document.getElementById(
+    "editProfileButton"
+).addEventListener(
+    "click",
+    function() {
+
+
+        editModal.classList.add(
+            "show"
+        );
+
+
+    }
+);
+
+
+
+document.getElementById(
+    "editPersonalButton"
+).addEventListener(
+    "click",
+    function() {
+
+
+        editModal.classList.add(
+            "show"
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+document.getElementById(
+    "closeModal"
+).addEventListener(
+    "click",
+    function() {
+
+
+        editModal.classList.remove(
+            "show"
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
+
+editModal.addEventListener(
+    "click",
+    function(event) {
+
+
+        if (
+            event.target ===
+            editModal
+        ) {
+
+
+            editModal.classList.remove(
+                "show"
+            );
+
+
+        }
+
+
+    }
+);
+
+
+
+/* =====================================================
+   SAVE PROFILE
+===================================================== */
+
+document.getElementById(
+    "saveProfile"
+).addEventListener(
+    "click",
+    function() {
+
+
+        const newName =
+            document.getElementById(
+                "editName"
+            ).value.trim();
+
+
+        const newEmail =
+            document.getElementById(
+                "editEmail"
+            ).value.trim();
+
+
+        const newPhone =
+            document.getElementById(
+                "editPhone"
+            ).value.trim();
+
+
+        const newAddress =
+            document.getElementById(
+                "editAddress"
+            ).value.trim();
+
+
+
+        /* Validate */
+
+        if (
+            newName === "" ||
+            newEmail === "" ||
+            newPhone === "" ||
+            newAddress === ""
+        ) {
+
+
+            alert(
+                "Please fill all profile details."
+            );
+
+
+            return;
+
+        }
+
+
+
+        /* Email validation */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (
+            !emailPattern.test(
+                newEmail
+            )
+        ) {
+
+
+            alert(
+                "Please enter a valid email address."
+            );
+
+
+            return;
+
+        }
+
+
+
+        /* Phone validation */
+
+        if (
+            !/^[0-9]{10}$/.test(
+                newPhone
+            )
+        ) {
+
+
+            alert(
+                "Phone number must contain exactly 10 digits."
+            );
+
+
+            return;
+
+        }
+
+
+
+        /* Save user information */
+
+        localStorage.setItem(
+            "userName",
+            newName
+        );
+
+
+        localStorage.setItem(
+            "userEmail",
+            newEmail
+        );
+
+
+        localStorage.setItem(
+            "userPhone",
+            newPhone
+        );
+
+
+        localStorage.setItem(
+            "userAddress",
+            newAddress
+        );
+
+
+
+        /* Update account */
+
+        const savedAccount =
+            localStorage.getItem(
+                "rideNowAccount"
+            );
+
+
+        if (savedAccount) {
+
+
+            try {
+
+
+                const account =
+                    JSON.parse(
+                        savedAccount
+                    );
+
+
+                account.name =
+                    newName;
+
+
+                account.email =
+                    newEmail;
+
+
+                account.phone =
+                    newPhone;
+
+
+                account.address =
+                    newAddress;
+
+
+                localStorage.setItem(
+                    "rideNowAccount",
+                    JSON.stringify(
+                        account
+                    )
+                );
+
+
+            }
+
+            catch(error) {
+
+
+                console.log(
+                    "Account update error:",
+                    error
+                );
+
+
+            }
+
+
+        }
+
+
+
+        alert(
+            "Profile updated successfully!"
+        );
+
+
+        editModal.classList.remove(
+            "show"
+        );
+
+
+        location.reload();
+
+
+    }
+);
+
+document.getElementById(
+    "updateDocuments"
+).addEventListener(
+    "click",
+    function() {
+
+        document.getElementById(
+            "documentUpdateBox"
+        ).style.display = "block";
+
+    }
+);
+
+
+
+/* =====================================================
+   CHANGE PASSWORD
+===================================================== */
+
+const passwordModal =
+    document.getElementById(
+        "passwordModal"
+    );
+
+
+/* Open Change Password */
+
+document.getElementById(
+    "changePassword"
+).addEventListener(
+    "click",
+    function() {
+
+        passwordModal.classList.add(
+            "show"
+        );
+
+        document.getElementById(
+            "newPassword"
+        ).value = "";
+
+        document.getElementById(
+            "confirmNewPassword"
+        ).value = "";
+
+        document.getElementById(
+            "changePasswordError"
+        ).textContent = "";
+
+    }
+);
+
+
+/* Close */
+
+document.getElementById(
+    "closePasswordModal"
+).addEventListener(
+    "click",
+    function() {
+
+        passwordModal.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* Close when clicking outside */
+
+passwordModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            passwordModal
+        ) {
+
+            passwordModal.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* Show / Hide password */
+
+function toggleNewPassword(
+    id,
+    button
+) {
+
+    const input =
+        document.getElementById(id);
+
+    if (
+        input.type === "password"
+    ) {
+
+        input.type = "text";
+
+    }
+
+    else {
+
+        input.type = "password";
+
+    }
+
+}
+
+
+/* Password rules */
+
+document.getElementById(
+    "newPassword"
+).addEventListener(
+    "input",
+    function() {
+
+        const password =
+            this.value;
+
+
+        document.getElementById(
+            "newRuleLength"
+        ).textContent =
+            (
+                password.length >= 6
+                ? "✓"
+                : "○"
+            )
+            +
+            " At least 6 characters";
+
+
+        document.getElementById(
+            "newRuleLetter"
+        ).textContent =
+            (
+                /[A-Za-z]/.test(password)
+                ? "✓"
+                : "○"
+            )
+            +
+            " At least one letter";
+
+
+        document.getElementById(
+            "newRuleNumber"
+        ).textContent =
+            (
+                /[0-9]/.test(password)
+                ? "✓"
+                : "○"
+            )
+            +
+            " At least one number";
+
+    }
+);
+
+
+/* Save new password */
+
+document.getElementById(
+    "saveNewPassword"
+).addEventListener(
+    "click",
+    function() {
+
+        const newPassword =
+            document.getElementById(
+                "newPassword"
+            ).value;
+
+        const confirmPassword =
+            document.getElementById(
+                "confirmNewPassword"
+            ).value;
+
+        const error =
+            document.getElementById(
+                "changePasswordError"
+            );
+
+
+        error.textContent = "";
+
+
+        /* Validate password */
+
+        if (!newPassword) {
+
+            error.textContent =
+                "Please enter a new password.";
+
+            return;
+
+        }
+
+
+        if (
+            newPassword.length < 6 ||
+            !/[A-Za-z]/.test(newPassword) ||
+            !/[0-9]/.test(newPassword)
+        ) {
+
+            error.textContent =
+                "Password must contain at least 6 characters, one letter and one number.";
+
+            return;
+
+        }
+
+
+        /* Confirm password */
+
+        if (!confirmPassword) {
+
+            error.textContent =
+                "Please confirm your new password.";
+
+            return;
+
+        }
+
+
+        if (
+            newPassword !==
+            confirmPassword
+        ) {
+
+            error.textContent =
+                "Passwords do not match.";
+
+            return;
+
+        }
+
+
+        /* Get account */
+
+        const savedAccount =
+            localStorage.getItem(
+                "rideNowAccount"
+            );
+
+
+        if (!savedAccount) {
+
+            error.textContent =
+                "Account not found.";
+
+            return;
+
+        }
+
+
+        try {
+
+            const account =
+                JSON.parse(
+                    savedAccount
+                );
+
+
+            /* Update password */
+
+            account.password =
+                newPassword;
+
+
+            /* Save updated account */
+
+            localStorage.setItem(
+                "rideNowAccount",
+                JSON.stringify(account)
+            );
+
+
+            /* Close modal */
+
+            passwordModal.classList.remove(
+                "show"
+            );
+
+
+            /* Success */
+
+            alert(
+                "Password changed successfully!"
+            );
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Password update error:",
+                error
+            );
+
+            error.textContent =
+                "Unable to change password. Please try again.";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CONTACT SUPPORT
+===================================================== */
+
+document.getElementById(
+    "contactSupport"
+).addEventListener(
+    "click",
+    function() {
+
+
+        alert(
+            "Contact Support: support@ridenow.com"
+        );
+
+
+    }
+);
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+document.getElementById(
+    "logoutButton"
+).addEventListener(
+    "click",
+    function() {
+
+
+        /*
+           IMPORTANT:
+
+           Logout only ends the current session.
+
+           Account information,
+           profile photo,
+           bookings etc.
+           are NOT deleted.
+        */
+
+
+        localStorage.removeItem(
+            "isLoggedIn"
+        );
+
+
+        window.location.href =
+            "login.html";
+
+
+    }
+);
+
+
+
+/* =====================================================
+   DELETE ACCOUNT
+===================================================== */
+
+document.getElementById(
+    "deleteAccountButton"
+).addEventListener(
+    "click",
+    function() {
+
+
+        const confirmDelete =
+            confirm(
+                "Are you sure you want to delete your Ride Now account?\n\nYour profile, photo, account information and booking history will be permanently removed."
+            );
+
+
+        if (!confirmDelete) {
+
+            return;
+
+        }
+
+
+
+        /*
+           Delete account information
+        */
+
+        localStorage.removeItem(
+            "rideNowAccount"
+        );
+
+
+        localStorage.removeItem(
+            "isLoggedIn"
+        );
+
+
+        localStorage.removeItem(
+            "userName"
+        );
+
+
+        localStorage.removeItem(
+            "userEmail"
+        );
+
+
+        localStorage.removeItem(
+            "userPhone"
+        );
+
+
+        localStorage.removeItem(
+            "userAddress"
+        );
+
+
+        localStorage.removeItem(
+            "userPhoto"
+        );
+
+
+        localStorage.removeItem(
+            "bookingHistory"
+        );
+
+
+        /*
+           Delete KYC documents if stored
+        */
+
+        localStorage.removeItem(
+            "aadhaarCard"
+        );
+
+
+        localStorage.removeItem(
+            "drivingLicence"
+        );
+
+
+        localStorage.removeItem(
+            "panCard"
+        );
+
+
+        /*
+           Delete selected vehicle
+           if one exists
+        */
+
+        localStorage.removeItem(
+            "selectedVehicle"
+        );
+
+
+
+        alert(
+            "Your Ride Now account has been deleted."
+        );
+
+
+        window.location.href =
+            "login.html";
+
+
+    }
+);
+
+function goBackHome() {
+    window.location.href = "home.html";
+}
+
+const savedDocuments = JSON.parse(
+    localStorage.getItem("rideNowDocuments") || "{}"
+);
+
+</script>
+
+
+</body>
+
+</html>

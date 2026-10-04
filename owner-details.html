@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Now - Owner Details</title>
+
+    <link rel="stylesheet" href="owner-details.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7faff;
+            min-height: 100vh;
+            color: #12345b;
+        }
+
+        /* Main container */
+
+        .page {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 25px 35px 40px;
+        }
+
+        /* Back button */
+
+        .back-button {
+            border: none;
+            background: none;
+            color: #315d8c;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        .back-button:hover {
+            color: #ff6b00;
+        }
+
+        /* Progress bar */
+
+        .progress-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: relative;
+            margin: 0 auto 35px;
+            max-width: 700px;
+        }
+
+        .progress-line {
+            position: absolute;
+            top: 15px;
+            left: 8%;
+            right: 8%;
+            height: 3px;
+            background: #e5eaf0;
+            z-index: 0;
+        }
+
+        .progress-line-active {
+            position: absolute;
+            top: 15px;
+            left: 8%;
+            width: 0%;
+            height: 3px;
+            background: #ff6b00;
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 20%;
+        }
+
+        .step-circle {
+            width: 31px;
+            height: 31px;
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            background: #edf1f6;
+            color: #78889b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .step.active .step-circle {
+            background: #ff6b00;
+            color: white;
+        }
+
+        .step-text {
+            font-size: 11px;
+            color: #8a98a8;
+            white-space: nowrap;
+        }
+
+        .step.active .step-text {
+            color: #ff6b00;
+            font-weight: bold;
+        }
+
+        /* Form card */
+
+        .form-card {
+            background: white;
+            border-radius: 14px;
+            padding: 30px 35px 35px;
+            box-shadow: 0 5px 25px rgba(35, 75, 120, 0.10);
+            border: 1px solid #edf1f5;
+        }
+
+        .form-card h1 {
+            font-size: 27px;
+            color: #103a67;
+            margin-bottom: 7px;
+        }
+
+        .subtitle {
+            color: #8290a0;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        /* Form */
+
+        .form-group {
+            margin-bottom: 19px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #34506c;
+            margin-bottom: 7px;
+        }
+
+        .required {
+            color: #ff6b00;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dce4ec;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            color: #243f5c;
+            background: #fff;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff6b00;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.08);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aab5c0;
+        }
+
+        .form-group textarea {
+            height: 95px;
+            resize: vertical;
+        }
+
+        /* Two columns */
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Next button */
+
+        .button-container {
+            margin-top: 28px;
+        }
+
+        .next-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #ff6b00;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .next-button:hover {
+            background: #e85e00;
+            transform: translateY(-1px);
+        }
+
+        /* Error */
+
+        .error-message {
+            color: #d93025;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 20px 15px 30px;
+            }
+
+            .form-card {
+                padding: 25px 20px 28px;
+            }
+
+            .form-card h1 {
+                font-size: 23px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .progress-container {
+                margin-bottom: 28px;
+            }
+
+            .step-text {
+                font-size: 9px;
+            }
+
+            .step-circle {
+                width: 27px;
+                height: 27px;
+                font-size: 11px;
+            }
+
+            .progress-line,
+            .progress-line-active {
+                top: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Back -->
+
+        <button class="back-button"
+                onclick="goBack()">
+
+            ← Back
+
+        </button>
+
+
+        <!-- Progress -->
+
+        <div class="progress-container">
+
+    <div class="progress-line"></div>
+
+    <div class="progress-line-active"></div>
+
+
+    <!-- STEP 1 -->
+
+    <div class="step completed">
+
+        <div class="step-circle">
+            ✓
+        </div>
+
+        <div class="step-text">
+            Owner Details
+        </div>
+
+    </div>
+
+
+    <!-- STEP 2 -->
+
+    <div class="step active">
+
+        <div class="step-circle">
+            2
+        </div>
+
+        <div class="step-text">
+            Profile Photo
+        </div>
+
+    </div>
+
+
+    <!-- STEP 3 -->
+
+    <div class="step">
+
+        <div class="step-circle">
+            3
+        </div>
+
+        <div class="step-text">
+            Documents
+        </div>
+
+    </div>
+
+
+    <!-- STEP 4 -->
+
+    <div class="step">
+
+        <div class="step-circle">
+            4
+        </div>
+
+        <div class="step-text">
+            Vehicle Details
+        </div>
+
+    </div>
+
+
+    <!-- STEP 5 -->
+
+    <div class="step">
+
+        <div class="step-circle">
+            5
+        </div>
+
+        <div class="step-text">
+            Password
+        </div>
+
+    </div>
+
+
+    <!-- STEP 6 -->
+
+    <div class="step">
+
+        <div class="step-circle">
+            6
+        </div>
+
+        <div class="step-text">
+            Complete
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- Owner Details -->
+
+        <div class="form-card">
+
+            <h1>
+                Create Your Account
+            </h1>
+
+            <p class="subtitle">
+                Start by telling us about yourself
+            </p>
+
+
+            <form id="ownerDetailsForm">
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="ownerName">
+                        Full Name <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ownerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone + Email -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="ownerPhone">
+                            Phone Number <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="ownerPhone"
+                            placeholder="Enter your phone number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ownerEmail">
+                            Email Address <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="ownerEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label for="ownerAddress">
+                        Address <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="ownerAddress"
+                        placeholder="Enter your complete address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <p id="errorMessage"
+                   class="error-message">
+                </p>
+
+
+                <!-- Next -->
+
+                <div class="button-container">
+
+                    <button
+                        type="submit"
+                        class="next-button">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* Back button */
+
+        function goBack() {
+
+            window.history.back();
+
+        }
+
+
+        /* Owner details */
+
+        document
+            .getElementById("ownerDetailsForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                    .getElementById("ownerName")
+                    .value
+                    .trim();
+
+
+                const phone =
+                    document
+                    .getElementById("ownerPhone")
+                    .value
+                    .trim();
+
+
+                const email =
+                    document
+                    .getElementById("ownerEmail")
+                    .value
+                    .trim();
+
+
+                const address =
+                    document
+                    .getElementById("ownerAddress")
+                    .value
+                    .trim();
+
+
+                const errorMessage =
+                    document
+                    .getElementById("errorMessage");
+
+
+                /* Phone validation */
+
+                if (!/^[0-9]{10}$/.test(phone)) {
+
+                    errorMessage.textContent =
+                        "Please enter a valid 10-digit phone number.";
+
+                    errorMessage.style.display = "block";
+
+                    return;
+
+                }
+
+
+                /* Save owner details */
+
+                const ownerDetails = {
+
+                    name: name,
+
+                    phone: phone,
+
+                    email: email,
+
+                    address: address
+
+                };
+
+
+                localStorage.setItem(
+                    "rideNowOwnerDetails",
+                    JSON.stringify(ownerDetails)
+                );
+
+
+                /* Go to Step 2 */
+
+                window.location.href =
+                    "owner-profile-photo.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ride Now</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Loading Page -->
+
+    <div class="loading-page">
+
+        <div class="ride-now-logo">
+
+        </div>
+
+
+        <div class="loading-info">
+
+            <h1>Your Ride, Your Way</h1>
+
+            <div class="loading-bar">
+
+                <div class="progress"></div>
+
+            </div>
+
+            <p>Loading...</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- After 3 seconds, open login page -->
+
+    <script>
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    3000
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
